@@ -18,6 +18,8 @@ export default async function Home() {
           Joris' sandbox
         </Link>
       </div>
+
+      <h2 className="input">TESTING TAILWIND CLASS</h2>
       <h1 className="font-spicy text-main-1">TEXT HERE</h1>
       <p className="text-main-1 font-rethink font-bold">This is a paragraph</p>
       <p className="text-accent-1 font-rethink font-semibold">This is a paragraph semibold</p>
