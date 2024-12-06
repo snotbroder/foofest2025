@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Spicy+Rice&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #fff8db;
   --foreground: #171717;
 }
 
