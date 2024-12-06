@@ -15,7 +15,6 @@ function AccordionBox({ question, answer }) {
       <div className="flex justify-between">
         <span className="font-semibold text-md">{question}</span>
         {isAccordionOpen ? <FiMinus size="1.2rem" /> : <GoPlus size="1.2rem" />}
-        {/* <GoPlus size="1.5rem" color="#A20F81" /> */}
       </div>
       <div
         className={`transition-all duration-200 ease-in-out ${

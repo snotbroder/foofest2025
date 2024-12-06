@@ -2,7 +2,7 @@ import AccordionBox from "./AccordionBox";
 
 function Accordion() {
   return (
-    <article className="bg-primary p-8 flex flex-col gap-4 text-main-1 rounded-rounded-reg -mr-mobile -ml-mobile md:mx-auto md:max-w-2xl">
+    <article className="bg-primary p-8 flex flex-col gap-4 text-main-1 rounded-rounded-reg -mr-mobile -ml-mobile md:mx-auto md:max-w-2xl relative before:content-[''] before:absolute before:top-[-50px] before:left-0 before:right-0 before:h-[200px] before:bg-cover before:bg-center before:z-[-1] before:bg-[url('/next.svg')]">
       <h4 className=" font-bold border-b border-feedback-error font-rethink text-2xl">
         FAQ
       </h4>
