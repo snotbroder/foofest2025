@@ -1,6 +1,7 @@
 import Accordion from "./componentsJulie/Accordion";
 import "./main.css";
 import Link from "next/link";
+i;
 export default function Home() {
   return (
     <>
