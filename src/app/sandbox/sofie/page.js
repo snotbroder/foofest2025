@@ -1,5 +1,6 @@
 import "./main.css";
 import BandCard from "./components/BandCard";
+import Footer from "./components/Footer";
 import Link from "next/link";
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <BandCard imgSrc="/img/led-zeppelin.jpg" name="Led Zeppelin"></BandCard>
         <BandCard imgSrc="/img/led-zeppelin.jpg" name="Led Zeppelin"></BandCard>
       </div>
+      <Footer></Footer>
     </>
   );
 }
