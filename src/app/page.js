@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getBands } from "../app/api";
 
 export default async function Home() {
@@ -5,11 +6,29 @@ export default async function Home() {
   console.log(bands);
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      {bands.map((band) => {
-        return <h1 key={band.slug}>{band.name}</h1>;
-      })}
-      <h1>Hej</h1>
+    <div className="">
+      <div className="flex gap-5 ">
+        <Link className="text-blue-700 hover:text-red-600 text-xl" href="/app/sandbox/sofie">
+          Sofies sandbox
+        </Link>
+        <Link className="text-blue-700 hover:text-red-600 text-xl" href="/app/sandbox/julie">
+          Julies sandbox
+        </Link>
+        <Link className="text-blue-700 hover:text-red-600 text-xl" href="/app/sandbox/joris">
+          Joris' sandbox
+        </Link>
+      </div>
+      <div className="grid grid-cols-6 text-gray-300">
+        {bands.map((band, index) => {
+          return (
+            <h1 key={band.slug}>
+              {band.name}
+              <span>{index}</span>
+            </h1>
+          );
+        })}
+      </div>
+      <footer>Footer</footer>
     </div>
   );
 }

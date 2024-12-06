@@ -14,6 +14,10 @@
   }
 }
 
+.test {
+  color: blue;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
