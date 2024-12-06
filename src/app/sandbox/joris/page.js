@@ -1,5 +1,8 @@
+"use client";
+import CtaButton from "@/components/CtaButton";
 import "./main.css";
 import Link from "next/link";
+
 export default function Home() {
   return (
     <>
@@ -7,6 +10,15 @@ export default function Home() {
         Home
       </Link>
       <div className="hello">Joris' sandbox</div>
+      <div className="grid grid-cols-2 gap-6">
+        <button onClick={sayHi} className="btn-style">
+          cssbutton
+        </button>
+        <CtaButton action="sayHi" text="componentbutton"></CtaButton>
+      </div>
     </>
   );
+}
+function sayHi() {
+  console.log("Hi");
 }
