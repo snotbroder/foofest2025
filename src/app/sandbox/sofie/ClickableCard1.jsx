@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function ClickableCard1({ header, text, src, alt }) {
   return (
-    <div className="w-96  bg-tertiary p-4 text-main-1 font-rethink flex flex-col gap-4">
+    <div className="w-96  bg-tertiary p-4 text-main-1 font-rethink flex flex-col gap-4 shadow-custom">
       <Image
         src={src}
         width={500}

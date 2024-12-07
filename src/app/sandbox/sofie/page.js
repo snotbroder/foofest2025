@@ -8,7 +8,7 @@ export default function Home() {
         Home
       </Link>
       <div className="hello">Sofies sandbox</div>
-      <div className="flex gap-32 flex-wrap">
+      <div className="flex gap-32 flex-wrap justify-center">
         <ClickableCard1
           src="/tshirt.webp"
           header="Buy the t-shirt of this year’s festival"
@@ -22,7 +22,7 @@ export default function Home() {
         <ClickableCard1
           src="/volunteerPoster.webp"
           header="Become a volunteer"
-          text="As a volunteer, you’ll be part of the magic—setting up, guiding guests, and keeping the festival running smoothly. In return, you’ll get free entry, official merch, and a chance to meet amazing people while gaining valuable experience."
+          text="As a volunteer, you’ll get free entry, official merch, and a chance to meet amazing people while gaining valuable experience."
         ></ClickableCard1>
       </div>
     </>
