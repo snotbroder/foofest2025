@@ -1,5 +1,5 @@
 import "./main.css";
-import BandCard from "./components/BandCard";
+import BandCard from "./BandCard";
 import Link from "next/link";
 export default function Home() {
   return (
