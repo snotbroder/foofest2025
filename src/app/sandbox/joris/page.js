@@ -1,5 +1,5 @@
 "use client";
-import CtaButton from "@/components/CtaButton";
+import CtaButton from "@/app/sandbox/joris/CtaButton";
 import "./main.css";
 import Link from "next/link";
 
