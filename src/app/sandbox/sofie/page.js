@@ -1,6 +1,6 @@
 import "./main.css";
 import BandCard from "./components/BandCard";
-import Footer from "./components/Footer";
+import Footer from "./Footer";
 import Link from "next/link";
 export default function Home() {
   return (
