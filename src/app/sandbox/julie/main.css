@@ -8,7 +8,6 @@
   box-shadow: 10px 10px black;
   background-image: url(/sun-illu.svg), url(/vintage-filter.svg);
   background-position: -10% -100%, 100%;
-  /* background-size: 99% %; */
   background-repeat: no-repeat;
   background-color: #dbd976;
 }
@@ -20,7 +19,16 @@
   background-image: url(/vinyl-1.svg), url(/vintage-filter.svg);
   background-position: -600% 200%, 100%;
   background-size: 104%;
-
   background-repeat: no-repeat;
   background-color: #d76f2d;
+}
+
+.cardlabel {
+  position: absolute;
+  left: 10%;
+  top: -65%;
+}
+
+.cardlabel-container {
+  position: relative;
 }
