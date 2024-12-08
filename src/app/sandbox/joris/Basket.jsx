@@ -2,36 +2,12 @@
 
 import { useState } from "react";
 
-function Basket() {
+function Basket({ basketTickets, basketCamp }) {
   const [openBasket, setOpenBasket] = useState(false);
 
   function handleOpenBasket() {
     setOpenBasket((prevState) => !prevState);
   }
-  const basketTickets = [
-    {
-      itemTitle: "regular ticket",
-      itemMultiply: 1,
-      itemPrice: 799,
-    },
-    {
-      itemTitle: "vip ticket",
-      itemMultiply: 3,
-      itemPrice: 1299,
-    },
-  ];
-  const basketCamp = [
-    // {
-    //   itemTitle: "Muspelheim",
-    //   itemPrice: "",
-    //   itemMultiply: 0,
-    // },
-    {
-      itemTitle: "three pers. tent",
-      itemPrice: 399,
-      itemMultiply: 3,
-    },
-  ];
 
   // fundet hjælp herfra med for https://bito.ai/resources/javascript-calculate-total-price-javascript-explained/
   let allTicketsTotal = 0;
