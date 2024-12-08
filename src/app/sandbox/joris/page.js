@@ -8,10 +8,12 @@ export default function Home() {
         Home
       </Link>
       <div className="hello">Joris' sandbox</div>
-      <main className="grid grid-cols-3">
+      <main className="grid grid-cols-1 lg:grid-cols-3">
         <div></div>
         <div></div>
-        <Basket></Basket>
+        <div className="-mx-mobile lg:mx-0">
+          <Basket></Basket>
+        </div>
       </main>
     </>
   );
