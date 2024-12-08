@@ -1,5 +1,5 @@
 "use client";
-import BookingSteps from "@/components/BookingSteps";
+import BookingSteps from "@/app/sandbox/joris/BookingSteps";
 import { useState } from "react";
 import "./main.css";
 import Link from "next/link";
