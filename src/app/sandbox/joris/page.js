@@ -1,3 +1,4 @@
+import Basket from "./Basket";
 import "./main.css";
 import Link from "next/link";
 export default function Home() {
@@ -7,6 +8,11 @@ export default function Home() {
         Home
       </Link>
       <div className="hello">Joris' sandbox</div>
+      <main className="grid grid-cols-3">
+        <div></div>
+        <div></div>
+        <Basket></Basket>
+      </main>
     </>
   );
 }
