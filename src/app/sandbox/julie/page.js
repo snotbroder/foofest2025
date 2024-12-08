@@ -1,3 +1,4 @@
+import Benefits from "./Benefits";
 import "./main.css";
 import Link from "next/link";
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
         Home
       </Link>
       <div className="hello">Julies sandbox</div>
+      <Benefits />
     </>
   );
 }
