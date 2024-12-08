@@ -38,5 +38,9 @@
       margin-top: 0;
     }
   }
+  &:active {
+    background-color: #3a140b;
+    color: #fff8db;
+  }
 }
 /*   after:-z-10 after:content-[''] after:w-full after:h-full after:ml-1 after:mt-1 hover:after:mt-0 hover:after:ml-0 after:transition-all after:duration-75 hover:outline-1 hover:outline-main-1 hover:text-main-1 hover:transition-all" */

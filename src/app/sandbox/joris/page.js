@@ -14,7 +14,13 @@ export default function Home() {
         <button onClick={sayHi} className="btn-style">
           cssbutton
         </button>
-        <CtaButton action="sayHi" text="componentbutton"></CtaButton>
+        <CtaButton
+          onClick={function () {
+            console.log("hej");
+          }}
+          action="sayHi"
+          text="componentbutton"
+        ></CtaButton>
       </div>
     </>
   );
