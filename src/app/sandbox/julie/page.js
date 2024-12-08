@@ -1,5 +1,7 @@
 import "./main.css";
 import Link from "next/link";
+import TicketCard from "./TicketCard";
+import TicketCards from "./TicketCards";
 export default function Home() {
   return (
     <>
@@ -7,6 +9,8 @@ export default function Home() {
         Home
       </Link>
       <div className="hello">Julies sandbox</div>
+
+      <TicketCards />
     </>
   );
 }
