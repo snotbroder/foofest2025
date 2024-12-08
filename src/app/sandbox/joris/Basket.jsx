@@ -20,28 +20,52 @@ function Basket() {
       itemPrice: 1299,
     },
   ];
+  const basketCamp = [
+    // {
+    //   itemTitle: "Muspelheim",
+    //   itemPrice: "",
+    //   itemMultiply: 0,
+    // },
+    {
+      itemTitle: "three pers. tent",
+      itemPrice: 399,
+      itemMultiply: 3,
+    },
+  ];
 
-  // fundet hjælp herfra https://bito.ai/resources/javascript-calculate-total-price-javascript-explained/
-  let totalPrice = 0 + 99;
+  // fundet hjælp herfra med for https://bito.ai/resources/javascript-calculate-total-price-javascript-explained/
+  let allTicketsTotal = 0;
   for (let item of basketTickets) {
-    totalPrice += item.itemPrice * item.itemMultiply;
+    allTicketsTotal += item.itemPrice * item.itemMultiply;
   }
+
+  let allCampTotal = 0;
+  for (let item of basketCamp) {
+    allCampTotal += item.itemPrice * item.itemMultiply;
+  }
+  let totalPrice = allCampTotal + allTicketsTotal + 99;
+
+  const countDown = "00:00";
+  const timeLeft = "Time left: " + countDown;
 
   const errorCamp = false;
   const errorTents = false;
   return (
-    <section className="fixed bottom-0 w-full bg-main-2 border-y-2 lg:border-2 border-main-1 border-solid p-8 rounded-md lg:relative">
+    <section time-left={timeLeft} className="fixed lg:relative after:absolute after:content-[attr(time-left)] after:-top-7 after:pb-2 after:px-4 after:left-0 after:bg-secondary after:font-rethink after:font-bold after:-z-20 bottom-0 after:text-main-2  w-full bg-main-2 border-y-2 lg:border-2 border-main-1 border-solid p-8 rounded-md ">
       <div className={`${openBasket ? "block" : "hidden"} md:block lg:block`}>
         <h2 className="font-spicy text-main-1 text-4xl">Basket</h2>
         <article className="flex flex-col gap-2 my-2">
           <span className="font-rethink text-xs py-1 px-3 bg-secondary text-main-2 rounded-md font-semibold w-max">Tickets</span>
           {basketTickets.map((ticket, index) => {
-            return <BasketItem key={index} itemTitle={ticket.itemTitle} itemMultiply={ticket.itemMultiply} itemPrice={ticket.itemPrice} i></BasketItem>;
+            return <BasketItem key={index} itemTitle={ticket.itemTitle} itemMultiply={ticket.itemMultiply} itemPrice={ticket.itemPrice}></BasketItem>;
           })}
         </article>
         <article className="flex flex-col gap-2 my-2">
           <span className="font-rethink text-xs py-1 px-3 bg-secondary text-main-2 rounded-md font-semibold w-max">Camp</span>
           <span className="font-rethink text-xs text-feedback-error ">Please choose a camp</span>
+          {basketCamp.map((camp, index) => {
+            return <BasketItem key={index} itemTitle={camp.itemTitle} itemMultiply={camp.itemMultiply} itemPrice={camp.itemPrice}></BasketItem>;
+          })}
         </article>
 
         <article className="font-rethink text-main-1 border-b-2 border-b-tertiary border-b-solid pb-2 my-1 mb-4 flex justify-between">
@@ -77,10 +101,13 @@ export function BasketItem({ itemTitle, itemMultiply, itemPrice }) {
   return (
     <div className="font-rethink text-main-1 border-b-2 border-b-tertiary border-b-solid my-1 pb-2 flex justify-between">
       <span>
-        <span className="mr-2 font-bold">{itemMultiply}</span>
-        <span className="uppercase">{itemTitle}</span>
+        <span className={`${itemMultiply === 0 ? "hidden" : ""} font-bold mr-2`}>{itemMultiply}</span>
+        <span className="uppercase ">{itemTitle}</span>
       </span>
-      <span>{itemPrice},-</span>
+      <span>
+        {itemPrice}
+        {itemPrice === "" ? "" : ",-"}
+      </span>
     </div>
   );
 }
