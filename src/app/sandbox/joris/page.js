@@ -1,5 +1,6 @@
 import "./main.css";
 import Link from "next/link";
+import TicketSelectCard from "./TicketSelectCard";
 export default function Home() {
   return (
     <>
@@ -7,6 +8,10 @@ export default function Home() {
         Home
       </Link>
       <div className="hello">Joris' sandbox</div>
+
+      <TicketSelectCard ticketName="VIP TICKET" variant="type1" price="1299" subText="Best Offer"></TicketSelectCard>
+      <br></br>
+      <TicketSelectCard ticketName="REGULAR TICKET" variant="type2" price="799"></TicketSelectCard>
     </>
   );
 }
