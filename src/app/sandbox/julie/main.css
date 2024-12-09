@@ -2,6 +2,21 @@
   color: purple;
 }
 
+/* .custom-selector {
+  position: relative;
+}
+
+.imgcontainer::before {
+  content: "";
+  background-image: url("/pink-flower.svg");
+  position: absolute;
+  width: 25rem;
+  height: 20rem;
+  left: -35%;
+  top: -13.5rem;
+  z-index: -1;
+} */
+
 .regular {
   cursor: pointer;
   border: 2px solid black;

@@ -22,6 +22,24 @@ export async function getBands() {
   return data; // Ensure this is an array of objects
 }
 
+export async function getSchedule() {
+  let headersList = {
+    Accept: "*/*",
+    "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+  };
+  const response = await fetch("http://localhost:8080/Schedule/Midgard", {
+    method: "GET",
+    headers: headersList,
+  });
+  // let response = await fetch("https://gabby-dull-drip.glitch.me/Schedule", {
+  //   method: "GET",
+  //   headers: headersList,
+  // });
+
+  let data = await response.json();
+  return data;
+}
+
 export async function getSpots() {
   let headersList = {
     Accept: "*/*",
