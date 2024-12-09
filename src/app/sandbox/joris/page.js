@@ -4,6 +4,8 @@ import Basket from "./Basket";
 ("use client");
 import { useState } from "react";
 import AmountBtn from "./AmountBtn";
+("use client");
+import CtaButton from "@/app/sandbox/joris/CtaButton";
 import "./main.css";
 import Link from "next/link";
 
@@ -53,6 +55,21 @@ export default function Home() {
       </main>
       <AmountBtn onAmountChange={handleAmountChange}></AmountBtn>
       <span>amount is {amount}</span>
+      <div className="grid grid-cols-2 gap-6">
+        <button onClick={sayHi} className="btn-style">
+          cssbutton
+        </button>
+        <CtaButton
+          onClick={function () {
+            console.log("hej");
+          }}
+          action="sayHi"
+          text="componentbutton"
+        ></CtaButton>
+      </div>
     </>
   );
+}
+function sayHi() {
+  console.log("Hi");
 }
