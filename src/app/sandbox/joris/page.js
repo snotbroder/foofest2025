@@ -9,6 +9,7 @@ import CtaButton from "@/app/sandbox/joris/CtaButton";
 import "./main.css";
 import Link from "next/link";
 
+import TicketSelectCard from "./TicketSelectCard";
 export default function Home() {
   const [basketData, setBasketData] = useState([]);
   const basketTickets = [
@@ -67,6 +68,10 @@ export default function Home() {
           text="componentbutton"
         ></CtaButton>
       </div>
+
+      <TicketSelectCard ticketName="VIP TICKET" variant="type1" price="1299" subText="Best Offer"></TicketSelectCard>
+      <br></br>
+      <TicketSelectCard ticketName="REGULAR TICKET" variant="type2" price="799"></TicketSelectCard>
     </>
   );
 }
