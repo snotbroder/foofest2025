@@ -50,5 +50,18 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities, theme }) {
+      addUtilities({
+        ".input": {
+          color: theme("textColor.main-1"),
+          fontSize: "7rem",
+        },
+        ".input2": {
+          color: "green",
+          fontSize: "5rem",
+        },
+      });
+    },
+  ],
 };

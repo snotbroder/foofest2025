@@ -19,6 +19,11 @@
   color: blue;
 }
 
+input {
+  background-color: red;
+  color: green;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
