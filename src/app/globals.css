@@ -19,10 +19,10 @@
   color: blue;
 }
 
-input {
+/* input {
   background-color: red;
   color: green;
-}
+} */
 
 body {
   color: var(--foreground);
