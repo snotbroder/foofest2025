@@ -6,6 +6,9 @@ import { useState } from "react";
 import AmountBtn from "./AmountBtn";
 ("use client");
 import CtaButton from "@/app/sandbox/joris/CtaButton";
+("use client");
+import BookingSteps from "@/app/sandbox/joris/BookingSteps";
+import { useState } from "react";
 import "./main.css";
 import Link from "next/link";
 
@@ -41,6 +44,8 @@ export default function Home() {
   function handleAmountChange(newAmount) {
     setAmount(newAmount);
   }
+  const [state, setState] = useState(0);
+
   return (
     <>
       <Link href="/" className="text-blue-700 hover:text-red-600 text-xl">
@@ -72,6 +77,28 @@ export default function Home() {
       <TicketSelectCard ticketName="VIP TICKET" variant="type1" price="1299" subText="Best Offer"></TicketSelectCard>
       <br></br>
       <TicketSelectCard ticketName="REGULAR TICKET" variant="type2" price="799"></TicketSelectCard>
+      <BookingSteps state={state}></BookingSteps>
+
+      <p>
+        state is <span className="font-bold text-red-600">{state}</span>
+      </p>
+
+      <button
+        className="border-main-1 border-2"
+        onClick={() => {
+          setState((prevState) => prevState - 1);
+        }}
+      >
+        state -1
+      </button>
+      <button
+        className="border-main-1 border-2"
+        onClick={() => {
+          setState((prevState) => prevState + 1);
+        }}
+      >
+        state +1
+      </button>
     </>
   );
 }
