@@ -4,15 +4,15 @@ export async function getBands() {
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
   };
 
-  // const response = await fetch("https://gabby-dull-drip.glitch.me/bands", {
-  //   method: "GET",
-  //   headers: headersList,
-  // });
-
-  const response = await fetch("http://localhost:8080/bands", {
+  const response = await fetch("https://gabby-dull-drip.glitch.me/bands", {
     method: "GET",
     headers: headersList,
   });
+
+  // const response = await fetch("http://localhost:8080/bands", {
+  //   method: "GET",
+  //   headers: headersList,
+  // });
 
   if (!response.ok) {
     throw new Error(`Failed to fetch bands: ${response.statusText}`);
