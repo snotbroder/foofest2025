@@ -9,7 +9,7 @@ async function BandCards() {
   const bands = await response.json();
 
   return (
-    <div className="flex flex-wrap justify-center md:justify-between gap-10">
+    <div className="flex flex-wrap justify-center md:justify-between gap-10 mx-mobile lg:mx-desktop">
       {bands.map((band) => {
         const logo = band.logo.startsWith("http")
           ? band.logo
