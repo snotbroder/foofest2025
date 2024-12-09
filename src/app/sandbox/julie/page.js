@@ -1,3 +1,5 @@
+import CampingCards from "./CampingCards";
+import CampingPage from "./CampingPage";
 import Benefits from "./Benefits";
 import Accordion from "./componentsJulie/Accordion";
 import "./main.css";
@@ -12,6 +14,8 @@ export default function Home() {
         Home
       </Link>
       <div className="hello">Julies sandbox</div>
+
+      <CampingPage />
 
       <TicketCards />
       <Benefits />

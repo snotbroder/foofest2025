@@ -21,3 +21,19 @@ export async function getBands() {
   const data = await response.json();
   return data; // Ensure this is an array of objects
 }
+
+export async function getSpots() {
+  let headersList = {
+    Accept: "*/*",
+    "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+  };
+
+  let response = await fetch("http://localhost:8080/available-spots", {
+    method: "GET",
+    headers: headersList,
+  });
+
+  let data = await response.json();
+  console.log(data);
+  return data;
+}
