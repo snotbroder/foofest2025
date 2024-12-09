@@ -75,3 +75,44 @@ body {
   top: -13.5rem;
   z-index: -1;
 }
+.btn-style {
+  color: #fff8db;
+  font-family: "Rethink Sans";
+  font-size: 1rem;
+  background-color: #f0047f;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  position: relative;
+  max-width: 40%;
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #3a140b;
+    z-index: -1;
+    content: "";
+    width: 100%;
+    height: 100%;
+    margin-left: 0.25rem;
+    margin-top: 0.25rem;
+    transition: all;
+    transition-duration: 0.075s;
+  }
+  &:hover {
+    color: #fff8db;
+    transition: all;
+    transition-duration: 0.075s;
+    &::after {
+      margin-left: 0;
+      margin-top: 0;
+    }
+  }
+  &:active {
+    background-color: #3a140b;
+    color: #fff8db;
+  }
+}
