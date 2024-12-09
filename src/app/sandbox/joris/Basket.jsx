@@ -28,7 +28,7 @@ function Basket({ basketTickets, basketCamp }) {
   const errorTents = false;
   return (
     <section time-left={timeLeft} className="fixed lg:relative after:absolute after:content-[attr(time-left)] after:-top-7 after:pb-2 after:px-4 after:left-0 after:bg-secondary after:font-rethink after:font-bold after:-z-20 bottom-0 after:text-main-2  w-full bg-main-2 border-y-2 lg:border-2 border-main-1 border-solid p-8 rounded-md ">
-      <div className={`${openBasket ? "block" : "hidden"} md:block lg:block`}>
+      <div className={`${openBasket ? "block" : "hidden"} lg:block`}>
         <h2 className="font-spicy text-main-1 text-4xl">Basket</h2>
         <article className="flex flex-col gap-2 my-2">
           <span className="font-rethink text-xs py-1 px-3 bg-secondary text-main-2 rounded-md font-semibold w-max">Tickets</span>
@@ -60,7 +60,7 @@ function Basket({ basketTickets, basketCamp }) {
           {errorCamp && "Please choose a camp to continue"}
           {errorTents && "You can only buy tents based on the amount of tickets "}
         </div>
-        <button onClick={handleOpenBasket} className="md:hidden lg:hidden">
+        <button onClick={handleOpenBasket} className="lg:hidden">
           open cart
         </button>
       </footer>
