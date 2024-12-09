@@ -55,3 +55,20 @@ export async function getSpots() {
   console.log(data);
   return data;
 }
+
+export async function getProgram(stage, day) {
+  let headersList = {
+    Accept: "*/*",
+    "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+  };
+
+  let response = await fetch("http://localhost:8080/schedule/", {
+    method: "GET",
+    headers: headersList,
+  });
+  const filteredprogram = data?.stage?.day || [];
+
+  let data = await response.json();
+  console.log(data);
+  return filteredprogram;
+}

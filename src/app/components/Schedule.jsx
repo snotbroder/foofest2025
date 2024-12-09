@@ -1,30 +1,21 @@
-import { getSchedule, getBands } from "../api";
+import { getSchedule } from "../api";
 import ScheduleBox from "./ScheduleBox";
-import { IoMdArrowDropdown } from "react-icons/io";
-import "../globals.css";
 
-async function Schedule() {
+export default async function Schedule({ stage, day }) {
+  // Fetch schedule data based on the stage and day
   const scheduleData = await getSchedule();
-  const schedule = scheduleData.Midgard.mon;
-
-  //   let listOfScenes = [];
-
-  //   for (let scene in scheduleData) {
-  //     listOfScenes.push(scene);
-  //   }
-
-  //   console.log(listOfScenes);
-  //   console.log(bands);
-  //   const bands = await getBands();
-  //   console.log(bands);
+  const schedule = scheduleData?.[stage]?.[day] || [];
 
   return (
-    <article className=" -mx-mobile flex flex-col justify-center gap-4">
-      {schedule.map((event) => {
-        return <ScheduleBox key={event.index} artist={event.act} time="start" />;
-      })}
+    <article className="-mx-mobile flex flex-col justify-center gap-4">
+      {schedule.map((event, index) => (
+        <ScheduleBox
+          key={index}
+          artist={event.act}
+          startTime={event.start}
+          endTime={event.end}
+        />
+      ))}
     </article>
   );
 }
-
-export default Schedule;
