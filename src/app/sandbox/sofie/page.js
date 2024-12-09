@@ -1,4 +1,5 @@
 import "./main.css";
+import ClickableCard1 from "./ClickableCard1";
 import Link from "next/link";
 import ClickableCard2 from "./ClickableCard2";
 import BurgerMenu from "./BurgerMenu";
@@ -10,6 +11,23 @@ export default function Home() {
         Home
       </Link>
       <div className="hello">Sofies sandbox</div>
+      <div className="flex gap-32 flex-wrap justify-center">
+        <ClickableCard1
+          src="/tshirt.webp"
+          header="Buy the t-shirt of this year’s festival"
+          text="Embrace the groove and wear the love! Get your official Foo Festival T-shirt and keep the peace, love, and music alive wherever you go"
+        ></ClickableCard1>
+        <ClickableCard1
+          src="/musicquiz.webp"
+          header="Join the quiz and win a free ticket"
+          text="Think you know your music trivia? Test your knowledge in our quiz for a chance to win a ticket to Foo Festival 2024! Don't miss out on the fun—peace, love, and music await"
+        ></ClickableCard1>
+        <ClickableCard1
+          src="/volunteerPoster.webp"
+          header="Become a volunteer"
+          text="As a volunteer, you’ll get free entry, official merch, and a chance to meet amazing people while gaining valuable experience."
+        ></ClickableCard1>
+      </div>
       <div className="flex flex-wrap justify-center gap-9">
         <ClickableCard2
           href="/schedule"
