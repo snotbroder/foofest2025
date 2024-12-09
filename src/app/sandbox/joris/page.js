@@ -1,8 +1,12 @@
 "use client";
 import { useState } from "react";
 import Basket from "./Basket";
+("use client");
+import { useState } from "react";
+import AmountBtn from "./AmountBtn";
 import "./main.css";
 import Link from "next/link";
+
 export default function Home() {
   const [basketData, setBasketData] = useState([]);
   const basketTickets = [
@@ -30,6 +34,10 @@ export default function Home() {
     },
   ];
 
+  const [amount, setAmount] = useState(0);
+  function handleAmountChange(newAmount) {
+    setAmount(newAmount);
+  }
   return (
     <>
       <Link href="/" className="text-blue-700 hover:text-red-600 text-xl">
@@ -43,6 +51,8 @@ export default function Home() {
           <Basket basketCamp={basketCamp} basketTickets={basketTickets}></Basket>
         </div>
       </main>
+      <AmountBtn onAmountChange={handleAmountChange}></AmountBtn>
+      <span>amount is {amount}</span>
     </>
   );
 }
