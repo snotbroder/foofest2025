@@ -11,6 +11,14 @@ module.exports = {
         spicy: ["Spicy Rice", "times new roman"],
         rethink: ["Rethink Sans", "ui-sans-serif"],
       },
+      // fontSize: {
+      //   "--step-0": "clamp(1rem, 0.9095rem + 0.3604vw, 1.25rem)",
+      //   "--step-1": "clamp(1.2rem, 1.0914rem + 0.4324vw, 1.5rem)",
+      //   "--step-2": "clamp(1.44rem, 1.3096rem + 0.5189vw, 1.8rem)",
+      //   "--step-3": "clamp(1.728rem, 1.5715rem + 0.6227vw, 2.16rem)",
+      //   "--step-4": "clamp(2.0736rem, 1.8859rem + 0.7472vw, 2.592rem)",
+      //   "--step-5": "clamp(2.4883rem, 2.263rem + 0.8967vw, 3.1104rem)",
+      // },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
