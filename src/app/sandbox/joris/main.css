@@ -30,7 +30,7 @@
     transition-duration: 0.075s;
   }
   &:hover {
-    color: #3a140b;
+    color: #fff8db;
     transition: all;
     transition-duration: 0.075s;
     &::after {
