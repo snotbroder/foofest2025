@@ -1,3 +1,4 @@
+import Benefits from "./Benefits";
 import Accordion from "./componentsJulie/Accordion";
 import "./main.css";
 import Link from "next/link";
@@ -9,6 +10,7 @@ export default function Home() {
         Home
       </Link>
       <div className="hello">Julies sandbox</div>
+      <Benefits />
       <Accordion />
     </>
   );
