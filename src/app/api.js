@@ -27,14 +27,14 @@ export async function getSchedule() {
     Accept: "*/*",
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
   };
-  const response = await fetch("http://localhost:8080/Schedule/Midgard", {
-    method: "GET",
-    headers: headersList,
-  });
-  // let response = await fetch("https://gabby-dull-drip.glitch.me/Schedule", {
+  // const response = await fetch("http://localhost:8080/Schedule/Midgard", {
   //   method: "GET",
   //   headers: headersList,
   // });
+  let response = await fetch("https://gabby-dull-drip.glitch.me/Schedule", {
+    method: "GET",
+    headers: headersList,
+  });
 
   let data = await response.json();
   return data;
@@ -46,7 +46,12 @@ export async function getSpots() {
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
   };
 
-  let response = await fetch("http://localhost:8080/available-spots", {
+  // let response = await fetch("http://localhost:8080/available-spots", {
+  //   method: "GET",
+  //   headers: headersList,
+  // });
+
+  let response = await fetch("https://gabby-dull-drip.glitch.me/available-spots", {
     method: "GET",
     headers: headersList,
   });
