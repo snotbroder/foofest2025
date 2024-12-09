@@ -1,5 +1,7 @@
+import Accordion from "./componentsJulie/Accordion";
 import "./main.css";
 import Link from "next/link";
+
 export default function Home() {
   return (
     <>
@@ -7,6 +9,7 @@ export default function Home() {
         Home
       </Link>
       <div className="hello">Julies sandbox</div>
+      <Accordion />
     </>
   );
 }
