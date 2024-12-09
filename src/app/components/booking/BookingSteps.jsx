@@ -1,33 +1,33 @@
 "use client";
-function BookingSteps({ state }) {
+function BookingSteps({ step }) {
   return (
     <ul className="flex flex-col gap-2 lg:flex-row lg:justify-between font-rethink">
       <li
-        className={`${state === 0 ? "text-secondary font-bold" : state > 0 ? "underline text-main-1" : "text-feedback-disabled-2"} `}
+        className={`${step === 0 ? "text-secondary font-bold" : step > 0 ? "underline text-main-1" : "text-feedback-disabled-2"} `}
         onClick={() => {
-          state <= 0 ? console.log("State is 0 or less. state=", state) : console.log("State is not 0 or less. state=", state);
+          step <= 0 ? console.log("step is 0 or less. step=", step) : console.log("step is not 0 or less. step=", step);
         }}
       >
         Choose tickets
       </li>
       <li
-        className={`${state === 1 ? "text-secondary font-bold" : state > 1 ? "underline text-main-1" : "text-feedback-disabled-2"} `}
+        className={`${step === 1 ? "text-secondary font-bold" : step > 1 ? "underline text-main-1" : "text-feedback-disabled-2"} `}
         onClick={() => {
-          state <= 1 ? console.log("State is 1 or less. state=", state) : console.log("State is not 1 or less. state=", state);
+          step <= 1 ? console.log("step is 1 or less. step=", step) : console.log("step is not 1 or less. step=", step);
         }}
       >
         Choose camp
       </li>
       <li
-        className={`${state === 2 ? "text-secondary font-bold" : state > 2 ? "underline text-main-1" : "text-feedback-disabled-2"} `}
+        className={`${step === 2 ? "text-secondary font-bold" : step > 2 ? "underline text-main-1" : "text-feedback-disabled-2"} `}
         onClick={() => {
-          state <= 2 ? console.log("State is 2 or less. state=", state) : console.log("State is not 2 or less. state=", state);
+          step <= 2 ? console.log("step is 2 or less. step=", step) : console.log("step is not 2 or less. step=", step);
         }}
       >
         Contact info
       </li>
-      <li className={`${state === 3 ? "text-secondary font-bold" : state > 3 ? "underline text-main-1" : "text-feedback-disabled-2"} `}>Payment info</li>
-      <li className={`${state === 4 ? "text-secondary font-bold" : state > 4 ? "underline text-main-1" : "text-feedback-disabled-2"} `}>Overview</li>
+      <li className={`${step === 3 ? "text-secondary font-bold" : step > 3 ? "underline text-main-1" : "text-feedback-disabled-2"} `}>Payment info</li>
+      <li className={`${step === 4 ? "text-secondary font-bold" : step > 4 ? "underline text-main-1" : "text-feedback-disabled-2"} `}>Overview</li>
     </ul>
   );
 }
