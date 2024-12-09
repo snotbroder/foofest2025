@@ -27,7 +27,7 @@ function Basket({ basketTickets, basketCamp }) {
   const errorCamp = false;
   const errorTents = false;
   return (
-    <section time-left={timeLeft} className="fixed lg:relative after:absolute after:content-[attr(time-left)] after:-top-7 after:pb-2 after:px-4 after:left-0 after:bg-secondary after:font-rethink after:font-bold after:-z-20 bottom-0 after:text-main-2  w-full bg-main-2 border-y-2 lg:border-2 border-main-1 border-solid p-8 rounded-md ">
+    <section time-left={timeLeft} className="fixed -mx-mobile row-span-1 row-start-1 col-start-2 lg:mx-0 lg:relative after:absolute after:content-[attr(time-left)] after:-top-7 after:pb-2 after:px-4 after:left-0 after:bg-secondary after:font-rethink after:font-bold after:-z-20 bottom-0 after:text-main-2  w-full bg-main-2 border-y-2 lg:border-2 border-main-1 border-solid p-8 rounded-md ">
       <div className={`${openBasket ? "block" : "hidden"} lg:block`}>
         <h2 className="font-spicy text-main-1 text-4xl">Basket</h2>
         <article className="flex flex-col gap-2 my-2">

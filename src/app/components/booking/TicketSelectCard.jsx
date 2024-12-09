@@ -1,6 +1,6 @@
 function TicketSelectCard({ variant, ticketName, price, subText }) {
   return (
-    <article data-variant={variant} className="bg-[url('https://www.svgrepo.com/show/202890/flower.svg')] bg-no-repeat bg-right-top bg-contain data-[variant=type1]:bg-tertiary data-[variant=type2]:bg-primary rounded-rounded-reg p-8 flex flex-col gap-3 lg:flex-row lg:justify-between lg:place-items-center lg:p-10">
+    <article data-variant={variant} className="bg-[url('https://www.svgrepo.com/show/202890/flower.svg')] bg-no-repeat bg-right-top bg-contain data-[variant=type1]:bg-tertiary data-[variant=type2]:bg-primary rounded-rounded-reg p-8 flex flex-col gap-3 lg:flex-row lg:justify-between lg:place-items-center lg:p-10 mb-3">
       <div>
         <header className="flex gap-3 place-items-center">
           <h3 className="font-rethink font-bold text-3xl">{ticketName}</h3>

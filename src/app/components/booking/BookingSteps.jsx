@@ -1,23 +1,27 @@
 "use client";
+import { RxDoubleArrowRight } from "react-icons/rx";
 
 function BookingSteps({ step, stepHandler }) {
-  const steps = ["Choose tickets", "Choose camp", "Contact info", "Payment info", "Overview"];
+  const stepNames = ["Choose tickets", "Choose camp", "Contact info", "Payment info", "Overview"];
+
   return (
-    <ul className="flex flex-col gap-2 lg:flex-row lg:justify-between font-rethink">
-      {steps.map((stepName, index) => (
-        <li
-          key={index}
-          onClick={() => {
-            if (index <= step) {
-              stepHandler(index);
-            }
-          }}
-          className={`cursor-pointer ${step === index ? "text-secondary font-bold" : step > index ? "underline text-main-1" : "text-feedback-disabled-1"}`}
-        >
-          {stepName}
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className="flex flex-col gap-2 lg:flex-row lg:justify-between font-rethink my-6">
+        {stepNames.map((stepName, index) => (
+          <li
+            key={index}
+            onClick={() => {
+              if (index <= step) {
+                stepHandler(index);
+              }
+            }}
+            className={`cursor-pointer ${step === index ? "text-main-2 font-semibold bg-secondary rounded-rounded-reg px-3" : step > index ? "italic text-main-1 hover:underline hover:not-italic" : "text-feedback-disabled-1 cursor-default"}`}
+          >
+            {stepName}
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
