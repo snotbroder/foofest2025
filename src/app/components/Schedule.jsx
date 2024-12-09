@@ -1,21 +1,37 @@
-import { getSchedule } from "../api";
+import { getSchedule, getBands } from "../api";
 import ScheduleBox from "./ScheduleBox";
+import { IoMdArrowDropdown } from "react-icons/io";
+import "../globals.css";
 
-export default async function Schedule({ stage, day }) {
-  // Fetch schedule data based on the stage and day
+async function Schedule() {
   const scheduleData = await getSchedule();
-  const schedule = scheduleData?.[stage]?.[day] || [];
+  const schedule = scheduleData.Jotunheim.mon;
+
+  //   let listOfScenes = [];
+
+  //   for (let scene in scheduleData) {
+  //     listOfScenes.push(scene);
+  //   }
+
+  //   console.log(listOfScenes);
+  //   console.log(bands);
+  //   const bands = await getBands();
+  //   console.log(bands);
 
   return (
-    <article className="-mx-mobile flex flex-col justify-center gap-4">
-      {schedule.map((event, index) => (
-        <ScheduleBox
-          key={index}
-          artist={event.act}
-          startTime={event.start}
-          endTime={event.end}
-        />
-      ))}
+    <article className=" -mx-mobile flex flex-col justify-center gap-4">
+      {schedule.map((event) => {
+        return (
+          <ScheduleBox
+            key={event.index}
+            artist={event.act}
+            startTime={event.start}
+            endTime={event.end}
+          />
+        );
+      })}
     </article>
   );
 }
+
+export default Schedule;

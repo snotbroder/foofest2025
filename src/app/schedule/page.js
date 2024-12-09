@@ -1,10 +1,14 @@
 "use client";
 import { useState } from "react";
 import Schedule from "../components/Schedule";
+function page() {
+  // const scheduleData = await getSchedule();
+  // const schedule = scheduleData.stage.day;
 
-function Page() {
-  const [pickedDay, setPickedDay] = useState("mon");
-  const [pickedStage, setPickedStage] = useState("MidGard");
+  // const scheduleData = await getSchedule();
+  // const schedule = scheduleData.stage.day;
+  const [pickedDay, setPickedDay] = useState("");
+  const [pickedStage, setPickedStage] = useState("");
 
   return (
     <div>
@@ -14,8 +18,6 @@ function Page() {
         className="custom-selector inline-block justify-self-center"
         name="stages"
         id="stages"
-        value={pickedStage}
-        onChange={(e) => setPickedStage(e.target.value)}
       >
         <option value="MidGard">MidGard</option>
         <option value="Jotunheim">Jotunheim</option>
@@ -23,29 +25,24 @@ function Page() {
       </select>
 
       <div className="list-none flex gap-4">
+        <li className="text-main-1 font-semibold">MAN</li>
         <li
-          className={`text-main-1 font-semibold ${
-            pickedDay === "mon" ? "text-accent" : ""
-          }`}
           onClick={() => {
             setPickedDay("mon");
-          }}
-        >
-          MON
-        </li>
-        <li
-          className={pickedDay === "thu" ? "text-accent" : ""}
-          onClick={() => {
-            setPickedDay("thu");
+            setPickedStage("MidGard");
           }}
         >
           THU
         </li>
-        {/* Add other days similarly */}
+        <li>WEN</li>
+        <li>THR</li>
+        <li>FRI</li>
+        <li>SAT</li>
+        <li>SUN</li>
       </div>
-      <Schedule stage={pickedStage} day={pickedDay} />
+      <Schedule />
     </div>
   );
 }
 
-export default Page;
+export default page;
