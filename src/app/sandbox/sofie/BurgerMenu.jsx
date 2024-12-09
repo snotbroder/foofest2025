@@ -5,13 +5,13 @@ import Image from "next/image";
 import BurgerMenuIcon from "./BurgerMenuIcon";
 
 function BurgerMenu() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState("");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="-mx-mobile overflow-hidden md:-mx-desktop">
+    <div className="-mx-mobile overflow-hidden -mx-desktop">
       <div
         className={` pt-7  ${
           isOpen ? "bg-secondary h-screen w-full fixed " : ""
