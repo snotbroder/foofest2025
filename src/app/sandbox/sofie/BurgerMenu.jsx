@@ -11,7 +11,7 @@ function BurgerMenu() {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="-mx-mobile overflow-hidden -mx-desktop">
+    <div className="-mx-mobile overflow-hidden lg:-mx-desktop">
       <div
         className={` pt-7  ${
           isOpen ? "bg-secondary h-screen w-full fixed " : ""
