@@ -1,17 +1,17 @@
 "use client";
 import { useState } from "react";
-import Basket from "./Basket";
+import Basket from "../../components/booking/Basket";
 
-import AmountBtn from "./AmountBtn";
+import AmountBtn from "../../components/AmountBtn";
 
-import CtaButton from "@/app/sandbox/joris/CtaButton";
+import CtaButton from "@/app/components/CtaButton";
 
-import BookingSteps from "@/app/sandbox/joris/BookingSteps";
+import BookingSteps from "@/app/components/booking/BookingSteps";
 
 import "./main.css";
 import Link from "next/link";
 
-import TicketSelectCard from "./TicketSelectCard";
+import TicketSelectCard from "../../components/booking/TicketSelectCard";
 export default function Home() {
   //Bruger ikke basketdata endnu
   const [basketData, setBasketData] = useState([]);

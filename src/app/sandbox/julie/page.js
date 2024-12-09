@@ -1,17 +1,12 @@
-import CampingCards from "./CampingCards";
-import CampingPage from "./CampingPage";
-import Benefits from "./Benefits";
-import Accordion from "./componentsJulie/Accordion";
+import CampingPage from "@/app/components/booking/CampingPage";
+import Benefits from "@/app/components/Benefits";
+import Accordion from "@/app/components/Accordion";
 import "./main.css";
 import Link from "next/link";
-import Schedule from "./Schedule";
-import ScheduleBox from "./ScheduleBox";
+import Schedule from "@/app/components/Schedule";
 import "./main.css";
-import SchedulePage from "./SchedulePage";
-
-import TicketCard from "./TicketCard";
-import TicketCards from "./TicketCards";
-
+import SchedulePage from "@/app/components/SchedulePage";
+import TicketCards from "@/app/components/TicketCards";
 export default function Home() {
   return (
     <>
