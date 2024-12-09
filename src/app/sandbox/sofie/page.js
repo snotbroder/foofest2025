@@ -1,5 +1,6 @@
 import "./main.css";
 import BandCard from "./BandCard";
+import Footer from "./Footer";
 import ClickableCard1 from "./ClickableCard1";
 import Link from "next/link";
 import ClickableCard2 from "./ClickableCard2";
@@ -18,6 +19,7 @@ export default function Home() {
         <BandCard imgSrc="/img/led-zeppelin.jpg" name="Led Zeppelin"></BandCard>
         <BandCard imgSrc="/img/led-zeppelin.jpg" name="Led Zeppelin"></BandCard>
       </div>
+      <Footer></Footer>
       <div className="flex gap-32 flex-wrap justify-center">
         <ClickableCard1
           src="/tshirt.webp"
