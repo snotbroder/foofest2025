@@ -1,19 +1,19 @@
 "use client";
 import { useState } from "react";
 import Basket from "./Basket";
-("use client");
-import { useState } from "react";
+
 import AmountBtn from "./AmountBtn";
-("use client");
+
 import CtaButton from "@/app/sandbox/joris/CtaButton";
-("use client");
+
 import BookingSteps from "@/app/sandbox/joris/BookingSteps";
-import { useState } from "react";
+
 import "./main.css";
 import Link from "next/link";
 
 import TicketSelectCard from "./TicketSelectCard";
 export default function Home() {
+  //Bruger ikke basketdata endnu
   const [basketData, setBasketData] = useState([]);
   const basketTickets = [
     {
