@@ -6,7 +6,7 @@ function ScheduleBox({ endTime, startTime, artist, logo }) {
         <li>
           {startTime} - {endTime}
         </li>
-        <li>{artist} Helheim</li>
+        <li>{artist}</li>
         <li>{logo}</li>
       </div>
     </div>
