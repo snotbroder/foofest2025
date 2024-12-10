@@ -1,14 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import { RiAddLine } from "react-icons/ri";
 
-function Basket({ basketTickets, basketCamp }) {
+function Basket({ basketCamp, basketTickets }) {
+  //Toggle button for mobile
   const [openBasket, setOpenBasket] = useState(false);
 
   function handleOpenBasket() {
     setOpenBasket((prevState) => !prevState);
   }
 
+  // Omregn priser fra billetter og telte til totalpris
   // fundet hjælp herfra med for https://bito.ai/resources/javascript-calculate-total-price-javascript-explained/
   let allTicketsTotal = 0;
   for (let item of basketTickets) {
@@ -32,9 +35,11 @@ function Basket({ basketTickets, basketCamp }) {
         <h2 className="font-spicy text-main-1 text-4xl">Basket</h2>
         <article className="flex flex-col gap-2 my-2">
           <span className="font-rethink text-xs py-1 px-3 bg-secondary text-main-2 rounded-md font-semibold w-max">Tickets</span>
-          {basketTickets.map((ticket, index) => {
-            return <BasketItem key={index} itemTitle={ticket.itemTitle} itemMultiply={ticket.itemMultiply} itemPrice={ticket.itemPrice}></BasketItem>;
-          })}
+          {basketTickets //Sørg for kun at loope gennem billetter der er med i beregningen
+            .filter((ticket) => ticket.itemMultiply > 0)
+            .map((ticket, index) => {
+              return <BasketItem key={index} itemTitle={ticket.itemTitle} itemMultiply={ticket.itemMultiply} itemPrice={ticket.itemPrice}></BasketItem>;
+            })}
         </article>
         <article className="flex flex-col gap-2 my-2">
           <span className="font-rethink text-xs py-1 px-3 bg-secondary text-main-2 rounded-md font-semibold w-max">Camp</span>
@@ -76,14 +81,15 @@ export function BasketItem({ itemTitle, itemMultiply, itemPrice }) {
   // const itemPrice = 799;
   return (
     <div className="font-rethink text-main-1 border-b-2 border-b-tertiary border-b-solid my-1 pb-2 flex justify-between">
-      <span>
-        <span className={`${itemMultiply === 0 ? "hidden" : ""} font-bold mr-2`}>{itemMultiply}</span>
-        <span className="uppercase ">{itemTitle}</span>
-      </span>
-      <span>
+      <div className="flex justify-between place-items-center">
+        <h3 className={`${itemMultiply === 0 ? "hidden" : ""} font-bold`}>{itemMultiply}</h3>
+        <RiAddLine className="origin-center rotate-45" />
+        <p className="uppercase ">{itemTitle}</p>
+      </div>
+      <p>
         {itemPrice}
         {itemPrice === "" ? "" : ",-"}
-      </span>
+      </p>
     </div>
   );
 }

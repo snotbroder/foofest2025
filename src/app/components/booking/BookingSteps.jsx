@@ -15,7 +15,7 @@ function BookingSteps({ step, stepHandler }) {
                 stepHandler(index);
               }
             }}
-            className={`cursor-pointer ${step === index ? "text-main-2 font-semibold bg-secondary rounded-rounded-reg px-3" : step > index ? "italic text-main-1 hover:underline hover:not-italic" : "text-feedback-disabled-1 cursor-default"}`}
+            className={`cursor-pointer ${step === index ? "text-main-2 font-semibold bg-secondary rounded-rounded-reg px-3" : step > index ? "italic text-main-1 hover:underline hover:not-italic" : "text-feedback-disabled-1 cursor-not-allowed"}`}
           >
             {stepName}
           </li>

@@ -14,18 +14,49 @@ export default function BookingPage() {
       setStep(newStep);
     }
   }
+  //Tjek for tomme felter
+  //   const [emptyField, unEmptyField] = useState(true);
+  //   function handleCheckEmptyFields(ticketAmounts) {
+  //     console.log("handleCheckEmptyFields");
+  //     if (ticketAmounts >= 1) {
+  //       unEmptyField = false;
+  //       setStep((prevState) => prevState + 1);
+  //     } else console.log("Theres an empty field");
+  //   }
+
+  // Sæt initial ticketamounts til 0
+  const [ticketAmounts, setTicketAmounts] = useState({
+    regular: 0,
+    vip: 0,
+  });
+
+  //Sæt billetamount i
+  function handleAmountChange(ticketType, newAmount) {
+    setTicketAmounts((prevAmounts) => ({
+      ...prevAmounts,
+      [ticketType]: newAmount,
+    }));
+  }
 
   //Bruger ikke basketdata endnu
-  const [basketData, setBasketData] = useState([]);
+  const [basketData, setBasketData] = useState([""]);
+
+  const handleBasketData = (id, data) => {
+    setBasketData((prevData) => {
+      const updatedData = [...prevData];
+      updatedData[id - 1] = data; //update data for specific item
+      return updatedData;
+    });
+  };
   const basketTickets = [
     {
       itemTitle: "regular ticket",
-      itemMultiply: 1,
+      itemMultiply: ticketAmounts.regular,
       itemPrice: 799,
     },
     {
       itemTitle: "vip ticket",
-      itemMultiply: 3,
+      itemMultiply: ticketAmounts.vip,
       itemPrice: 1299,
     },
   ];
@@ -41,7 +72,6 @@ export default function BookingPage() {
       itemMultiply: 3,
     },
   ];
-
   return (
     <>
       <p>
@@ -74,9 +104,10 @@ export default function BookingPage() {
       <section className="lg:grid grid-cols-[2fr_1fr] grid-rows-1 gap-4 ">
         {step === 0 && (
           <article>
-            <TicketSelectCard ticketName="VIP TICKET" variant="type1" price="1299" subText="Best Offer"></TicketSelectCard>
+            <TicketSelectCard onAmountChange={(amount) => handleAmountChange("vip", amount)} ticketName="VIP TICKET" variant="type1" price="1299" subText="Best Offer"></TicketSelectCard>
 
-            <TicketSelectCard ticketName="REGULAR TICKET" variant="type2" price="799"></TicketSelectCard>
+            <TicketSelectCard onAmountChange={(amount) => handleAmountChange("regular", amount)} ticketName="REGULAR TICKET" variant="type2" price="799"></TicketSelectCard>
+            <button className="btn-style grid place-self-center lg:place-self-end">Next step</button>
           </article>
         )}
         {step === 1 && <article></article>}
@@ -85,6 +116,10 @@ export default function BookingPage() {
         {step === 4 && <article></article>}
         <Basket basketCamp={basketCamp} basketTickets={basketTickets}></Basket>
       </section>
+      <pre>
+        Data as JSON
+        {JSON.stringify(basketData, null, 2)}
+      </pre>
     </>
   );
 }
