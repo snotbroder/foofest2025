@@ -1,4 +1,4 @@
-"use client";
+"use server";
 import CampingCards from "./CampingCards";
 import { getSpots } from "../../api";
 async function CampingPage() {

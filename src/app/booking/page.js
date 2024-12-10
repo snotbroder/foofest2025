@@ -3,7 +3,7 @@ import CampingPage from "../components/booking/CampingPage";
 import { getSpots } from "../api";
 import BookingSteps from "../components/booking/BookingSteps";
 import { useState } from "react";
-import TicketSelectCard from "../components/booking/TicketSelectCard";
+
 import Basket from "../components/booking/Basket";
 import TicketSelectParent from "../components/booking/TicketSelectParent";
 
@@ -57,13 +57,15 @@ export default function BookingPage() {
         {step === 0 && (
           <article>
             <TicketSelectParent onBasketUpdate={handleTicketUpdate}></TicketSelectParent>
-            {/* <TicketSelectCard onAmountChange={(amount) => handleAmountChange("vip", amount)} ticketName="VIP TICKET" variant="type1" price="1299" subText="Best Offer"></TicketSelectCard>
 
-            <TicketSelectCard onAmountChange={(amount) => handleAmountChange("regular", amount)} ticketName="REGULAR TICKET" variant="type2" price="799"></TicketSelectCard> */}
             <button className="btn-style grid place-self-center lg:place-self-end">Next step</button>
           </article>
         )}
-        {step === 1 && <article></article>}
+        {step === 1 && (
+          <article>
+            <CampingPage></CampingPage>
+          </article>
+        )}
         {step === 2 && <article></article>}
         {step === 3 && <article></article>}
         {step === 4 && <article></article>}
