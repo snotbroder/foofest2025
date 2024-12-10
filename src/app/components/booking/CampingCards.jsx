@@ -1,22 +1,12 @@
 "use client";
 import CampingCard from "./CampingCard";
-import { useState } from "react";
 
-function CampingCards({ spots }) {
-  const [selectedCamping, setSelectedCamping] = useState("");
+function CampingCards({ spots, setSelectedCamping, selectedCamping }) {
   return (
     <section>
-      <div className="flex-wrap md:justify-start justify-center flex gap-10">
+      <div className="flex flex-col place-items-center gap-2 lg:flex-row lg:flex-wrap ">
         {spots.map((spot) => {
-          return (
-            <CampingCard
-              key={spot.area}
-              area={spot.area}
-              space={spot.available}
-              setSelectedCamping={setSelectedCamping}
-              selectedCamping={selectedCamping}
-            />
-          );
+          return <CampingCard key={spot.area} area={spot.area} space={spot.available} setSelectedCamping={setSelectedCamping} selectedCamping={selectedCamping} />;
         })}
       </div>
     </section>

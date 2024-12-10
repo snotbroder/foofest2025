@@ -1,23 +1,23 @@
 "use client";
-import CampingPage from "../components/booking/CampingPage";
-import { getSpots } from "../api";
-import BookingSteps from "../components/booking/BookingSteps";
 import { useState } from "react";
 
+import BookingSteps from "../components/booking/BookingSteps";
 import Basket from "../components/booking/Basket";
 import TicketSelectParent from "../components/booking/TicketSelectParent";
+import CampingPage from "../components/booking/CampingPage";
+import CampingExtra from "../components/booking/CampingExtras";
 
 export default function BookingPage() {
   const [step, setStep] = useState(0);
+  const [selectedCamping, setSelectedCamping] = useState("");
+  const [basketTickets, setBasketTickets] = useState([]);
+  const [basketCamp, setBasketCamp] = useState([]);
 
   function stepHandler(newStep) {
     if (newStep <= step) {
       setStep(newStep);
     }
   }
-
-  const [basketTickets, setBasketTickets] = useState([]);
-  //const [basketCamp, setBasketCamp] = useState([]);
 
   function handleTicketUpdate(updatedTickets) {
     setBasketTickets(updatedTickets);
@@ -62,18 +62,20 @@ export default function BookingPage() {
           </article>
         )}
         {step === 1 && (
-          <article>
-            <CampingPage></CampingPage>
+          <article className="lg:grid grid-cols-2">
+            <CampingPage selectedCamping={selectedCamping} setSelectedCamping={setSelectedCamping}></CampingPage>
+            <CampingExtra></CampingExtra>
           </article>
         )}
         {step === 2 && <article></article>}
         {step === 3 && <article></article>}
         {step === 4 && <article></article>}
-        <Basket basketTickets={basketTickets}></Basket>
+        <Basket selectedCamping={selectedCamping} basketCamp={basketCamp} basketTickets={basketTickets}></Basket>
       </section>
       <pre>
         Data as JSON
         {JSON.stringify(basketTickets, null, 2)}
+        {JSON.stringify(selectedCamping, null, 2)}
       </pre>
     </>
   );
