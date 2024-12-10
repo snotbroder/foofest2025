@@ -5,6 +5,7 @@ import BookingSteps from "../components/booking/BookingSteps";
 import { useState } from "react";
 import TicketSelectCard from "../components/booking/TicketSelectCard";
 import Basket from "../components/booking/Basket";
+import TicketSelectParent from "../components/booking/TicketSelectParent";
 
 export default function BookingPage() {
   const [step, setStep] = useState(0);
@@ -14,64 +15,15 @@ export default function BookingPage() {
       setStep(newStep);
     }
   }
-  //Tjek for tomme felter
-  //   const [emptyField, unEmptyField] = useState(true);
-  //   function handleCheckEmptyFields(ticketAmounts) {
-  //     console.log("handleCheckEmptyFields");
-  //     if (ticketAmounts >= 1) {
-  //       unEmptyField = false;
-  //       setStep((prevState) => prevState + 1);
-  //     } else console.log("Theres an empty field");
-  //   }
 
-  // Sæt initial ticketamounts til 0
-  const [ticketAmounts, setTicketAmounts] = useState({
-    regular: 0,
-    vip: 0,
-  });
+  const [basketTickets, setBasketTickets] = useState([]);
+  //const [basketCamp, setBasketCamp] = useState([]);
 
-  //Sæt billetamount i
-  function handleAmountChange(ticketType, newAmount) {
-    setTicketAmounts((prevAmounts) => ({
-      ...prevAmounts,
-      [ticketType]: newAmount,
-    }));
+  function handleTicketUpdate(updatedTickets) {
+    setBasketTickets(updatedTickets);
   }
 
-  //Bruger ikke basketdata endnu
-  const [basketData, setBasketData] = useState([""]);
-
-  const handleBasketData = (id, data) => {
-    setBasketData((prevData) => {
-      const updatedData = [...prevData];
-      updatedData[id - 1] = data; //update data for specific item
-      return updatedData;
-    });
-  };
-  const basketTickets = [
-    {
-      itemTitle: "regular ticket",
-      itemMultiply: ticketAmounts.regular,
-      itemPrice: 799,
-    },
-    {
-      itemTitle: "vip ticket",
-      itemMultiply: ticketAmounts.vip,
-      itemPrice: 1299,
-    },
-  ];
-  const basketCamp = [
-    // {
-    //   itemTitle: "Muspelheim",
-    //   itemPrice: "",
-    //   itemMultiply: 0,
-    // },
-    {
-      itemTitle: "three pers. tent",
-      itemPrice: 399,
-      itemMultiply: 3,
-    },
-  ];
+  //
   return (
     <>
       <p>
@@ -104,9 +56,10 @@ export default function BookingPage() {
       <section className="lg:grid grid-cols-[2fr_1fr] grid-rows-1 gap-4 ">
         {step === 0 && (
           <article>
-            <TicketSelectCard onAmountChange={(amount) => handleAmountChange("vip", amount)} ticketName="VIP TICKET" variant="type1" price="1299" subText="Best Offer"></TicketSelectCard>
+            <TicketSelectParent onBasketUpdate={handleTicketUpdate}></TicketSelectParent>
+            {/* <TicketSelectCard onAmountChange={(amount) => handleAmountChange("vip", amount)} ticketName="VIP TICKET" variant="type1" price="1299" subText="Best Offer"></TicketSelectCard>
 
-            <TicketSelectCard onAmountChange={(amount) => handleAmountChange("regular", amount)} ticketName="REGULAR TICKET" variant="type2" price="799"></TicketSelectCard>
+            <TicketSelectCard onAmountChange={(amount) => handleAmountChange("regular", amount)} ticketName="REGULAR TICKET" variant="type2" price="799"></TicketSelectCard> */}
             <button className="btn-style grid place-self-center lg:place-self-end">Next step</button>
           </article>
         )}
@@ -114,11 +67,11 @@ export default function BookingPage() {
         {step === 2 && <article></article>}
         {step === 3 && <article></article>}
         {step === 4 && <article></article>}
-        <Basket basketCamp={basketCamp} basketTickets={basketTickets}></Basket>
+        <Basket basketTickets={basketTickets}></Basket>
       </section>
       <pre>
         Data as JSON
-        {JSON.stringify(basketData, null, 2)}
+        {JSON.stringify(basketTickets, null, 2)}
       </pre>
     </>
   );

@@ -6,23 +6,18 @@ import { RiAddLine } from "react-icons/ri";
 function Basket({ basketCamp, basketTickets }) {
   //Toggle button for mobile
   const [openBasket, setOpenBasket] = useState(false);
-
   function handleOpenBasket() {
     setOpenBasket((prevState) => !prevState);
   }
 
   // Omregn priser fra billetter og telte til totalpris
   // fundet hjælp herfra med for https://bito.ai/resources/javascript-calculate-total-price-javascript-explained/
-  let allTicketsTotal = 0;
-  for (let item of basketTickets) {
-    allTicketsTotal += item.itemPrice * item.itemMultiply;
-  }
 
-  let allCampTotal = 0;
-  for (let item of basketCamp) {
-    allCampTotal += item.itemPrice * item.itemMultiply;
-  }
-  let totalPrice = allCampTotal + allTicketsTotal + 99;
+  const reservationFee = 99;
+  const ticketTotal = basketTickets.reduce((total, ticket) => total + ticket.itemPrice * ticket.itemMultiply, 0);
+
+  //const campTotal = basketCamp.reduce((total, camp) => total + camp.itemPrice * camp.itemMultiply, 0);
+  const totalPrice = ticketTotal + reservationFee;
 
   const countDown = "00:00";
   const timeLeft = "Time left: " + countDown;
@@ -41,13 +36,13 @@ function Basket({ basketCamp, basketTickets }) {
               return <BasketItem key={index} itemTitle={ticket.itemTitle} itemMultiply={ticket.itemMultiply} itemPrice={ticket.itemPrice}></BasketItem>;
             })}
         </article>
-        <article className="flex flex-col gap-2 my-2">
+        {/* <article className="flex flex-col gap-2 my-2">
           <span className="font-rethink text-xs py-1 px-3 bg-secondary text-main-2 rounded-md font-semibold w-max">Camp</span>
           <span className="font-rethink text-xs text-feedback-error ">Please choose a camp</span>
           {basketCamp.map((camp, index) => {
             return <BasketItem key={index} itemTitle={camp.itemTitle} itemMultiply={camp.itemMultiply} itemPrice={camp.itemPrice}></BasketItem>;
           })}
-        </article>
+        </article> */}
 
         <article className="font-rethink text-main-1 border-b-2 border-b-tertiary border-b-solid pb-2 my-1 mb-4 flex justify-between">
           <span>
