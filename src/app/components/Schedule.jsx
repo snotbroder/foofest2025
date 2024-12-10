@@ -74,6 +74,7 @@ function Schedule() {
               artist={event.act}
               startTime={event.start}
               endTime={event.end}
+              stage={pickedStage}
             />
           </div>
         );
