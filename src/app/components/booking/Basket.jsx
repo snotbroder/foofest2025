@@ -29,15 +29,21 @@ function Basket({ basketCamp, basketTickets }) {
       <div className={`${openBasket ? "block" : "hidden"} lg:block`}>
         <h2 className="font-spicy text-main-1 text-4xl">Basket</h2>
         <article className="flex flex-col gap-2 my-2">
-          <span className="font-rethink text-xs py-1 px-3 bg-secondary text-main-2 rounded-md font-semibold w-max">Tickets</span>
-          {basketTickets //Sørg for kun at loope gennem billetter der er med i beregningen
+          <span className="font-rethink text-xs py-1 border-b-[1px] border-tertiary border-solid text-main-1 font-semibold w-max">Tickets</span>
+
+          {
+            //Tjek on nogen af billetterne har itemMultiply value 0, så vis det her
+            basketTickets.every((ticket) => ticket.itemMultiply === 0) && <span className="font-rethink text-xs text-feedback-error ">Please choose a ticket</span>
+          }
+
+          {basketTickets //Sørg for kun at loope gennem billetter der er med i beregningen, altså har en itemMultiply value over 0
             .filter((ticket) => ticket.itemMultiply > 0)
             .map((ticket, index) => {
               return <BasketItem key={index} itemTitle={ticket.itemTitle} itemMultiply={ticket.itemMultiply} itemPrice={ticket.itemPrice}></BasketItem>;
             })}
         </article>
         {/* <article className="flex flex-col gap-2 my-2">
-          <span className="font-rethink text-xs py-1 px-3 bg-secondary text-main-2 rounded-md font-semibold w-max">Camp</span>
+          <span className="font-rethink text-xs py-1 border-b-[1px] border-tertiary border-solid text-main-1 font-semibold w-max">Camp</span>
           <span className="font-rethink text-xs text-feedback-error ">Please choose a camp</span>
           {basketCamp.map((camp, index) => {
             return <BasketItem key={index} itemTitle={camp.itemTitle} itemMultiply={camp.itemMultiply} itemPrice={camp.itemPrice}></BasketItem>;
