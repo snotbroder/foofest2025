@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { RiAddLine } from "react-icons/ri";
 
-function Basket({ basketCamp, basketTickets, selectedCamping }) {
+function Basket({ basketCamp, selectedCamping, basketTickets }) {
   //Toggle button for mobile
   const [openBasket, setOpenBasket] = useState(false);
   function handleOpenBasket() {

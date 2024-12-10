@@ -13,6 +13,9 @@ export default function BookingPage() {
   const [basketTickets, setBasketTickets] = useState([]);
   const [basketCamp, setBasketCamp] = useState([]);
 
+  //Bare for at visualisere den samlede data:
+  const basketArray = [{ "ticket info": basketTickets }, { "choosen camp": selectedCamping, "camp info": basketCamp }];
+
   function stepHandler(newStep) {
     if (newStep <= step) {
       setStep(newStep);
@@ -74,8 +77,9 @@ export default function BookingPage() {
       </section>
       <pre>
         Data as JSON
-        {JSON.stringify(basketTickets, null, 2)}
-        {JSON.stringify(selectedCamping, null, 2)}
+        {/* {JSON.stringify(basketTickets, null, 2)}
+        {JSON.stringify(selectedCamping, null, 2)} */}
+        {JSON.stringify(basketArray, null, 2)}
       </pre>
     </>
   );
