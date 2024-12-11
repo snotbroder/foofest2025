@@ -10,6 +10,7 @@ export default function CampingPage({ setSelectedCamping, selectedCamping }) {
   const [spots, setSpots] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  //Erstat med SWR
   //CHAT GPT
   useEffect(() => {
     async function fetchSpots() {
@@ -26,6 +27,7 @@ export default function CampingPage({ setSelectedCamping, selectedCamping }) {
     fetchSpots();
   }, []); //Tomt array betyder det kun kører én gang når komponentent renderes, ellers ville det rendere konstant
 
+  //Hvis der nu er sløv forbindelse
   if (loading) {
     return <p>Loading camping spots...</p>;
   }
