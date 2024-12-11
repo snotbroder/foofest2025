@@ -7,16 +7,17 @@ function CampingExtra({ onBasketUpdate, regularTickets, vipTickets }) {
   const [tentAmounts, setTentAmounts] = useState({
     twoPersTent: 0,
     threePersTent: 0,
+    //greenCamping: 0,
   });
 
   //totalberegn hvor mange billetter der er i ordren
   const availableTicketsAmount = regularTickets + vipTickets;
 
-  //baseret på staten tentAmount, opdateres totalAllocatedTickets variablen også.
-  //det her er de tildelte telte
+  //det her er bare antallet af telte totalt valgt af brugeren
   const totalAllocatedTickets = tentAmounts.twoPersTent + tentAmounts.threePersTent;
 
   //Split de individuelle amounts, baseret på om det bliver sendt med proppen "twoPersTent" eller "threePersTent"
+  //checkboxEvent
   function handleAmountChange(tentType, newAmount) {
     //samler de valgte tentAmounts værdier sammen med newAmount som brugeren har valgt.
     //man kan lidt se det som en målepind, fordi længere nede sammenligner den værdien med billetter valgt i ordren (availableTicketsAmout)
@@ -28,14 +29,23 @@ function CampingExtra({ onBasketUpdate, regularTickets, vipTickets }) {
       return; // returner absolut ingenting øvvvvv prøv igen
     }
 
+    // let greenCampingChecked = 0;
+    // const isChecked = checkboxEvent.target.checked;
+    // if ((isChecked = true)) {
+    //   greenCampingChecked = 1;
+    // }
+
     const updatedAmounts = { ...tentAmounts, [tentType]: newAmount };
+
     setTentAmounts(updatedAmounts);
 
     //Prepare baskettickets and pass it on
     const basketCamp = [
       { itemTitle: "two person tent", itemMultiply: updatedAmounts.twoPersTent, itemPrice: 299 },
       { itemTitle: "three person tent", itemMultiply: updatedAmounts.threePersTent, itemPrice: 399 },
+      //{ itemTitle: "green camping", itemMultiply: greenCampingChecked, itemPrice: 249 },
     ];
+
     onBasketUpdate(basketCamp);
   }
   console.log("availabletickets", availableTicketsAmount);
@@ -45,12 +55,14 @@ function CampingExtra({ onBasketUpdate, regularTickets, vipTickets }) {
         Extras <span className="font-normal italic">optional</span>
       </h3>
       <form className="flex gap-6 font-rethink text-main-1">
-        <input className="w-10 h-auto" id="greeen-camping" type="checkbox" />
+        <input className="w-10 h-auto" id="green-camping" type="checkbox" onChange={handleAmountChange || false} />
         <div className="flex flex-col gap-1">
-          <label className="font-bold" for="green-camping">
+          <label className="font-bold" htmlFor="green-camping">
             Green Camping +249,-
           </label>
-          <label className="text-xs">When you buy green camping, please note only available on site.</label>
+          <label htmlFor="green-camping" className="text-xs">
+            When you buy green camping, please note only available on site.
+          </label>
         </div>
       </form>
       <section>
