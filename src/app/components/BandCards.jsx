@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { getBands } from "../api";
 import BandCard from "./BandCard";
 
@@ -15,7 +14,6 @@ async function BandCards() {
         const logo = band.logo.startsWith("http")
           ? band.logo
           : `${BASE_URL}${band.logo}`;
-
         return (
           <BandCard
             alt={`Logo of ${band.name}`}

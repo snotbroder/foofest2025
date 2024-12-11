@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function BandCard({ genre, imgSrc, alt, name, slug }) {
   return (
     <div className=" w-60 lg:w-80  flex flex-col shadow-custom ">
-      <Link href={`/bands${slug}`}>
+      <Link href={`/bands/${slug}`}>
         <div className=" relative w-full h-[180px] lg:h-[280px] ">
           <div className="absolute font-rethink text-sm font-bold right-0 top-5 text-main-2 bg-tertiary    uppercase py-1 px-5 z-10  ">
             <p>{genre}</p>
