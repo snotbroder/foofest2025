@@ -12,12 +12,11 @@ function Basket({ basketCamp, selectedCamping, basketTickets }) {
 
   // Omregn priser fra billetter og telte til totalpris
   // fundet hjælp herfra med for https://bito.ai/resources/javascript-calculate-total-price-javascript-explained/
-
   const reservationFee = 99;
   const ticketTotal = basketTickets.reduce((total, ticket) => total + ticket.itemPrice * ticket.itemMultiply, 0);
 
-  //const campTotal = basketCamp.reduce((total, camp) => total + camp.itemPrice * camp.itemMultiply, 0);
-  const totalPrice = ticketTotal + reservationFee;
+  const campTotal = basketCamp.reduce((total, camp) => total + camp.itemPrice * camp.itemMultiply, 0);
+  const totalPrice = ticketTotal + campTotal + reservationFee;
 
   const countDown = "00:00";
   const timeLeft = "Time left: " + countDown;
@@ -46,9 +45,11 @@ function Basket({ basketCamp, selectedCamping, basketTickets }) {
           <span className="font-rethink text-xs py-1 border-b-[1px] border-tertiary border-solid text-main-1 font-semibold w-max">Camp</span>
           {selectedCamping === "" && <span className="font-rethink text-xs text-feedback-error "> Please choose a camp</span>}
           <span className="font-rethink text-main-1 text-xl">{selectedCamping}</span>
-          {basketCamp.map((camp, index) => {
-            return <BasketItem key={index} itemTitle={camp.itemTitle} itemMultiply={camp.itemMultiply} itemPrice={camp.itemPrice}></BasketItem>;
-          })}
+          {basketCamp
+            .filter((camp) => camp.itemMultiply > 0)
+            .map((camp, index) => {
+              return <BasketItem key={index} itemTitle={camp.itemTitle} itemMultiply={camp.itemMultiply} itemPrice={camp.itemPrice}></BasketItem>;
+            })}
         </article>
 
         <article className="font-rethink text-main-1 border-b-2 border-b-tertiary border-b-solid pb-2 my-1 mb-4 flex justify-between">

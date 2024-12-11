@@ -9,12 +9,12 @@ function TicketSelectParent({ onBasketUpdate }) {
     vip: 0,
   });
 
+  //Split de individuelle amounts, baseret på om det bliver sendt med proppen "vip" eller "regular"
   function handleAmountChange(ticketType, newAmount) {
     const updatedAmounts = { ...ticketAmounts, [ticketType]: newAmount };
     setTicketAmounts(updatedAmounts);
 
     //Prepare baskettickets and pass it on
-
     const basketTickets = [
       { itemTitle: "regular ticket", itemMultiply: updatedAmounts.regular, itemPrice: 799 },
       { itemTitle: "vip ticket", itemMultiply: updatedAmounts.vip, itemPrice: 1299 },

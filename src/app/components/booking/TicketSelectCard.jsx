@@ -19,7 +19,7 @@ function TicketSelectCard({ variant, ticketName, price, subText, onAmountChange 
         </header>
         <span className="font-rethink text-2xl">{price},-</span>
       </div>
-      <AmountBtn onAmountChange={handleAmountChange} />
+      <AmountBtn maxAmount={10} onAmountChange={handleAmountChange} />
     </article>
   );
 }

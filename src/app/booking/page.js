@@ -25,6 +25,9 @@ export default function BookingPage() {
   function handleTicketUpdate(updatedTickets) {
     setBasketTickets(updatedTickets);
   }
+  function handleCampUpdate(updatedCamp) {
+    setBasketCamp(updatedCamp);
+  }
 
   //
   return (
@@ -67,7 +70,7 @@ export default function BookingPage() {
         {step === 1 && (
           <article className="lg:grid grid-cols-2">
             <CampingPage selectedCamping={selectedCamping} setSelectedCamping={setSelectedCamping}></CampingPage>
-            <CampingExtra></CampingExtra>
+            <CampingExtra onBasketUpdate={handleCampUpdate}></CampingExtra>
           </article>
         )}
         {step === 2 && <article></article>}
