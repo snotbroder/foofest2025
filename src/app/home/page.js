@@ -1,5 +1,6 @@
 import ClickableCard2 from "../components/ClickableCard2";
 import BandCard from "../components/BandCard";
+import Accordion from "../components/Accordion";
 import ClickableCard1 from "../components/ClickableCard1";
 async function Home() {
   const BASE_URL = "http://localhost:8080/logos/";
@@ -85,6 +86,9 @@ async function Home() {
             alt=""
           ></ClickableCard1>
         </div>
+      </section>
+      <section>
+        <Accordion></Accordion>
       </section>
     </section>
   );
