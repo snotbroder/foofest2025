@@ -1,4 +1,7 @@
 import localFont from "next/font/local";
+import BurgerMenu from "./components/layout-components/BurgerMenu";
+import Footer from "./components/layout-components/Footer";
+
 import "./globals.css";
 
 const geistSans = localFont({
@@ -23,7 +26,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased mx-mobile lg:mx-desktop`}
       >
-        {children}
+        <header>
+          <BurgerMenu />
+        </header>
+        <main>{children}</main>
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );
