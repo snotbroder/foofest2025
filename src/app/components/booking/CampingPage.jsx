@@ -6,7 +6,7 @@ import CampingCards from "./CampingCards";
 import { getSpots } from "../../api";
 import { useState, useEffect } from "react";
 
-export default function CampingPage({ setSelectedCamping, selectedCamping }) {
+export default function CampingPage({ setSelectedCamping, selectedCamping, regularTickets, vipTickets }) {
   const [spots, setSpots] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -32,9 +32,13 @@ export default function CampingPage({ setSelectedCamping, selectedCamping }) {
   if (loading) {
     return <p>Loading camping spots...</p>;
   }
+
+  //totalberegn hvor mange billetter der er i ordren
+  const availableTicketsAmount = regularTickets + vipTickets;
+
   return (
     <div>
-      <CampingCards selectedCamping={selectedCamping} setSelectedCamping={setSelectedCamping} spots={spots} />
+      <CampingCards availableTicketsAmount={availableTicketsAmount} selectedCamping={selectedCamping} setSelectedCamping={setSelectedCamping} spots={spots} />
     </div>
   );
 }

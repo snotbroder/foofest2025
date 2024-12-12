@@ -72,7 +72,7 @@ export default function BookingPage() {
         {step === 1 && (
           <article>
             <section className="lg:grid grid-cols-2">
-              <CampingPage selectedCamping={selectedCamping} setSelectedCamping={setSelectedCamping}></CampingPage>
+              <CampingPage regularTickets={basketTickets[0].itemMultiply} vipTickets={basketTickets[1].itemMultiply} selectedCamping={selectedCamping} setSelectedCamping={setSelectedCamping}></CampingPage>
               <CampingExtra regularTickets={basketTickets[0].itemMultiply} vipTickets={basketTickets[1].itemMultiply} onBasketUpdate={handleCampUpdate}></CampingExtra>
             </section>
             <button className="btn-style grid place-self-center lg:place-self-end">Next step</button>
