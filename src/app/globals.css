@@ -8,27 +8,32 @@
   --main-2: #fff8db;
 }
 h1 {
-  font-size: clamp(3.8125rem, 8vw, 3.8125rem);
+  font-size: clamp(2.5rem, 8vw, 3.8125rem);
   color: var(--main-1);
 }
 
 h2 {
-  font-size: clamp(2.1875rem, 6vw, 2.1875rem);
+  font-size: clamp(1.875rem, 6vw, 2.1875rem);
   color: var(--main-1);
 }
 
 h3 {
-  font-size: clamp(1.4375rem, 4vw, 1.4375rem);
+  font-size: clamp(1.25rem, 4vw, 1.4375rem);
   color: var(--main-1);
 }
 
 p {
-  font-size: clamp(1.125rem, 2vw, 1.125rem);
-  color: var(var(--main-1));
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--main-1);
 }
 
 p.small {
-  font-size: clamp(0.5625rem, 1.5vw, 0.625rem);
+  font-size: clamp(0.625rem, 1.5vw, 0.625rem);
+  color: var(--main-1);
+}
+
+p.small {
+  font-size: clamp(0.625rem, 1.5vw, 0.625rem);
   color: var(--main-1);
 }
 
@@ -36,7 +41,6 @@ p.small {
   font-size: 6rem;
   color: var(--main-1);
 }
-
 body {
   color: var(--foreground);
   background: var(--background);
