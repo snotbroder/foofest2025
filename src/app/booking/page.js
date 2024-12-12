@@ -23,6 +23,7 @@ export default function BookingPage() {
     }
   }
 
+  //Håndter ændringer fra komponenter, og send til basket
   function handleTicketUpdate(updatedTickets) {
     setBasketTickets(updatedTickets);
   }
