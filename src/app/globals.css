@@ -23,6 +23,12 @@ h3 {
   color: var(--main-1);
 }
 
+h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--main-1);
+}
+
 p {
   font-size: clamp(1rem, 2vw, 1.125rem);
   color: var(--main-1);
