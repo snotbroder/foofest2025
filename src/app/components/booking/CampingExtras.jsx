@@ -67,16 +67,16 @@ function CampingExtra({ onBasketUpdate, regularTickets, vipTickets }) {
       </form>
       <section>
         <div className="font-rethink text-main-1 border-b-2 border-b-tertiary border-b-solid my-1 pb-2 flex justify-between">
-          <h3 className="text-2xl">Tents</h3>
+          <h3>Tents</h3>
         </div>
-        <p className="text-xs italic mt-2 mb-4">Festival staff will set the tent up for you</p>
+        <p className=" small italic mt-2 mb-4">Festival staff will set the tent up for you</p>
         <section className="flex flex-col gap-6">
           <div className="flex justify-between place-items-center gap-2">
-            <h3 className="font-bold text-main-1 font-rethink">2 person tent +299,-</h3>
+            <h4 className="font-bold text-main-1 font-rethink">2 person tent +299,-</h4>
             <AmountBtn maxAmount={availableTicketsAmount - totalAllocatedTickets + tentAmounts.twoPersTent} onAmountChange={(amount) => handleAmountChange("twoPersTent", amount)}></AmountBtn>
           </div>
           <div className="flex justify-between place-items-center gap-2">
-            <h3 className="font-bold font-rethink text-main-1">3 person tent +399,-</h3>
+            <h4 className="font-bold font-rethink text-main-1">3 person tent +399,-</h4>
             <AmountBtn maxAmount={availableTicketsAmount - totalAllocatedTickets + tentAmounts.threePersTent} onAmountChange={(amount) => handleAmountChange("threePersTent", amount)}></AmountBtn>
           </div>
         </section>
