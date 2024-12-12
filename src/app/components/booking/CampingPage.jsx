@@ -3,14 +3,14 @@
 //da page bruger useState til at holde styr på navigationen over steps
 
 import CampingCards from "./CampingCards";
-import { getSpots } from "../../api"; // Your data-fetching function
+import { getSpots } from "../../api";
 import { useState, useEffect } from "react";
 
 export default function CampingPage({ setSelectedCamping, selectedCamping }) {
   const [spots, setSpots] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  //Erstat med SWR
+  //Erstat med SWR?
   //CHAT GPT
   useEffect(() => {
     async function fetchSpots() {
@@ -18,6 +18,7 @@ export default function CampingPage({ setSelectedCamping, selectedCamping }) {
         const data = await getSpots(); // Fetch camping spots
         setSpots(data);
       } catch (error) {
+        //Fallback
         console.error("Error fetching spots:", error);
       } finally {
         setLoading(false);

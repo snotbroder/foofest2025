@@ -6,6 +6,7 @@ import Basket from "../components/booking/Basket";
 import TicketSelectParent from "../components/booking/TicketSelectParent";
 import CampingPage from "../components/booking/CampingPage";
 import CampingExtra from "../components/booking/CampingExtras";
+import ContactPage from "../components/booking/ContactPage";
 
 export default function BookingPage() {
   const [step, setStep] = useState(0);
@@ -76,7 +77,11 @@ export default function BookingPage() {
             <button className="btn-style grid place-self-center lg:place-self-end">Next step</button>
           </article>
         )}
-        {step === 2 && <article></article>}
+        {step === 2 && (
+          <article className="bg-primary rounded-rounded-reg p-10">
+            <ContactPage></ContactPage>
+          </article>
+        )}
         {step === 3 && <article></article>}
         {step === 4 && <article></article>}
         <Basket selectedCamping={selectedCamping} basketCamp={basketCamp} basketTickets={basketTickets}></Basket>
