@@ -4,26 +4,44 @@
 @tailwind utilities;
 
 :root {
-  --background: #fff8db;
-  --foreground: #171717;
+  --main-1: #3a140b;
+  --main-2: #fff8db;
+  --background: var(--main-2);
+}
+h1 {
+  font-size: clamp(2.5rem, 8vw, 3.8125rem);
+  color: var(--main-1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* --background: #0a0a0a;
-    --foreground: #ededed; */
-  }
+h2 {
+  font-size: clamp(1.875rem, 6vw, 2.1875rem);
+  color: var(--main-1);
 }
 
-.test {
-  color: blue;
+h3 {
+  font-size: clamp(1.25rem, 4vw, 1.4375rem);
+  color: var(--main-1);
 }
 
-/* input {
-  background-color: red;
-  color: green;
-} */
+p {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--main-1);
+}
 
+p.small {
+  font-size: clamp(0.625rem, 1.5vw, 0.625rem);
+  color: var(--main-1);
+}
+
+p.small {
+  font-size: clamp(0.625rem, 1.5vw, 0.625rem);
+  color: var(--main-1);
+}
+
+.display {
+  font-size: 6rem;
+  color: var(--main-1);
+}
 body {
   color: var(--foreground);
   background: var(--background);
@@ -75,7 +93,7 @@ body {
   top: -13.5rem;
   z-index: -1;
 }
-
+/* 
 input:focus {
   outline: 2px solid #3a140b;
   outline-offset: 2px;
@@ -87,7 +105,8 @@ input:user-invalid {
 
 input:user-valid {
   border-color: green;
-}
+} */
+
 .btn-style {
   color: #fff8db;
   font-family: "Rethink Sans";

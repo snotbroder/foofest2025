@@ -12,8 +12,8 @@ async function Home() {
     <section className="flex flex-col gap-32 md:gap-48 -mt-16">
       <section className="bg-[url('/illustrations/patternHero.svg')] bg-cover -mx-mobile lg:-mx-desktop ">
         <div className="py-80 mx-mobile lg:mx-desktop">
-          <h1 className="text-5xl lg:text-7xl font-spicy">Foo Festival 2025</h1>
-          <p className="font-rethink text-xl">
+          <h1 className=" display font-spicy">Foo Festival 2025</h1>
+          <p className="font-rethink">
             Where Music Meets Peace, Love, and Groovy Vibes&nbsp;
             <time className="font-bold">July 7th - 13th</time>
           </p>
@@ -41,7 +41,7 @@ async function Home() {
       </section>
       <section className=" bg-secondary -mx-mobile lg:-mx-desktop">
         <div className="py-12 mx-mobile lg:mx-desktop">
-          <h3 className="font-bold text-2xl lg:text-4xl">Line up 2025</h3>
+          <h2 className="font-bold ">Line up 2025</h2>
           {/* flex flex-wrap justify-between md:justify-normal md:gap-16 */}
           <div className="grid gap-8 grid-cols-2 md:grid-cols-3  xl:grid-cols-3  place-items-center ">
             {bands.length > 0 &&
@@ -64,7 +64,7 @@ async function Home() {
         </div>
       </section>
       <section className="flex flex-col gap">
-        <h3 className="font-bold text-2xl lg:text-4xl">News</h3>
+        <h2 className="font-bold ">News</h2>
         <div className="flex justify-between">
           <ClickableCard1
             header="Buy the t-shirt of this year’s festival"
