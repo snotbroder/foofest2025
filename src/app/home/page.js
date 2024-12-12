@@ -65,22 +65,22 @@ async function Home() {
       </section>
       <section className="flex flex-col gap">
         <h2 className="font-bold ">News</h2>
-        <div className="flex justify-between">
+        <div className="flex justify-center gap-12 flex-wrap">
           <ClickableCard1
             header="Buy the t-shirt of this year’s festival"
-            text="Embrace the groove and wear the love! Get your official Foo Festival T-shirt and keep the peace, love, and music alive wherever you go"
+            text=" Get your official Foo Festival T-shirt and keep the peace, love, and music alive wherever you go"
             src="/img/tshirt.webp"
             alt=""
           ></ClickableCard1>
           <ClickableCard1
             header="Join the quiz and win a free ticket"
-            text="Think you know your music trivia? Test your knowledge in our quiz for a chance to win a ticket to Foo Festival 2024! Don't miss out on the fun—peace, love, and music await"
+            text="Think you know your music trivia? Test your knowledge in our quiz for a chance to win a ticket to Foo Festival 2024!"
             src="/img/musicquiz.webp"
             alt=""
           ></ClickableCard1>
           <ClickableCard1
             header="Become a volunteer"
-            text="As a volunteer, you’ll be part of the magic—setting up, guiding guests, and keeping the festival running smoothly. In return, you’ll get free entry, official merch, and a chance to meet amazing people while gaining valuable experience."
+            text="Volunteer with us! Enjoy free entry, merch, and unforgettable experiences while helping the festival run smoothly."
             src="/img/volunteerPoster.webp"
             alt=""
           ></ClickableCard1>
