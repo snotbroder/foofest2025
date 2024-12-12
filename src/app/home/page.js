@@ -40,10 +40,10 @@ async function Home() {
         ></ClickableCard2>
       </section>
       <section className=" bg-secondary -mx-mobile lg:-mx-desktop">
-        <div className="py-12 mx-mobile lg:mx-desktop">
-          <h2 className="font-bold ">Line up 2025</h2>
-          {/* flex flex-wrap justify-between md:justify-normal md:gap-16 */}
-          <div className="grid gap-8 grid-cols-2 md:grid-cols-3  xl:grid-cols-3  place-items-center ">
+        <div className="py-12 mx-mobile gap-6 lg:mx-desktop flex flex-col items-center lg:items-start">
+          <h2 className="font-bold">Line up 2025</h2>
+
+          <div className="flex flex-wrap justify-center lg:justify-between gap-6 ">
             {bands.length > 0 &&
               bands.slice(0, 4).map((band) => {
                 const logo = band.logo.startsWith("http")
