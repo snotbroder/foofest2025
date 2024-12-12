@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function BurgerMenuIcon({ isOpen }) {
   return (
-    <div className="flex justify-end">
+    <div className="z-10 flex justify-end">
       <div
         className={`py-3 px-2.5 rounded-full flex items-end flex-col gap-1.5 cursor-pointer transition-colors duration-300 ${
           isOpen ? "bg-main-2" : "bg-accent-1"
