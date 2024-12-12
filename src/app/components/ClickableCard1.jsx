@@ -11,8 +11,8 @@ function ClickableCard1({ header, text, src, alt }) {
         className="object-cover "
       ></Image>
       <div>
-        <h4 className="text-2xl font-bold">{header}</h4>
-        <p className="text-sm md:text-base">{text}</p>
+        <h3 className="font-bold">{header}</h3>
+        <p className="">{text}</p>
       </div>
     </div>
   );
