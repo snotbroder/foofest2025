@@ -29,12 +29,7 @@ p {
 }
 
 p.small {
-  font-size: clamp(0.625rem, 1.5vw, 0.625rem);
-  color: var(--main-1);
-}
-
-p.small {
-  font-size: clamp(0.625rem, 1.5vw, 0.625rem);
+  font-size: clamp(0.625rem, 1.5vw, 0.825rem);
   color: var(--main-1);
 }
 
