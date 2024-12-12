@@ -60,7 +60,7 @@ async function Band({ params }) {
           style={{ objectFit: "cover" }}
         />
       </div>
-      <div className=" md:mt-0 gap-11 flex flex-col lg:gap-24 lg:flex-row md:gap-24 ">
+      <div className=" relative md:mt-0 gap-11 flex flex-col lg:gap-24 lg:flex-row md:gap-24 ">
         <div className="w-100vw lg:w-2/3 xl:w-5/6 lg:max-w-screen-md bg-secondary -mt-20 -mx-mobile p-11 lg:-mx-0.5 rounded-md font-rethink text-main-1 flex flex-col gap-4">
           <h1 className="text-2xl font-bold ">About</h1>
           <p className="text-base">{band.bio}</p>

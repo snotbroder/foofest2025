@@ -20,8 +20,8 @@ function ScheduleForBand({ schedule, bandName, band }) {
     });
   });
   return (
-    <div className="font-rethink flex flex-col gap-4 ">
-      <div>
+    <div className="font-rethink relative flex flex-col gap-4 ">
+      <div className="before:-mr-mobile lg:before:-mr-desktop before:w-[34vw] before:h-auto before:content-[url('/illustrations/spiralPink.svg')] before:absolute before:-right-10 before:-z-10 before:opacity-60 ">
         <h3 className="font-bold text-2xl">Schedule</h3>
         {scheduleItems.length > 0 ? (
           scheduleItems.map((item, index) => (
