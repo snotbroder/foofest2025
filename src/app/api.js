@@ -52,7 +52,7 @@ export async function getSpots() {
   });
 
   let data = await response.json();
-  console.log(data);
+  // console.log(data);
   return data;
 }
 
@@ -69,7 +69,7 @@ export async function getProgram(stage, day) {
   const filteredprogram = data?.stage?.day || [];
 
   let data = await response.json();
-  console.log(data);
+  // console.log(data);
   return filteredprogram;
 }
 
@@ -93,6 +93,6 @@ export async function postVoluenteerInfo(voluenteerData) {
   );
 
   let data = await response.json();
-  console.log(data);
+  // console.log(data);
   return data;
 }
