@@ -19,10 +19,10 @@
   color: blue;
 }
 
-input {
+/* input {
   background-color: red;
   color: green;
-}
+} */
 
 body {
   color: var(--foreground);
@@ -74,6 +74,19 @@ body {
   left: -35%;
   top: -13.5rem;
   z-index: -1;
+}
+
+input:focus {
+  outline: 2px solid #3a140b;
+  outline-offset: 2px;
+}
+
+input:user-invalid {
+  border-color: red;
+}
+
+input:user-valid {
+  border-color: green;
 }
 .btn-style {
   color: #fff8db;
