@@ -30,22 +30,21 @@ function LineUpFilter() {
       short: "sun",
     },
   ];
-  console.log(pickedDay);
   return (
     <article>
       <h1 className="font-spicy text-4xl text-main-1 mb-6">Schedule</h1>
 
       <div className="flex flex-col gap-8 align-middle justify-center items-center">
         <div className="list-none text-main-1 flex gap-4">
-          {stageArray.map((stage, index) => {
+          {genreArray.map((genre, index) => {
             return (
               <li
                 key={index}
                 onClick={() => {
-                  setPickedStage(stage);
+                  setPickedGenre(genre);
                 }}
                 className={`cursor-pointer uppercase font-semibold  ${
-                  pickedStage === stage ? "text-feedback-error" : " text-main-1"
+                  pickedGenre === genre ? "text-feedback-error" : " text-main-1"
                 }`}
               >
                 {stage}
