@@ -6,6 +6,7 @@
 :root {
   --main-1: #3a140b;
   --main-2: #fff8db;
+  --background: var(--main-2);
 }
 h1 {
   font-size: clamp(2.5rem, 8vw, 3.8125rem);
