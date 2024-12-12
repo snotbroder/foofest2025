@@ -20,7 +20,7 @@ async function Home() {
         </div>
       </section>
       <section
-        className="flex flex-col gap-4 items-center relative md:flex-row md:items-stretch md:justify-center md:gap-10 before:content-[url('/illustrations/flower2Green.svg')] before:absolute before:-z-10 before:-top-44 before:left-11 before:opacity-60 
+        className="flex flex-wrap justify-center gap-4 items-center relative  md:gap-10 before:content-[url('/illustrations/flower2Green.svg')] before:absolute before:-z-10 before:-top-44 before:left-11 before:opacity-60 
      "
       >
         <ClickableCard2
@@ -30,18 +30,18 @@ async function Home() {
         ></ClickableCard2>
         <ClickableCard2
           headline="Map"
-          text=" Find your way around the Foo Festival with our easy-to-follow map. Discover all the stages, food trucks, and relaxation zones scattered across the festival grounds"
+          text=" Find your way around the Foo Festival with our easy-to-follow map."
           href=""
         ></ClickableCard2>
         <ClickableCard2
           headline="Lineup"
-          text=" Check out our amazing lineup of bands and performers. From rock to indie, there's something for everyone. Be ready for unforgettable performances"
+          text=" Check out our amazing lineup of bands and performers, and don't miss your favourite artists "
           href=""
         ></ClickableCard2>
       </section>
       <section className=" bg-secondary -mx-mobile lg:-mx-desktop">
-        <div className="py-12 mx-mobile gap-6 lg:mx-desktop flex flex-col items-center lg:items-start">
-          <h2 className="font-bold">Line up 2025</h2>
+        <div className="py-14 mx-mobile gap-6 lg:mx-desktop flex flex-col ">
+          <h2 className="font-bold text-center lg:text-start">Line up 2025</h2>
 
           <div className="flex flex-wrap justify-center lg:justify-between gap-6 ">
             {bands.length > 0 &&
