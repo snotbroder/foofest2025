@@ -21,27 +21,6 @@ function TicketSelectParent({ onBasketUpdate }) {
     ];
     onBasketUpdate(basketTickets);
   }
-
-  //   const basketCamp = [
-  // {
-  //   itemTitle: "Muspelheim",
-  //   itemPrice: "",
-  //   itemMultiply: 0,
-  // },
-  //     {
-  //       itemTitle: "three pers. tent",
-  //       itemPrice: 399,
-  //       itemMultiply: 3,
-  //     },
-  //   ];
-
-  //Sæt billetamount i
-  //   function handleAmountChange(ticketType, newAmount) {
-  //     setTicketAmounts((prevAmounts) => ({
-  //       ...prevAmounts,
-  //       [ticketType]: newAmount,
-  //     }));
-  //   }
   return (
     <>
       <TicketSelectCard onAmountChange={(amount) => handleAmountChange("vip", amount)} ticketName="VIP TICKET" variant="type1" price="1299" subText="Best Offer"></TicketSelectCard>

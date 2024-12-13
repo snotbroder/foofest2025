@@ -26,12 +26,12 @@ function Basket({ basketCamp, selectedCamping, basketTickets }) {
   return (
     <section time-left={timeLeft} className="fixed max-h-max -mx-mobile row-span-1 row-start-1 col-start-2 lg:mx-0 lg:relative after:absolute after:content-[attr(time-left)] after:-top-7 after:pb-2 after:px-4 after:left-0 after:bg-secondary after:font-rethink after:font-bold after:-z-20 bottom-0 after:text-main-2  w-full bg-main-2 border-y-2 lg:border-2 border-main-1 border-solid p-8 rounded-rounded-reg ">
       <div className={`${openBasket ? "block" : "hidden"} lg:block`}>
-        <h2 className="font-spicy text-main-1 text-4xl">Basket</h2>
+        <h2 className="font-spicy">Basket</h2>
         <article className="flex flex-col gap-2 my-2">
-          <span className="font-rethink text-xs py-1 border-b-[1px] border-tertiary border-solid text-main-1 font-semibold w-max">Tickets</span>
+          <p className="font-rethink small text-main-1 py-1 border-b-[1px] border-tertiary border-solid  font-semibold w-max">Tickets</p>
           {
             //Tjek on nogen af billetterne har itemMultiply value 0, så vis det her
-            basketTickets.every((ticket) => ticket.itemMultiply === 0) && <span className="font-rethink text-xs text-feedback-error ">Please choose a ticket</span>
+            basketTickets.every((ticket) => ticket.itemMultiply === 0) && <p className="font-rethink small text-feedback-error">Please choose a ticket</p>
           }
 
           {basketTickets //Sørg for kun at loope gennem billetter der er med i beregningen, altså har en itemMultiply value over 0
@@ -42,9 +42,9 @@ function Basket({ basketCamp, selectedCamping, basketTickets }) {
         </article>
 
         <article className="flex flex-col gap-2 my-2">
-          <span className="font-rethink text-xs py-1 border-b-[1px] border-tertiary border-solid text-main-1 font-semibold w-max">Camp</span>
-          {selectedCamping === "" && <span className="font-rethink text-xs text-feedback-error "> Please choose a camp</span>}
-          <span className="font-rethink text-main-1 text-xl">{selectedCamping}</span>
+          <p className="font-rethink small py-1 border-b-[1px] border-tertiary border-solid text-main-1 font-semibold w-max">Camp</p>
+          {selectedCamping === "" && <p className="font-rethink small text-feedback-error "> Please choose a camp</p>}
+          <h4 className="font-rethink ">{selectedCamping}</h4>
           {basketCamp
             .filter((camp) => camp.itemMultiply > 0)
             .map((camp, index) => {
@@ -53,10 +53,8 @@ function Basket({ basketCamp, selectedCamping, basketTickets }) {
         </article>
 
         <article className="font-rethink text-main-1 border-b-2 border-b-tertiary border-b-solid pb-2 my-1 mb-4 flex justify-between">
-          <span>
-            <span className="font-bold">Reservation fee</span>
-          </span>
-          <span>99,-</span>
+          <h4 className="font-bold">Reservation fee</h4>
+          <h4 className="">99,-</h4>
         </article>
       </div>
       <footer className="font-rethink text-main-1">
@@ -82,14 +80,14 @@ export function BasketItem({ itemTitle, itemMultiply, itemPrice }) {
   return (
     <div className="font-rethink text-main-1 border-b-2 border-b-tertiary border-b-solid my-1 pb-2 flex justify-between">
       <div className="flex justify-between place-items-center">
-        <h3 className={`${itemMultiply === 0 ? "hidden" : ""} font-bold`}>{itemMultiply}</h3>
+        <h4 className={`${itemMultiply === 0 ? "hidden" : ""} font-bold`}>{itemMultiply}</h4>
         <RiAddLine className="origin-center rotate-45" />
-        <p className="uppercase ">{itemTitle}</p>
+        <h4 className="uppercase ">{itemTitle}</h4>
       </div>
-      <p>
+      <h4>
         {itemPrice}
         {itemPrice === "" ? "" : ",-"}
-      </p>
+      </h4>
     </div>
   );
 }
