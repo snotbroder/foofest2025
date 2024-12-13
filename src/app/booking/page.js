@@ -21,7 +21,7 @@ export default function BookingPage() {
     if (newStep <= step) {
       setStep(newStep);
     }
-  }
+  } //test
 
   //Håndter ændringer fra komponenter, og send til basket
   function handleTicketUpdate(updatedTickets) {
