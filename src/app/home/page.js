@@ -3,11 +3,11 @@ import BandCard from "../components/BandCard";
 import Accordion from "../components/Accordion";
 import ClickableCard1 from "../components/ClickableCard1";
 async function Home() {
-  // const BASE_URL = "http://https://gabby-dull-drip.glitch.me/logos/";
-  // const response = await fetch("http://https://gabby-dull-drip.glitch.me/bands", {
-  //   method: "GET",
-  // });
-  // const bands = await response.json();
+  const BASE_URL = "http://https://gabby-dull-drip.glitch.me/logos/";
+  const response = await fetch("http://https://gabby-dull-drip.glitch.me/bands", {
+    method: "GET",
+  });
+  const bands = await response.json();
 
   return (
     <section className="flex flex-col gap-32 md:gap-48 -mt-16">
