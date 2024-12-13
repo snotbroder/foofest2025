@@ -47,7 +47,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 function Schedule() {
   const { data: scheduleData, error, isLoading } = useSWR("https://gabby-dull-drip.glitch.me/Schedule", fetcher);
 
-  //= useSWR("http://localhost:8080/schedule", fetcher);
+  //= useSWR("http://https://gabby-dull-drip.glitch.me/schedule", fetcher);
 
   const [pickedDay, setPickedDay] = useState("mon");
   const [pickedStage, setPickedStage] = useState("Midgard");
