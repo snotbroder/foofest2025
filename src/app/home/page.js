@@ -44,9 +44,9 @@ async function Home() {
       <section className="flex flex-col gap">
         <h2 className="font-bold ">News</h2>
         <div className="flex justify-center gap-12 flex-wrap">
-          <ClickableCard1 header="Buy the t-shirt of this year’s festival" text=" Get your official Foo Festival T-shirt and keep the peace, love, and music alive wherever you go" src="/img/tshirt.webp" alt=""></ClickableCard1>
+          {/* <ClickableCard1 header="Buy the t-shirt of this year’s festival" text=" Get your official Foo Festival T-shirt and keep the peace, love, and music alive wherever you go" src="/img/tshirt.webp" alt=""></ClickableCard1>
           <ClickableCard1 header="Join the quiz and win a free ticket" text="Think you know your music trivia? Test your knowledge in our quiz for a chance to win a ticket to Foo Festival 2024!" src="/img/musicquiz.webp" alt=""></ClickableCard1>
-          <ClickableCard1 header="Become a volunteer" text="Volunteer with us! Enjoy free entry, merch, and unforgettable experiences while helping the festival run smoothly." src="/img/volunteerPoster.webp" alt=""></ClickableCard1>
+          <ClickableCard1 header="Become a volunteer" text="Volunteer with us! Enjoy free entry, merch, and unforgettable experiences while helping the festival run smoothly." src="/img/volunteerPoster.webp" alt=""></ClickableCard1> */}
         </div>
       </section>
       <section>
