@@ -5,7 +5,6 @@ const nextConfig = {
       {
         protocol: "",
         hostname: "gabby-dull-drip.glitch.me",
-        port: "",
         pathname: "/**",
       },
       {
