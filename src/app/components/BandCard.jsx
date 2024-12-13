@@ -10,7 +10,7 @@ export default function BandCard({ genre, imgSrc, alt, name, slug }) {
           <div className="absolute font-rethink  font-bold right-0 top-5 text-main-2 bg-tertiary uppercase py-1 px-5 z-10  ">
             <p>{genre}</p>
           </div>
-          <Image
+          {/* <Image
             className="fill"
             src={imgSrc}
             alt={alt}
@@ -18,7 +18,7 @@ export default function BandCard({ genre, imgSrc, alt, name, slug }) {
             style={{
               objectFit: "cover",
             }}
-          />
+          /> */}
         </div>
         <div className="bg-primary h-16 flex justify-center items-center w-full   ">
           <h3 className="font-rethink">
