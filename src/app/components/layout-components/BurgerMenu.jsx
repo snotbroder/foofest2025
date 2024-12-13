@@ -11,9 +11,15 @@ function BurgerMenu() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  if (isOpen) {
+    document.body.classList.add("no-scroll");
+  } else {
+    document.body.classList.remove("no-scroll");
+  }
   return (
     <div>
-      <div className="fixed top-5 right-5 z-50 flex ">
+      <div className=" relative top-5  z-50 gap-10 flex justify-end items-center">
         <div>
           <CtaButton text="Buy ticket"></CtaButton>
         </div>
@@ -22,17 +28,10 @@ function BurgerMenu() {
           <BurgerMenuIcon isOpen={isOpen}></BurgerMenuIcon>
         </div>
       </div>
-      {isOpen && (
-        <div className="fixed inset-0 bg-secondary pt-6 z-40">
-          <Image
-            className="absolute top-10 left-10"
-            src="/illustrations/flower2Green.svg"
-            width={300}
-            height={300}
-            alt="Decorative Flower"
-          />
 
-          <ul className="mt-8 font-rethink font-bold text-5xl flex flex-col items-end text-main-1 gap-10 p-10">
+      {isOpen && (
+        <div className="fixed inset-0 bg-secondary z-40 bg-[url('/img/filterbg.png')] bg-cover	bg-repeat">
+          <ul className="mt-8 font-rethink font-bold text-5xl flex flex-col items-end text-main-1 gap-10 pt-10 lg:mx-desktop mx-mobile relative">
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -42,6 +41,13 @@ function BurgerMenu() {
             <li>
               <Link href="/">Festival Map</Link>
             </li>
+            <div className="absolute ">
+              <Image
+                src="illustrations/flowerPurple.svg"
+                width={800}
+                height={800}
+              ></Image>
+            </div>
           </ul>
         </div>
       )}
