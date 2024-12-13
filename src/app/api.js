@@ -4,15 +4,15 @@ export async function getBands() {
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
   };
 
-  const response = await fetch("https://gabby-dull-drip.glitch.me/bands", {
-    method: "GET",
-    headers: headersList,
-  });
-
-  // const response = await fetch("http://localhost:8080/bands", {
+  // const response = await fetch("https://gabby-dull-drip.glitch.me/bands", {
   //   method: "GET",
   //   headers: headersList,
   // });
+
+  const response = await fetch("http://localhost:8080/bands", {
+    method: "GET",
+    headers: headersList,
+  });
 
   if (!response.ok) {
     throw new Error(`Failed to fetch bands: ${response.statusText}`);
@@ -27,14 +27,14 @@ export async function getSchedule() {
     Accept: "*/*",
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
   };
-  // const response = await fetch("http://localhost:8080/Schedule/Midgard", {
-  //   method: "GET",
-  //   headers: headersList,
-  // });
-  let response = await fetch("https://gabby-dull-drip.glitch.me/Schedule", {
+  const response = await fetch("http://localhost:8080/Schedule/Midgard", {
     method: "GET",
     headers: headersList,
   });
+  // let response = await fetch("https://gabby-dull-drip.glitch.me/Schedule", {
+  //   method: "GET",
+  //   headers: headersList,
+  // });
 
   let data = await response.json();
   return data;
@@ -46,15 +46,15 @@ export async function getSpots() {
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
   };
 
-  // let response = await fetch("http://localhost:8080/available-spots", {
-  //   method: "GET",
-  //   headers: headersList,
-  // });
-  //d
-  let response = await fetch("https://gabby-dull-drip.glitch.me/available-spots", {
+  let response = await fetch("http://localhost:8080/available-spots", {
     method: "GET",
     headers: headersList,
   });
+
+  // let response = await fetch("https://gabby-dull-drip.glitch.me/available-spots", {
+  //   method: "GET",
+  //   headers: headersList,
+  // });
 
   let data = await response.json();
   // console.log(data);
@@ -67,15 +67,15 @@ export async function getProgram(stage, day) {
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
   };
 
-  // let response = await fetch("http://localhost:8080/schedule/", {
-  //   method: "GET",
-  //   headers: headersList,
-  // });
-
-  let response = await fetch("https://gabby-dull-drip.glitch.me/Schedule", {
+  let response = await fetch("http://localhost:8080/schedule/", {
     method: "GET",
     headers: headersList,
   });
+
+  // let response = await fetch("https://gabby-dull-drip.glitch.me/Schedule", {
+  //   method: "GET",
+  //   headers: headersList,
+  // });
   const filteredprogram = data?.stage?.day || [];
 
   let data = await response.json();
@@ -113,17 +113,17 @@ export async function reserveSpot(areaReserved, amount) {
     amount: amount,
   });
 
-  // let response = await fetch("http://localhost:8080/reserve-spot", {
-  //   method: "PUT",
-  //   body: bodyContent,
-  //   headers: headersList,
-  // });
-
-  let response = await fetch("https://gabby-dull-drip.glitch.me/reserve-spot", {
-    method: "put",
+  let response = await fetch("http://localhost:8080/reserve-spot", {
+    method: "PUT",
     body: bodyContent,
     headers: headersList,
   });
+
+  // let response = await fetch("https://gabby-dull-drip.glitch.me/reserve-spot", {
+  //   method: "put",
+  //   body: bodyContent,
+  //   headers: headersList,
+  // });
 
   let data = await response.json(); //omg husk json
   console.log(data);
