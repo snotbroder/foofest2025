@@ -33,11 +33,11 @@ async function Home() {
           <h2 className="font-bold text-center lg:text-start">Line up 2025</h2>
 
           <div className="flex flex-wrap justify-center lg:justify-between gap-6 ">
-            {bands.length > 0 &&
+            {/* {bands.length > 0 &&
               bands.slice(0, 4).map((band) => {
                 const logo = band.logo.startsWith("http") ? band.logo : `${BASE_URL}${band.logo}`;
                 return <BandCard alt={`Logo of ${band.name}`} key={band.name} imgSrc={logo} name={band.name} genre={band.genre} slug={band.slug} />;
-              })}
+              })} */}
           </div>
         </div>
       </section>
