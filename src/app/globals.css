@@ -148,3 +148,35 @@ input:user-valid {
     color: #fff8db;
   }
 }
+
+.select-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  min-width: 250px;
+  height: 50px;
+}
+
+.select-box {
+  border: none;
+  appearance: none;
+  padding: 0 35px 5px 0px;
+  width: 100%;
+  background-color: #fff8db;
+  display: flex;
+
+  outline: none;
+  border: none;
+  gap: 10px;
+  cursor: pointer;
+  text-align: end;
+}
+
+.select-icon {
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  top: 1px;
+}
