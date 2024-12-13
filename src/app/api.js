@@ -50,7 +50,7 @@ export async function getSpots() {
   //   method: "GET",
   //   headers: headersList,
   // });
-
+  //d
   let response = await fetch("https://gabby-dull-drip.glitch.me/available-spots", {
     method: "GET",
     headers: headersList,
