@@ -1,3 +1,5 @@
+import TicketInfo from "./TicketInfo";
+
 function TicketCard({
   bgColor,
   title,

@@ -24,7 +24,7 @@
   background-image: url(/sun-illu.svg), url(/vintage-filter.svg);
   background-position: -10% -100%, 100%;
   background-repeat: no-repeat;
-  background-color: #dbd976;
+  /* background-color: #dbd976; */
 }
 
 .vip {
@@ -35,7 +35,7 @@
   background-position: -600% 200%, 100%;
   background-size: 104%;
   background-repeat: no-repeat;
-  background-color: #d76f2d;
+  /* background-color: #d76f2d; */
 }
 
 .cardlabel {
