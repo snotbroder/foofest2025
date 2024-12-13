@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import BurgerMenuIcon from "./BurgerMenuIcon";
+import CtaButton from "../CtaButton";
 
 function BurgerMenu() {
   const [isOpen, setIsOpen] = useState("");
@@ -11,54 +12,39 @@ function BurgerMenu() {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="-mx-mobile overflow-hidden lg:-mx-desktop">
-      <div
-        className={` pt-7  ${
-          isOpen ? "bg-secondary h-screen w-full fixed " : ""
-        }`}
-      >
-        <div onClick={toggleMenu} className="mx-mobile z-10 md:mx-desktop ">
-          <BurgerMenuIcon isOpen={isOpen}></BurgerMenuIcon>
+    <div>
+      <div className="fixed top-5 right-5 z-50 flex ">
+        <div>
+          <CtaButton text="Buy ticket"></CtaButton>
         </div>
 
-        {isOpen && (
-          <div className="z-10 flex justify-between h-screen w-full pt-6 ">
-            <div>
-              <Image
-                src="/spiral.svg"
-                alt="Background decoration 2"
-                width={300}
-                height={300}
-                className="opacity-60 -mt-32 "
-              ></Image>
-            </div>
-
-            <div className="flex flex-col">
-              <ul className="font-rethink font-bold text-5xl flex flex-col text-end w-80 text-main-1 h-screen mx-mobile md:mx-desktop  gap-10">
-                <li>
-                  <Link href="/">Home</Link>
-                </li>
-                <li>
-                  <Link href="/">Music</Link>
-                </li>
-                <li>
-                  <Link href="/">Festival Map</Link>
-                </li>
-              </ul>
-
-              <div className="">
-                <Image
-                  src="/flower2.svg"
-                  alt="Background decoration 2"
-                  width={800}
-                  height={800}
-                  className="opacity-20 -mr-80"
-                ></Image>
-              </div>
-            </div>
-          </div>
-        )}
+        <div onClick={toggleMenu} className="">
+          <BurgerMenuIcon isOpen={isOpen}></BurgerMenuIcon>
+        </div>
       </div>
+      {isOpen && (
+        <div className="fixed inset-0 bg-secondary pt-6 z-40">
+          <Image
+            className="absolute top-10 left-10"
+            src="/illustrations/flower2Green.svg"
+            width={300}
+            height={300}
+            alt="Decorative Flower"
+          />
+
+          <ul className="mt-8 font-rethink font-bold text-5xl flex flex-col items-end text-main-1 gap-10 p-10">
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/">Music</Link>
+            </li>
+            <li>
+              <Link href="/">Festival Map</Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
