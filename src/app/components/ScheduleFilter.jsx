@@ -37,7 +37,7 @@ function ScheduleFilter({
   ];
   console.log(pickedDay);
   return (
-    <article>
+    <article className="lg:px-32 lg:mt-28 flex flex-col gap-20">
       <h1 className="font-spicy ">Schedule</h1>
 
       <div className="flex flex-col gap-8 align-middle justify-center items-center">
