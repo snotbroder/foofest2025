@@ -17,7 +17,7 @@ export default function BookingPage() {
       setStep(newStep);
     }
   }
-  const reservationId = useBasketStore((state) => state.reservationId);
+
   const fullBasket = useBasketStore((state) => state);
   return (
     <>
@@ -48,7 +48,7 @@ export default function BookingPage() {
         {step === 3 && "Payment Information"}
         {step === 4 && "Booking Overview"}
       </h1>
-      ReservationID: {reservationId}
+
       <section className="lg:grid grid-cols-[2fr_1fr] grid-rows-1 gap-4 ">
         {step === 0 && (
           <article>

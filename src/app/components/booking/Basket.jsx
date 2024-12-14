@@ -11,6 +11,7 @@ function Basket() {
     setOpenBasket((prevState) => !prevState);
   }
 
+  const reservationId = useBasketStore((state) => state.reservationId);
   const ticketInfo = useBasketStore((state) => state.ticketInfo);
   const campInfo = useBasketStore((state) => state.campInfo);
   const chosenCamp = useBasketStore((state) => state.chosenCamp);
@@ -65,7 +66,7 @@ function Basket() {
             .map((camp, index) => {
               return <BasketItem key={index} itemTitle={camp.itemTitle} itemMultiply={camp.itemMultiply} itemPrice={camp.itemPrice}></BasketItem>;
             })}
-          {greenCamping === true && <BasketItem itemTitle="Green camping" itemMultiply="1" itemPrice="299"></BasketItem>}
+          {greenCamping === true && <BasketItem itemTitle="Green camping" itemMultiply="1" itemPrice="249"></BasketItem>}
         </article>
 
         <article className="font-rethink text-main-1 border-b-2 border-b-tertiary border-b-solid pb-2 my-1 mb-4 flex justify-between">
@@ -78,6 +79,7 @@ function Basket() {
           <span>TOTAL</span>
           <span className="font-bold text-4xl">{totalPrice},-</span>
         </span>
+        {reservationId !== "" ? <p className="small text-feedback-disabled-2">ReservationID: {reservationId}</p> : ""}
         <div className="font-rethink text-xs text-feedback-error text-end">
           {errorCamp && "Please choose a camp to continue"}
           {errorTents && "You can only buy tents based on the amount of tickets "}
