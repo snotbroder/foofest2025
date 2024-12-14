@@ -19,7 +19,7 @@ function Basket() {
   //Tjek om greencamping er true i basket store
   let greenCampingTrue = 0;
   if (greenCamping === true) {
-    greenCampingTrue = 299;
+    greenCampingTrue = 249;
   }
   //fundet hjælp herfra med for https://bito.ai/resources/javascript-calculate-total-price-javascript-explained/
   const reservationFee = 99;
