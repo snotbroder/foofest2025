@@ -4,7 +4,7 @@ import { useState } from "react";
 import { RiAddLine } from "react-icons/ri";
 import { useBasketStore } from "@/stores/basket-stores";
 
-function Basket({ selectedCamping }) {
+function Basket() {
   //Toggle button for mobile
   const [openBasket, setOpenBasket] = useState(false);
   function handleOpenBasket() {
@@ -13,6 +13,7 @@ function Basket({ selectedCamping }) {
 
   const ticketInfo = useBasketStore((state) => state.ticketInfo);
   const campInfo = useBasketStore((state) => state.campInfo);
+  const chosenCamp = useBasketStore((state) => state.chosenCamp);
 
   // Omregn priser fra billetter og telte til totalpris
   // fundet hjælp herfra med for https://bito.ai/resources/javascript-calculate-total-price-javascript-explained/
@@ -47,8 +48,13 @@ function Basket({ selectedCamping }) {
 
         <article className="flex flex-col gap-2 my-2">
           <p className="font-rethink small py-1 border-b-[1px] border-tertiary border-solid text-main-1 font-semibold w-max">Camp</p>
-          {selectedCamping === "" && <p className="font-rethink small text-feedback-error "> Please choose a camp</p>}
-          <h4 className="font-rethink ">{selectedCamping}</h4>
+
+          <h4 className="font-rethink">
+            Selected camp:{" "}
+            <span className="font-normal">
+              {chosenCamp} {chosenCamp === "" && <p className="font-rethink small text-feedback-error "> Please choose a camp</p>}
+            </span>
+          </h4>
           {campInfo
             .filter((camp) => camp.itemMultiply > 0)
             .map((camp, index) => {
