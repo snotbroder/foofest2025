@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 function ScheduleFilter({
   setPickedDay,
   setPickedStage,
@@ -37,10 +39,42 @@ function ScheduleFilter({
   ];
   console.log(pickedDay);
   return (
-    <article className="lg:px-32 lg:mt-28 flex flex-col gap-20">
+    <article className="lg:px-32 lg:mt-48 flex flex-col gap-10">
       <h1 className="font-spicy ">Schedule</h1>
 
-      <div className="flex flex-col gap-8 align-middle justify-center items-center">
+      <div className="flex flex-col gap-5 align-middle justify-center items-center relative">
+        <div className="absolute mx-auto -right-52 hidden -top-24 lg:block opacity-60 ">
+          <Image
+            alt="Orange Flower"
+            src="illustrations/svg/flower2Orange.svg"
+            width={180}
+            height={180}
+          ></Image>
+        </div>
+        <div className="absolute mx-auto -right-40 hidden top-20 opacity-60 lg:block">
+          <Image
+            alt="Orange Flower"
+            src="illustrations/svg/flower2Orange.svg"
+            width={140}
+            height={140}
+          ></Image>
+        </div>
+        <div className="absolute mx-auto right-0 hidden opacity-60 -top-6 lg:block">
+          <Image
+            alt="Orange Flower"
+            src="illustrations/svg/flower2Orange.svg"
+            width={100}
+            height={100}
+          ></Image>
+        </div>
+        <div className="absolute mx-auto -left-60 hidden top-96 opacity-60 lg:block">
+          <Image
+            alt="Pink Spiral"
+            src="illustrations/svg/spiralPink.svg"
+            width={210}
+            height={210}
+          ></Image>
+        </div>
         <div className="list-none text-main-1 flex gap-4">
           {stageArray.map((stage, index) => {
             return (

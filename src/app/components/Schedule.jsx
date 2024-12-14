@@ -36,7 +36,7 @@
 
 // export default Schedule;
 "use client";
-
+import Image from "next/image";
 import { useState } from "react";
 import useSWR from "swr";
 import ScheduleBox from "./ScheduleBox";
@@ -61,7 +61,7 @@ function Schedule() {
   const schedule = scheduleData?.[pickedStage]?.[pickedDay] || [];
 
   return (
-    <article className=" -mx-mobile flex flex-col justify-center gap-4">
+    <article className=" -mx-mobile flex flex-col justify-center gap-4 ">
       <ScheduleFilter
         setPickedDay={setPickedDay}
         setPickedStage={setPickedStage}
