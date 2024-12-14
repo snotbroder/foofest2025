@@ -180,3 +180,7 @@ input:user-valid {
   align-self: center;
   top: 1px;
 }
+
+.no-scroll {
+  overflow: hidden;
+}

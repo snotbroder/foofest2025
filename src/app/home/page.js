@@ -11,7 +11,7 @@ async function Home() {
 
   return (
     <section className="flex flex-col gap-32 md:gap-48 -mt-16">
-      <section className="bg-[url('/illustrations/patternHero.svg')] bg-cover -mx-mobile lg:-mx-desktop ">
+      <section className="bg-[url('/illustrations/patternHero.svg')] bg-cover -mx-mobile lg:-mx-desktop -mt-10">
         <div className="py-80 mx-mobile lg:mx-desktop">
           <h1 className=" display font-spicy">Foo Festival 2025</h1>
           <p className="font-rethink">
