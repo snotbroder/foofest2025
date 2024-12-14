@@ -5,20 +5,19 @@ import { useBasketStore } from "@/stores/basket-stores";
 import BookingSteps from "../components/booking/BookingSteps";
 import Basket from "../components/booking/Basket";
 import TicketSelectParent from "../components/booking/TicketSelectParent";
-import CampingPage from "../components/booking/CampingPage";
+import CampingCards from "../components/booking/CampingCards";
 import CampingExtra from "../components/booking/CampingExtras";
 import ContactPage from "../components/booking/ContactPage";
 
 export default function BookingPage() {
   const [step, setStep] = useState(0);
-  const [selectedCamping, setSelectedCamping] = useState("");
 
   function stepHandler(newStep) {
     if (newStep <= step) {
       setStep(newStep);
     }
   }
-
+  const reservationId = useBasketStore((state) => state.reservationId);
   const fullBasket = useBasketStore((state) => state);
   return (
     <>
@@ -49,6 +48,7 @@ export default function BookingPage() {
         {step === 3 && "Payment Information"}
         {step === 4 && "Booking Overview"}
       </h1>
+      ReservationID: {reservationId}
       <section className="lg:grid grid-cols-[2fr_1fr] grid-rows-1 gap-4 ">
         {step === 0 && (
           <article>
@@ -59,7 +59,7 @@ export default function BookingPage() {
         {step === 1 && (
           <article>
             <section className="lg:grid grid-cols-2">
-              <CampingPage selectedCamping={selectedCamping} setSelectedCamping={setSelectedCamping}></CampingPage>
+              <CampingCards />
               <CampingExtra></CampingExtra>
             </section>
             <button className="btn-style grid place-self-center lg:place-self-end">Next step</button>
@@ -72,7 +72,7 @@ export default function BookingPage() {
         )}
         {step === 3 && <article></article>}
         {step === 4 && <article></article>}
-        <Basket selectedCamping={selectedCamping}></Basket>
+        <Basket></Basket>
       </section>
       <pre>
         Data as JSON
