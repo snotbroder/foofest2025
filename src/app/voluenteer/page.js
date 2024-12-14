@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import Benefits from "../components/Benefits";
 import ClickableCard1 from "../components/ClickableCard1";
 import VolunteerForm from "../components/VoluenteerForm";
