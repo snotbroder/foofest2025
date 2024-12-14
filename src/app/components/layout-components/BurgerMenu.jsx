@@ -19,11 +19,19 @@ function BurgerMenu() {
   }
   return (
     <div>
-      <div className=" relative top-5  z-50 gap-10 flex justify-end items-center">
+      <div className=" relative top-5 gap-9 z-50 flex justify-end items-center">
+        <div className="absolute left-0 top-6">
+          <Image
+            objectFit="cover"
+            src="illustrations/svg/logo.svg"
+            width={135}
+            height={135}
+          ></Image>
+        </div>
+
         <div>
           <CtaButton text="Buy ticket"></CtaButton>
         </div>
-
         <div onClick={toggleMenu} className="">
           <BurgerMenuIcon isOpen={isOpen}></BurgerMenuIcon>
         </div>
