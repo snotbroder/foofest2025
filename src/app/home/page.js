@@ -2,6 +2,7 @@ import ClickableCard2 from "../components/ClickableCard2";
 import BandCard from "../components/BandCard";
 import Accordion from "../components/Accordion";
 import ClickableCard1 from "../components/ClickableCard1";
+import Image from "next/image";
 async function Home() {
   const BASE_URL = "http://localhost:8080/logos/";
   const response = await fetch("http://localhost:8080/bands", {
@@ -20,10 +21,23 @@ async function Home() {
           </p>
         </div>
       </section>
-      <section
-        className="flex flex-wrap justify-center gap-4 items-center relative  md:gap-10 before:content-[url('/illustrations/flower2Green.svg')] before:absolute before:-z-10 before:-top-44 before:left-11 before:opacity-60 
-     "
-      >
+      <section className="flex flex-wrap justify-center gap-4 items-center relative  md:gap-10 ">
+        <div className="absolute -z-10 left-20 -top-24 opacity-60">
+          <Image
+            src="illustrations/svg/flower2Pink.svg"
+            width={250}
+            height={250}
+            objectFit="cover"
+          ></Image>
+        </div>
+        <div className="absolute -z-10 left-20 bottom-0 opacity-60">
+          <Image
+            src="illustrations/svg/flower2Pink.svg"
+            width={150}
+            height={150}
+            objectFit="cover"
+          ></Image>
+        </div>
         <ClickableCard2
           headline="Schedule"
           text=" Check out the full schedule and don't miss any moment of the festival"
