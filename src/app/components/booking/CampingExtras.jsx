@@ -7,6 +7,8 @@ function CampingExtra() {
   const campInfo = useBasketStore((state) => state.campInfo);
   const updateTentMultiply = useBasketStore((state) => state.updateTentMultiply);
 
+  const toggleGreenCamping = useBasketStore((state) => state.toggleGreenCamping);
+
   //beregn totaler, men først når de kaldes (inden i handle update)
   const calculateTotalTickets = (tickets) => tickets.reduce((total, ticket) => total + ticket.itemMultiply, 0);
   const calculateTotalTents = (tents) => tents.reduce((total, tent) => total + tent.itemMultiply, 0);
@@ -43,7 +45,7 @@ function CampingExtra() {
         Extras <span className="font-normal italic">optional</span>
       </h3>
       <form className="flex gap-6 font-rethink text-main-1">
-        <input className="w-10 h-auto" id="green-camping" type="checkbox" onChange={handleUpdate || false} />
+        <input className="w-10 h-auto" id="green-camping" type="checkbox" onChange={toggleGreenCamping || false} />
         <div className="flex flex-col gap-1">
           <label className="font-bold" htmlFor="green-camping">
             Green Camping +249,-

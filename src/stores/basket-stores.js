@@ -8,7 +8,7 @@ export const useBasketStore = create((set, get) => ({
   ],
   chosenCamp: "",
   reservationId: "",
-  greenCamping: true,
+  greenCamping: false,
 
   campInfo: [
     { itemTitle: "two person tent", itemMultiply: 0, itemPrice: 299 },
@@ -32,4 +32,5 @@ export const useBasketStore = create((set, get) => ({
   //opdater valgt camp state
   setChosenCamp: (area) => set({ chosenCamp: area }),
   setReserveId: (id) => set({ reservationId: id }),
+  toggleGreenCamping: () => set((state) => ({ greenCamping: !state.greenCamping })),
 }));
