@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useBasketStore } from "@/stores/basket-stores";
 
 import BookingSteps from "../components/booking/BookingSteps";
 import Basket from "../components/booking/Basket";
@@ -11,11 +12,6 @@ import ContactPage from "../components/booking/ContactPage";
 export default function BookingPage() {
   const [step, setStep] = useState(0);
   const [selectedCamping, setSelectedCamping] = useState("");
-  const [basketTickets, setBasketTickets] = useState([]);
-  const [basketCamp, setBasketCamp] = useState([]);
-
-  //Bare for at visualisere den samlede data:
-  const basketArray = [{ "ticket info": basketTickets }, { "choosen camp": selectedCamping, "camp info": basketCamp }];
 
   function stepHandler(newStep) {
     if (newStep <= step) {
@@ -23,15 +19,7 @@ export default function BookingPage() {
     }
   }
 
-  //Håndter ændringer fra komponenter, og send til basket
-  function handleTicketUpdate(updatedTickets) {
-    setBasketTickets(updatedTickets);
-  }
-  function handleCampUpdate(updatedCamp) {
-    setBasketCamp(updatedCamp);
-  }
-
-  //
+  const fullBasket = useBasketStore((state) => state);
   return (
     <>
       <p>
@@ -64,16 +52,15 @@ export default function BookingPage() {
       <section className="lg:grid grid-cols-[2fr_1fr] grid-rows-1 gap-4 ">
         {step === 0 && (
           <article>
-            <TicketSelectParent onBasketUpdate={handleTicketUpdate}></TicketSelectParent>
-
+            <TicketSelectParent></TicketSelectParent>
             <button className="btn-style grid place-self-center lg:place-self-end">Next step</button>
           </article>
         )}
         {step === 1 && (
           <article>
             <section className="lg:grid grid-cols-2">
-              <CampingPage regularTickets={basketTickets[0].itemMultiply} vipTickets={basketTickets[1].itemMultiply} selectedCamping={selectedCamping} setSelectedCamping={setSelectedCamping}></CampingPage>
-              <CampingExtra regularTickets={basketTickets[0].itemMultiply} vipTickets={basketTickets[1].itemMultiply} onBasketUpdate={handleCampUpdate}></CampingExtra>
+              <CampingPage selectedCamping={selectedCamping} setSelectedCamping={setSelectedCamping}></CampingPage>
+              <CampingExtra></CampingExtra>
             </section>
             <button className="btn-style grid place-self-center lg:place-self-end">Next step</button>
           </article>
@@ -85,13 +72,12 @@ export default function BookingPage() {
         )}
         {step === 3 && <article></article>}
         {step === 4 && <article></article>}
-        <Basket selectedCamping={selectedCamping} basketCamp={basketCamp} basketTickets={basketTickets}></Basket>
+        <Basket selectedCamping={selectedCamping}></Basket>
       </section>
       <pre>
         Data as JSON
-        {/* {JSON.stringify(basketTickets, null, 2)}
-        {JSON.stringify(selectedCamping, null, 2)} */}
-        {JSON.stringify(basketArray, null, 2)}
+        {JSON.stringify(fullBasket, null, 2)}
+        {/* {JSON.stringify(basketArray, null, 2)} */}
       </pre>
     </>
   );
