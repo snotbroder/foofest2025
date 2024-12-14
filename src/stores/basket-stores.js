@@ -8,6 +8,7 @@ export const useBasketStore = create((set, get) => ({
   ],
   chosenCamp: "",
   reservationId: "",
+  greenCamping: true,
 
   campInfo: [
     { itemTitle: "two person tent", itemMultiply: 0, itemPrice: 299 },

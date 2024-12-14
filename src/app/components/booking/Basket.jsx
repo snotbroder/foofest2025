@@ -14,14 +14,19 @@ function Basket() {
   const ticketInfo = useBasketStore((state) => state.ticketInfo);
   const campInfo = useBasketStore((state) => state.campInfo);
   const chosenCamp = useBasketStore((state) => state.chosenCamp);
+  const greenCamping = useBasketStore((state) => state.greenCamping);
 
-  // Omregn priser fra billetter og telte til totalpris
-  // fundet hjælp herfra med for https://bito.ai/resources/javascript-calculate-total-price-javascript-explained/
+  //Tjek om greencamping er true i basket store
+  let greenCampingTrue = 0;
+  if (greenCamping === true) {
+    greenCampingTrue = 299;
+  }
+  //fundet hjælp herfra med for https://bito.ai/resources/javascript-calculate-total-price-javascript-explained/
   const reservationFee = 99;
   const ticketTotal = ticketInfo.reduce((total, ticket) => total + ticket.itemPrice * ticket.itemMultiply, 0);
 
   const campTotal = campInfo.reduce((total, camp) => total + camp.itemPrice * camp.itemMultiply, 0);
-  const totalPrice = ticketTotal + campTotal + reservationFee;
+  const totalPrice = ticketTotal + campTotal + reservationFee + greenCampingTrue;
 
   const countDown = "00:00";
   const timeLeft = "Time left: " + countDown;
@@ -60,6 +65,7 @@ function Basket() {
             .map((camp, index) => {
               return <BasketItem key={index} itemTitle={camp.itemTitle} itemMultiply={camp.itemMultiply} itemPrice={camp.itemPrice}></BasketItem>;
             })}
+          {greenCamping === true && <BasketItem itemTitle="Green camping" itemMultiply="1" itemPrice="299"></BasketItem>}
         </article>
 
         <article className="font-rethink text-main-1 border-b-2 border-b-tertiary border-b-solid pb-2 my-1 mb-4 flex justify-between">
