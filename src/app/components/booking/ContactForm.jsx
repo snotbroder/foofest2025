@@ -27,7 +27,6 @@ function ContactForm({ index }) {
           <label>Email</label>
           <input
             className="rounded-full pl-2"
-            input="email"
             type="email"
             name="email"
             placeholder="e.g. john@doe.com"

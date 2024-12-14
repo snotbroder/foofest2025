@@ -20,10 +20,10 @@ function PaymentInfo() {
           <legend className="font-semibold text-xl  mb-2">
             Payment information
           </legend>
-          <PaymentKind typePayment="Mobilepay" />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 align-baseline justify-end ">
-            <div>
-              <div className="flex flex-col">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 align-baseline justify-end ">
+            <div className="flex flex-col">
+              <PaymentKind typePayment="Mobilepay" />
+              <div className="flex flex-col ">
                 <label>Email</label>
                 <input
                   className="rounded-full pl-2"
@@ -59,7 +59,7 @@ function PaymentInfo() {
                 <div className="flex  gap-2">
                   <input
                     type="text"
-                    name="last_name"
+                    name="MM"
                     className="rounded-full pl-2 w-1/5"
                     placeholder="Doe"
                     required
@@ -67,7 +67,7 @@ function PaymentInfo() {
                   <p>/</p>
                   <input
                     type="text"
-                    name="last_name"
+                    name="YY"
                     className="rounded-full pl-2 w-1/5"
                     placeholder="Doe"
                     required
@@ -76,6 +76,7 @@ function PaymentInfo() {
               </div>
             </div>
             <div>
+              <PaymentKind typePayment="Credit Card" />
               <div className="flex flex-col gap-1">
                 <label>Adress 1</label>
                 <input
@@ -90,7 +91,7 @@ function PaymentInfo() {
                 <label>Adress 2</label>
                 <input
                   type="text"
-                  name="adress_1"
+                  name="adress_2"
                   className="rounded-full pl-2"
                   placeholder="Fun street nr.9"
                   required
@@ -111,7 +112,7 @@ function PaymentInfo() {
                   <label>Zip code</label>
                   <input
                     type="text"
-                    name="City"
+                    name="city"
                     className="rounded-full pl-2"
                     placeholder="Fun street nr.9"
                     required
