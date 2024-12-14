@@ -16,16 +16,35 @@ function TicketSelectParent({ onBasketUpdate }) {
 
     //Prepare baskettickets and pass it on
     const basketTickets = [
-      { itemTitle: "regular ticket", itemMultiply: updatedAmounts.regular, itemPrice: 799 },
-      { itemTitle: "vip ticket", itemMultiply: updatedAmounts.vip, itemPrice: 1299 },
+      {
+        itemTitle: "regular ticket",
+        itemMultiply: updatedAmounts.regular,
+        itemPrice: 799,
+      },
+      {
+        itemTitle: "vip ticket",
+        itemMultiply: updatedAmounts.vip,
+        itemPrice: 1299,
+      },
     ];
     onBasketUpdate(basketTickets);
   }
   return (
     <>
-      <TicketSelectCard onAmountChange={(amount) => handleAmountChange("vip", amount)} ticketName="VIP TICKET" variant="type1" price="1299" subText="Best Offer"></TicketSelectCard>
+      <TicketSelectCard
+        onAmountChange={(amount) => handleAmountChange("vip", amount)}
+        ticketName="VIP TICKET"
+        variant="type1"
+        price="1299"
+        subText="Best Offer"
+      ></TicketSelectCard>
 
-      <TicketSelectCard onAmountChange={(amount) => handleAmountChange("regular", amount)} ticketName="REGULAR TICKET" variant="type2" price="799"></TicketSelectCard>
+      <TicketSelectCard
+        onAmountChange={(amount) => handleAmountChange("regular", amount)}
+        ticketName="REGULAR TICKET"
+        variant="type2"
+        price="799"
+      ></TicketSelectCard>
     </>
   );
 }
