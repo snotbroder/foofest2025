@@ -1,31 +1,22 @@
 "use client";
 
-import { useState } from "react";
 import TicketSelectCard from "./TicketSelectCard";
+import { useBasketStore } from "@/stores/basket-stores";
 
-function TicketSelectParent({ onBasketUpdate }) {
-  const [ticketAmounts, setTicketAmounts] = useState({
-    regular: 0,
-    vip: 0,
-  });
+function TicketSelectParent() {
+  //Multiply funktion i store som sørger for at opdatere dataen korrekt/de rigtige steder i arrayet
+  const updateTicketMultiply = useBasketStore((state) => state.updateTicketMultiply);
 
-  //Split de individuelle amounts, baseret på om det bliver sendt med proppen "vip" eller "regular"
-  function handleAmountChange(ticketType, newAmount) {
-    const updatedAmounts = { ...ticketAmounts, [ticketType]: newAmount };
-    setTicketAmounts(updatedAmounts);
+  const handleUpdate = (ticketType, newAmount) => {
+    // Update the ticket amount in Zustand state
+    updateTicketMultiply(ticketType, newAmount);
+  };
 
-    //Prepare baskettickets and pass it on
-    const basketTickets = [
-      { itemTitle: "regular ticket", itemMultiply: updatedAmounts.regular, itemPrice: 799 },
-      { itemTitle: "vip ticket", itemMultiply: updatedAmounts.vip, itemPrice: 1299 },
-    ];
-    onBasketUpdate(basketTickets);
-  }
   return (
     <>
-      <TicketSelectCard onAmountChange={(amount) => handleAmountChange("vip", amount)} ticketName="VIP TICKET" variant="type1" price="1299" subText="Best Offer"></TicketSelectCard>
+      <TicketSelectCard onAmountChange={(amount) => handleUpdate("vip ticket", amount)} ticketName="VIP TICKET" variant="type1" price="1299" subText="Best Offer"></TicketSelectCard>
 
-      <TicketSelectCard onAmountChange={(amount) => handleAmountChange("regular", amount)} ticketName="REGULAR TICKET" variant="type2" price="799"></TicketSelectCard>
+      <TicketSelectCard onAmountChange={(amount) => handleUpdate("regular ticket", amount)} ticketName="REGULAR TICKET" variant="type2" price="799"></TicketSelectCard>
     </>
   );
 }

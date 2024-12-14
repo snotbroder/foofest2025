@@ -1,61 +1,49 @@
-"use client";
-import { useState } from "react";
 import AmountBtn from "../AmountBtn";
+import { useBasketStore } from "@/stores/basket-stores";
 
-function CampingExtra({ onBasketUpdate, regularTickets, vipTickets }) {
-  //Opretter state, der skal vedligeholde antal af telt typer og values
-  const [tentAmounts, setTentAmounts] = useState({
-    twoPersTent: 0,
-    threePersTent: 0,
-    //greenCamping: 0,
-  });
+function CampingExtra() {
+  //hent state data fra store
+  const ticketInfo = useBasketStore((state) => state.ticketInfo);
+  const campInfo = useBasketStore((state) => state.campInfo);
+  const updateTentMultiply = useBasketStore((state) => state.updateTentMultiply);
 
-  //totalberegn hvor mange billetter der er i ordren
-  const availableTicketsAmount = regularTickets + vipTickets;
+  //beregn totaler, men først når de kaldes (inden i handle update)
+  const calculateTotalTickets = (tickets) => tickets.reduce((total, ticket) => total + ticket.itemMultiply, 0);
+  const calculateTotalTents = (tents) => tents.reduce((total, tent) => total + tent.itemMultiply, 0);
 
-  //det her er bare antallet af telte totalt valgt af brugeren
-  const totalAllocatedTickets = tentAmounts.twoPersTent + tentAmounts.threePersTent;
+  //totals der kaldes i handleUpdate, og send dynamisk data fra basket store med
+  const totalTicketsInOrder = calculateTotalTickets(ticketInfo);
+  const totalTentsAllocated = calculateTotalTents(campInfo);
 
-  //Split de individuelle amounts, baseret på om det bliver sendt med proppen "twoPersTent" eller "threePersTent"
-  //checkboxEvent
-  function handleAmountChange(tentType, newAmount) {
-    //samler de valgte tentAmounts værdier sammen med newAmount som brugeren har valgt.
-    //man kan lidt se det som en målepind, fordi længere nede sammenligner den værdien med billetter valgt i ordren (availableTicketsAmout)
-    const proposedTotal = totalAllocatedTickets - tentAmounts[tentType] + newAmount;
+  //finder data for nuværende antal telte i store
+  const twoPersonTent = campInfo.find((tent) => tent.itemTitle === "two person tent")?.itemMultiply || 0;
+  const threePersonTent = campInfo.find((tent) => tent.itemTitle === "three person tent")?.itemMultiply || 0;
+  //beregner max værdi til AmountBtn, så den kan give feedback til brugeren hvis aktiveret
+  const sharedMaxAmount = totalTicketsInOrder - totalTentsAllocated;
 
-    //tjek om der er flere telte valgt, end billetter tilgængeligt i ordren end
-    if (proposedTotal > availableTicketsAmount) {
+  //håndteres når der ændres i AmountBtn
+  const handleUpdate = (tentType, newAmount) => {
+    //beregn hvor mange telte er valgt i store
+    const currentTentAmount = campInfo.find((tent) => tent.itemTitle === tentType)?.itemMultiply || 0;
+    const proposedTotal = totalTentsAllocated - currentTentAmount + newAmount;
+
+    //Hvis der er flere ønskede antal telte er højere end billetter i ordren
+    if (proposedTotal > totalTicketsInOrder) {
       console.log("no more tents than tickets");
       return; // returner absolut ingenting øvvvvv prøv igen
     }
 
-    // let greenCampingChecked = 0;
-    // const isChecked = checkboxEvent.target.checked;
-    // if ((isChecked = true)) {
-    //   greenCampingChecked = 1;
-    // }
+    // Opdatér de tilvalgte telte i store
+    updateTentMultiply(tentType, newAmount);
+  };
 
-    const updatedAmounts = { ...tentAmounts, [tentType]: newAmount };
-
-    setTentAmounts(updatedAmounts);
-
-    //Prepare baskettickets and pass it on
-    const basketCamp = [
-      { itemTitle: "two person tent", itemMultiply: updatedAmounts.twoPersTent, itemPrice: 299 },
-      { itemTitle: "three person tent", itemMultiply: updatedAmounts.threePersTent, itemPrice: 399 },
-      //{ itemTitle: "green camping", itemMultiply: greenCampingChecked, itemPrice: 249 },
-    ];
-
-    onBasketUpdate(basketCamp);
-  }
-  console.log("availabletickets", availableTicketsAmount);
   return (
     <article className="bg-main-2 border-solid border-2 border-main-1 rounded-rounded-reg max-h-max p-8 flex flex-col gap-2">
       <h3 className="font-rethink text-main-1 font-bold text-2xl">
         Extras <span className="font-normal italic">optional</span>
       </h3>
       <form className="flex gap-6 font-rethink text-main-1">
-        <input className="w-10 h-auto" id="green-camping" type="checkbox" onChange={handleAmountChange || false} />
+        <input className="w-10 h-auto" id="green-camping" type="checkbox" onChange={handleUpdate || false} />
         <div className="flex flex-col gap-1">
           <label className="font-bold" htmlFor="green-camping">
             Green Camping +249,-
@@ -73,16 +61,15 @@ function CampingExtra({ onBasketUpdate, regularTickets, vipTickets }) {
         <section className="flex flex-col gap-6">
           <div className="flex justify-between place-items-center gap-2">
             <h4 className="font-bold text-main-1 font-rethink">2 person tent +299,-</h4>
-            <AmountBtn maxAmount={availableTicketsAmount - totalAllocatedTickets + tentAmounts.twoPersTent} onAmountChange={(amount) => handleAmountChange("twoPersTent", amount)}></AmountBtn>
+            <AmountBtn maxAmount={sharedMaxAmount + twoPersonTent} onAmountChange={(amount) => handleUpdate("two person tent", amount)}></AmountBtn>
           </div>
           <div className="flex justify-between place-items-center gap-2">
             <h4 className="font-bold font-rethink text-main-1">3 person tent +399,-</h4>
-            <AmountBtn maxAmount={availableTicketsAmount - totalAllocatedTickets + tentAmounts.threePersTent} onAmountChange={(amount) => handleAmountChange("threePersTent", amount)}></AmountBtn>
+            <AmountBtn maxAmount={sharedMaxAmount + threePersonTent} onAmountChange={(amount) => handleUpdate("three person tent", amount)}></AmountBtn>
           </div>
         </section>
       </section>
     </article>
   );
 }
-
 export default CampingExtra;

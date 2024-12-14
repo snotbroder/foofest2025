@@ -2,20 +2,24 @@
 
 import { useState } from "react";
 import { RiAddLine } from "react-icons/ri";
+import { useBasketStore } from "@/stores/basket-stores";
 
-function Basket({ basketCamp, selectedCamping, basketTickets }) {
+function Basket({ selectedCamping }) {
   //Toggle button for mobile
   const [openBasket, setOpenBasket] = useState(false);
   function handleOpenBasket() {
     setOpenBasket((prevState) => !prevState);
   }
 
+  const ticketInfo = useBasketStore((state) => state.ticketInfo);
+  const campInfo = useBasketStore((state) => state.campInfo);
+
   // Omregn priser fra billetter og telte til totalpris
   // fundet hjælp herfra med for https://bito.ai/resources/javascript-calculate-total-price-javascript-explained/
   const reservationFee = 99;
-  const ticketTotal = basketTickets.reduce((total, ticket) => total + ticket.itemPrice * ticket.itemMultiply, 0);
+  const ticketTotal = ticketInfo.reduce((total, ticket) => total + ticket.itemPrice * ticket.itemMultiply, 0);
 
-  const campTotal = basketCamp.reduce((total, camp) => total + camp.itemPrice * camp.itemMultiply, 0);
+  const campTotal = campInfo.reduce((total, camp) => total + camp.itemPrice * camp.itemMultiply, 0);
   const totalPrice = ticketTotal + campTotal + reservationFee;
 
   const countDown = "00:00";
@@ -31,10 +35,10 @@ function Basket({ basketCamp, selectedCamping, basketTickets }) {
           <p className="font-rethink small text-main-1 py-1 border-b-[1px] border-tertiary border-solid  font-semibold w-max">Tickets</p>
           {
             //Tjek on nogen af billetterne har itemMultiply value 0, så vis det her
-            basketTickets.every((ticket) => ticket.itemMultiply === 0) && <p className="font-rethink small text-feedback-error">Please choose a ticket</p>
+            ticketInfo.every((ticket) => ticket.itemMultiply === 0) && <p className="font-rethink small text-feedback-error">Please choose a ticket</p>
           }
 
-          {basketTickets //Sørg for kun at loope gennem billetter der er med i beregningen, altså har en itemMultiply value over 0
+          {ticketInfo //Sørg for kun at loope gennem billetter der er med i beregningen, altså har en itemMultiply value over 0
             .filter((ticket) => ticket.itemMultiply > 0)
             .map((ticket, index) => {
               return <BasketItem key={index} itemTitle={ticket.itemTitle} itemMultiply={ticket.itemMultiply} itemPrice={ticket.itemPrice}></BasketItem>;
@@ -45,7 +49,7 @@ function Basket({ basketCamp, selectedCamping, basketTickets }) {
           <p className="font-rethink small py-1 border-b-[1px] border-tertiary border-solid text-main-1 font-semibold w-max">Camp</p>
           {selectedCamping === "" && <p className="font-rethink small text-feedback-error "> Please choose a camp</p>}
           <h4 className="font-rethink ">{selectedCamping}</h4>
-          {basketCamp
+          {campInfo
             .filter((camp) => camp.itemMultiply > 0)
             .map((camp, index) => {
               return <BasketItem key={index} itemTitle={camp.itemTitle} itemMultiply={camp.itemMultiply} itemPrice={camp.itemPrice}></BasketItem>;
