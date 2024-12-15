@@ -81,7 +81,7 @@ async function Home() {
         </div>
         <div className="relative after:absolute after:content-[''] after:w-full after:h-[0.5px] after:bg-main-1 after:-bottom-8"></div>
       </section>
-      <section className="flex flex-col items-center py-40 bg-[url('/illustrations/svg/circle.svg')] bg-repeat bg-top bg-container lg:-mx-desktop -mx-mobile">
+      <section className="flex flex-col items-center py-40 bg-[url('/illustrations/svg/circle.svg')] bg-repeat bg-top bg-container lg:-mx-desktop -mx-mobile bg-opacity-20">
         <h2 className="font-bold ">News</h2>
 
         <div className="flex flex-col gap-12 ">
