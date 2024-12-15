@@ -1,6 +1,7 @@
 import ClickableCard2 from "../components/ClickableCard2";
 import BandCard from "../components/BandCard";
 import Accordion from "../components/Accordion";
+import CtaButton from "../components/CtaButton";
 import Image from "next/image";
 async function Home() {
   const BASE_URL = "http://localhost:8080/logos/";
@@ -20,42 +21,49 @@ async function Home() {
           </p>
         </div>
       </section>
-      <section className="flex flex-wrap justify-center gap-4 items-center relative  md:gap-10 ">
-        <div className="absolute -z-10 -top-36 -left-20 mx-auto xl:left-20 xl:-top-24 opacity-60">
-          <Image
-            src="illustrations/svg/flower2Pink.svg"
-            width={250}
-            height={250}
-            objectFit="cover"
-          ></Image>
+      <section className="flex flex-col items-center gap-28">
+        <div className="flex flex-wrap justify-center gap-4 items-center relative  md:gap-10 ">
+          <div className="absolute -z-10 -top-36 left-0 mx-auto opacity-60 xl:-left-28">
+            <Image
+              src="illustrations/svg/flower2Pink.svg"
+              width={250}
+              height={250}
+              objectFit="cover"
+              alt="Pink Flowe"
+            ></Image>
+          </div>
+          <div className="absolute -left-10  top-28  xl:-left-20 -z-10 mx-auto   opacity-60 ">
+            <Image
+              src="illustrations/svg/flower2Pink.svg"
+              width={150}
+              height={150}
+              objectFit="cover"
+              alt="Small Pink Flower"
+            ></Image>
+          </div>
+          <ClickableCard2
+            headline="Schedule"
+            text=" Check out the full schedule and don't miss any moment of the festival"
+            href=""
+          ></ClickableCard2>
+          <ClickableCard2
+            headline="Map"
+            text=" Find your way around the Foo Festival with our easy-to-follow map."
+            href=""
+          ></ClickableCard2>
+          <ClickableCard2
+            headline="Lineup"
+            text=" Check out our amazing lineup of bands and performers, and don't miss your favourite artists "
+            href=""
+          ></ClickableCard2>
         </div>
-        <div className="absolute -left-20 top-28 -z-10 mx-auto xl:left-20 xl:bottom-0 opacity-60">
-          <Image
-            src="illustrations/svg/flower2Pink.svg"
-            width={150}
-            height={150}
-            objectFit="cover"
-          ></Image>
+        <div>
+          <CtaButton text="Buy Ticket"></CtaButton>
         </div>
-        <ClickableCard2
-          headline="Schedule"
-          text=" Check out the full schedule and don't miss any moment of the festival"
-          href=""
-        ></ClickableCard2>
-        <ClickableCard2
-          headline="Map"
-          text=" Find your way around the Foo Festival with our easy-to-follow map."
-          href=""
-        ></ClickableCard2>
-        <ClickableCard2
-          headline="Lineup"
-          text=" Check out our amazing lineup of bands and performers, and don't miss your favourite artists "
-          href=""
-        ></ClickableCard2>
       </section>
       <section
-        className="relative 
-      before:h-[0.5px] before:bg-main-1 before:w-full  before:content-[''] before:absolute"
+        className="relative flex flex-col items-center
+      before:h-[0.5px] before:bg-main-1 before:w-full  before:content-[''] before:absolute after:absolute after:w-full after:h-[0.5px] after:bg-main-1 after:content-[''] after:-bottom-20"
       >
         <div className="py-14 mx-mobile gap-6 lg:mx-desktop flex flex-col ">
           <h2 className="font-bold text-center lg:text-start">Line up 2025</h2>
@@ -79,9 +87,17 @@ async function Home() {
               })}
           </div>
         </div>
-        <div className="relative after:absolute after:content-[''] after:w-full after:h-[0.5px] after:bg-main-1 after:-bottom-8"></div>
+        <div className="relative ">
+          <CtaButton text="Buy Ticket"></CtaButton>
+        </div>
       </section>
-      <section className="flex flex-col items-center py-40 bg-[url('/illustrations/svg/circle.svg')] bg-repeat bg-top bg-container lg:-mx-desktop -mx-mobile bg-opacity-20 ">
+      <section
+        className="flex flex-col items-center py-40 
+  bg-[url('/img/filterbg.webp'),url('/illustrations/svg/circle.svg')] 
+  bg-repeat 
+  bg-[top_center] bg-[contain]
+  lg:-mx-desktop -mx-mobile"
+      >
         <div className="mx-auto lg:w-full max-w-[700px] px-4 md:px-0">
           <h2 className="font-bold ">News</h2>
 
