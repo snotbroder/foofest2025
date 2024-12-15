@@ -44,17 +44,17 @@ async function Home() {
           <ClickableCard2
             headline="Schedule"
             text=" Check out the full schedule and don't miss any moment of the festival"
-            href=""
+            href="/schedule"
           ></ClickableCard2>
           <ClickableCard2
             headline="Map"
             text=" Find your way around the Foo Festival with our easy-to-follow map."
-            href=""
+            href="/map"
           ></ClickableCard2>
           <ClickableCard2
             headline="Lineup"
             text=" Check out our amazing lineup of bands and performers, and don't miss your favourite artists "
-            href=""
+            href="/lineup"
           ></ClickableCard2>
         </div>
         <div>
