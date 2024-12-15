@@ -41,6 +41,7 @@ export default function BookingPage() {
         step +1
       </button>
       <BookingSteps stepHandler={stepHandler} step={step}></BookingSteps>
+
       <h1 className="font-spicy text-main-1 text-4xl mb-3">
         {step === 0 && "Select Ticket Type"}
         {step === 1 && "Select Camp"}
@@ -71,7 +72,12 @@ export default function BookingPage() {
           </article>
         )}
         {step === 3 && <article></article>}
-        {step === 4 && <article></article>}
+        {step === 4 && (
+          <article>
+            <pre>{JSON.stringify(fullBasket, null, 2)}</pre>
+            <button className="btn-style">Confirm booking</button>
+          </article>
+        )}
         <Basket></Basket>
       </section>
       <pre>

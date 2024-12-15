@@ -1,8 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { RiAddLine } from "react-icons/ri";
 import { useBasketStore } from "@/stores/basket-stores";
+import { useBasketFunctionality } from "@/stores/basket-functionality";
+import Countdown from "react-countdown";
+import { redirect } from "next/navigation";
 
 function Basket() {
   //Toggle button for mobile
@@ -29,13 +32,43 @@ function Basket() {
   const campTotal = campInfo.reduce((total, camp) => total + camp.itemPrice * camp.itemMultiply, 0);
   const totalPrice = ticketTotal + campTotal + reservationFee + greenCampingTrue;
 
-  const countDown = "00:00";
-  const timeLeft = "Time left: " + countDown;
+  function sessionInvalid() {
+    console.log("Session invalid, redirected to session invalid page");
+    redirect("/session-invalid");
+  }
+  //Hent reservertionstiden fra zustand store, og startCountDown functionen
+  const { reservationTime, startCountdown } = useBasketFunctionality();
+  const startTimeRef = useRef(null); // useRef kan gemme værdier, uden at rendere påny
+
+  //Når komponenten renderes, start
+  useEffect(() => {
+    handleStart();
+    //startCountdown(startTimeRef);
+  }, []);
+
+  function handleStart() {
+    //startCountdown(startTimeRef);
+  }
+  //sætter initial state for timeLeft
+  const [timeLeft, setTimeLeft] = useState("05:00");
+
+  // CHATGPT renderingen
+  const renderer = ({ minutes, seconds }) => {
+    //måden tiden vises på
+    const formattedTime = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    setTimeLeft(formattedTime); // Update the time-left state dynamically
+    return <span>{formattedTime}</span>;
+  };
 
   const errorCamp = false;
   const errorTents = false;
+
   return (
-    <section time-left={timeLeft} className="fixed max-h-max -mx-mobile row-span-1 row-start-1 col-start-2 lg:mx-0 lg:relative after:absolute after:content-[attr(time-left)] after:-top-7 after:pb-2 after:px-4 after:left-0 after:bg-secondary after:font-rethink after:font-bold after:-z-20 bottom-0 after:text-main-2  w-full bg-main-2 border-y-2 lg:border-2 border-main-1 border-solid p-8 rounded-rounded-reg ">
+    <section time-left={timeLeft} className="fixed shadow-[-1px_-9px_56px_-13px_rgba(0,0,0,0.50)] md:shadow-none lg:shadow-none max-h-max -mx-mobile row-span-1 row-start-1 col-start-2 lg:mx-0 lg:relative after:absolute after:content-['Time_left:_'attr(time-left)] after:-top-7 after:pb-2 after:px-4 after:left-0 after:bg-secondary after:font-rethink after:font-bold after:-z-20 bottom-0 after:text-main-2  w-full bg-main-2 border-y-2 lg:border-2 border-main-1 border-solid p-8 rounded-rounded-reg ">
+      {/* <div className="hidden"> */}
+      <Countdown onComplete={sessionInvalid} date={startTimeRef.current + reservationTime} renderer={renderer} />
+      {/* </div> */}
+
       <div className={`${openBasket ? "block" : "hidden"} lg:block`}>
         <h2 className="font-spicy">Basket</h2>
         <article className="flex flex-col gap-2 my-2">

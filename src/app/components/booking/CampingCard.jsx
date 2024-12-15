@@ -1,6 +1,7 @@
 "use client";
-
+import { useState, useRef } from "react";
 import { reserveSpot } from "@/app/api";
+import { useBasketFunctionality } from "@/stores/basket-functionality";
 
 import { useBasketStore } from "@/stores/basket-stores";
 
@@ -9,6 +10,7 @@ function CampingCard({ area, space, info }) {
   const setChosenCamp = useBasketStore((state) => state.setChosenCamp);
   const setReserveId = useBasketStore((state) => state.setReserveId);
   const totalTickets = useBasketStore((state) => state.totalTickets());
+  const startCountDown = useBasketFunctionality((state) => state.startCountDown);
 
   //hent reservationsID
   const reservationId = useBasketStore((state) => state.reservationId);
