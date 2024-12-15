@@ -37,23 +37,27 @@ function Basket() {
     redirect("/session-invalid");
   }
   //Hent reservertionstiden fra zustand store, og startCountDown functionen
-  const { startCountdown } = useBasketFunctionality();
+
   //fallback for reservationtime
   const { reservationTime = 1000000 } = useBasketFunctionality();
+  const { startCountdown } = useBasketFunctionality();
   const startTimeRef = useRef(Date.now());
 
   //Når komponenten renderes, start
   useEffect(() => {
     startCountdown(startTimeRef);
+    //hvis startTime ikke er noget, så set den til date.now
     if (!startTimeRef.current) {
       startTimeRef.current = Date.now();
     }
-  }, []);
+  }, []); // kør kun en gang
 
-  const timeLeftRef = useRef("05:00");
+  //initialize ref state, en state der gemmes
+  const timeLeftRef = useRef("00:00");
 
-  // CHATGPT renderingen
+  //renderingen
   const renderer = ({ minutes, seconds }) => {
+    //få tiden til at se anderledes ud
     const formattedTime = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
     timeLeftRef.current = formattedTime; // Update time-left
     return <span>{formattedTime}</span>;
