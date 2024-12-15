@@ -132,3 +132,32 @@ export async function reserveSpot(selectedArea, ticketAmount) {
     console.error("Fejl", error);
   }
 }
+
+export async function fulfillReservation(reservationId) {
+  let headersList = {
+    "Content-Type": "application/json",
+  };
+
+  let bodyContent = JSON.stringify({
+    id: reservationId,
+  });
+
+  // let response = await fetch("http://https://gabby-dull-drip.glitch.me/fullfill-reservation", {
+  //   method: "POST",
+  //   body: bodyContent,
+  //   headers: headersList,
+  // });
+  try {
+    let response = await fetch("http://localhost:8080/fullfill-reservation", {
+      method: "POST",
+      body: bodyContent,
+      headers: headersList,
+    });
+
+    let data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error("Fejl", error);
+  }
+}
