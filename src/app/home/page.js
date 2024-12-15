@@ -1,7 +1,6 @@
 import ClickableCard2 from "../components/ClickableCard2";
 import BandCard from "../components/BandCard";
 import Accordion from "../components/Accordion";
-import ClickableCard1 from "../components/ClickableCard1";
 import Image from "next/image";
 async function Home() {
   const BASE_URL = "http://localhost:8080/logos/";
@@ -11,7 +10,7 @@ async function Home() {
   const bands = await response.json();
 
   return (
-    <section className="flex flex-col gap-32 md:gap-48 -mt-16">
+    <section className="flex flex-col gap-32 md:gap-48 -mt-16 ">
       <section className="bg-[url('/illustrations/patternHero.svg')] bg-cover -mx-mobile lg:-mx-desktop -mt-10">
         <div className="py-80 mx-mobile lg:mx-desktop">
           <h1 className=" display font-spicy">Foo Festival 2025</h1>
@@ -22,7 +21,7 @@ async function Home() {
         </div>
       </section>
       <section className="flex flex-wrap justify-center gap-4 items-center relative  md:gap-10 ">
-        <div className="absolute -z-10 left-20 -top-24 opacity-60">
+        <div className="absolute -z-10 -top-36 -left-20 mx-auto xl:left-20 xl:-top-24 opacity-60">
           <Image
             src="illustrations/svg/flower2Pink.svg"
             width={250}
@@ -30,7 +29,7 @@ async function Home() {
             objectFit="cover"
           ></Image>
         </div>
-        <div className="absolute -z-10 left-20 bottom-0 opacity-60">
+        <div className="absolute -left-20 top-28 -z-10 mx-auto xl:left-20 xl:bottom-0 opacity-60">
           <Image
             src="illustrations/svg/flower2Pink.svg"
             width={150}
@@ -54,7 +53,10 @@ async function Home() {
           href=""
         ></ClickableCard2>
       </section>
-      <section className=" bg-secondary -mx-mobile lg:-mx-desktop">
+      <section
+        className="relative 
+      before:h-[0.5px] before:bg-main-1 before:w-full  before:content-[''] before:absolute"
+      >
         <div className="py-14 mx-mobile gap-6 lg:mx-desktop flex flex-col ">
           <h2 className="font-bold text-center lg:text-start">Line up 2025</h2>
 
@@ -77,28 +79,59 @@ async function Home() {
               })}
           </div>
         </div>
+        <div className="relative after:absolute after:content-[''] after:w-full after:h-[0.5px] after:bg-main-1 after:-bottom-8"></div>
       </section>
-      <section className="flex flex-col gap">
+      <section className="flex flex-col items-center py-40 bg-[url('/illustrations/svg/circle.svg')] bg-repeat bg-top bg-container lg:-mx-desktop -mx-mobile">
         <h2 className="font-bold ">News</h2>
-        <div className="flex justify-center gap-12 flex-wrap">
-          <ClickableCard1
-            header="Buy the t-shirt of this year’s festival"
-            text=" Get your official Foo Festival T-shirt and keep the peace, love, and music alive wherever you go"
-            src="/img/tshirt.webp"
-            alt=""
-          ></ClickableCard1>
-          <ClickableCard1
-            header="Join the quiz and win a free ticket"
-            text="Think you know your music trivia? Test your knowledge in our quiz for a chance to win a ticket to Foo Festival 2024!"
-            src="/img/musicquiz.webp"
-            alt=""
-          ></ClickableCard1>
-          <ClickableCard1
-            header="Become a volunteer"
-            text="Volunteer with us! Enjoy free entry, merch, and unforgettable experiences while helping the festival run smoothly."
-            src="/img/volunteerPoster.webp"
-            alt=""
-          ></ClickableCard1>
+
+        <div className="flex flex-col gap-12 ">
+          <article className="bg-tertiary shadow-custom flex flex-col items-start gap-3 text-pretty w-[400px] p-3 md:w-[700px]">
+            <Image
+              className="h-2/3"
+              src="/img/tshirt.webp"
+              width={700}
+              height={700}
+              objectFit="cover"
+              alt="Foo Festival T-shirt"
+            ></Image>
+            <h3 className="font-bold">
+              Buy the t-shirt of this year’s festival
+            </h3>
+            <p>
+              Get your official Foo Festival T-shirt and keep the peace, love,
+              and music alive wherever you go
+            </p>
+          </article>
+          <div className="flex flex-col md:flex-row gap-16 mb-9">
+            <article className="bg-tertiary p-3 shadow-custom flex  text-pretty flex-col gap-3  w-64 md:w-80">
+              <Image
+                src="/img/quiz.webp"
+                width={300}
+                height={300}
+                objectFit="cover"
+                alt="Quiz poster"
+              ></Image>
+              <h3 className="font-bold">Join the quiz and win a free ticket</h3>
+              <p>
+                Think you know your music trivia? Test your knowledge in our
+                quiz for a chance to win a ticket to Foo Festival 2024!
+              </p>
+            </article>
+            <article className="bg-tertiary p-3 shadow-custom flex flex-col text-pretty gap-3  w-64 md:w-80">
+              <Image
+                src="/img/volunteer.webp"
+                width={300}
+                height={300}
+                objectFit="cover"
+                alt="Volunteer poster"
+              ></Image>
+              <h3 className="font-bold">Become a volunteer</h3>
+              <p>
+                Volunteer with us! Enjoy free entry, merch, and unforgettable
+                experiences while helping the festival run smoothly.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
       <section>
