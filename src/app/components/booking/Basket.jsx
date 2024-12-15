@@ -37,91 +37,97 @@ function Basket() {
     redirect("/session-invalid");
   }
   //Hent reservertionstiden fra zustand store, og startCountDown functionen
-  const { reservationTime, startCountdown } = useBasketFunctionality();
-  const startTimeRef = useRef(null); // useRef kan gemme værdier, uden at rendere påny
+  const { startCountdown } = useBasketFunctionality();
+  //fallback for reservationtime
+  const { reservationTime = 1000000 } = useBasketFunctionality();
+  const startTimeRef = useRef(Date.now());
 
   //Når komponenten renderes, start
   useEffect(() => {
-    handleStart();
-    //startCountdown(startTimeRef);
+    startCountdown(startTimeRef);
+    if (!startTimeRef.current) {
+      startTimeRef.current = Date.now();
+    }
   }, []);
 
-  function handleStart() {
-    //startCountdown(startTimeRef);
-  }
-  //sætter initial state for timeLeft
-  const [timeLeft, setTimeLeft] = useState("05:00");
+  const timeLeftRef = useRef("05:00");
 
   // CHATGPT renderingen
   const renderer = ({ minutes, seconds }) => {
-    //måden tiden vises på
     const formattedTime = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-    setTimeLeft(formattedTime); // Update the time-left state dynamically
+    timeLeftRef.current = formattedTime; // Update time-left
     return <span>{formattedTime}</span>;
   };
 
   const errorCamp = false;
   const errorTents = false;
 
+  //den gemte tid plus hvad den gemte tid/timeout er i zustand store
+  const countdownDate = startTimeRef.current + reservationTime;
+  //debug hvis countdown er forkert
+  if (countdownDate <= Date.now()) {
+    console.error("Countdown date is invalid or in the past:", countdownDate);
+  }
   return (
-    <section time-left={timeLeft} className="fixed shadow-[-1px_-9px_56px_-13px_rgba(0,0,0,0.50)] md:shadow-none lg:shadow-none max-h-max -mx-mobile row-span-1 row-start-1 col-start-2 lg:mx-0 lg:relative after:absolute after:content-['Time_left:_'attr(time-left)] after:-top-7 after:pb-2 after:px-4 after:left-0 after:bg-secondary after:font-rethink after:font-bold after:-z-20 bottom-0 after:text-main-2  w-full bg-main-2 border-y-2 lg:border-2 border-main-1 border-solid p-8 rounded-rounded-reg ">
-      {/* <div className="hidden"> */}
-      <Countdown onComplete={sessionInvalid} date={startTimeRef.current + reservationTime} renderer={renderer} />
-      {/* </div> */}
+    <div>
+      <section className="fixed shadow-[-1px_-9px_56px_-13px_rgba(0,0,0,0.50)] md:shadow-none lg:shadow-none max-h-max -mx-mobile row-span-1 row-start-1 col-start-2 lg:mx-0 lg:relative    bottom-0 after:text-main-2  w-full bg-main-2 border-y-2 lg:border-2 border-main-1 border-solid p-8 rounded-rounded-reg ">
+        <article className="font-rethink place-self-end">
+          <Countdown onComplete={sessionInvalid} date={countdownDate} renderer={renderer} />
+        </article>{" "}
+        <div className={`${openBasket ? "block" : "hidden"} lg:block`}>
+          <h2 className="font-spicy">Basket</h2>
+          <article className="flex flex-col gap-2 my-2">
+            <p className="font-rethink small text-main-1 py-1 border-b-[1px] border-tertiary border-solid  font-semibold w-max">Tickets</p>
+            {
+              //Tjek on nogen af billetterne har itemMultiply value 0, så vis det her
+              ticketInfo.every((ticket) => ticket.itemMultiply === 0) && <p className="font-rethink small text-feedback-error">Please choose a ticket</p>
+            }
 
-      <div className={`${openBasket ? "block" : "hidden"} lg:block`}>
-        <h2 className="font-spicy">Basket</h2>
-        <article className="flex flex-col gap-2 my-2">
-          <p className="font-rethink small text-main-1 py-1 border-b-[1px] border-tertiary border-solid  font-semibold w-max">Tickets</p>
-          {
-            //Tjek on nogen af billetterne har itemMultiply value 0, så vis det her
-            ticketInfo.every((ticket) => ticket.itemMultiply === 0) && <p className="font-rethink small text-feedback-error">Please choose a ticket</p>
-          }
+            {ticketInfo //Sørg for kun at loope gennem billetter der er med i beregningen, altså har en itemMultiply value over 0
+              .filter((ticket) => ticket.itemMultiply > 0)
+              .map((ticket, index) => {
+                return <BasketItem key={index} itemTitle={ticket.itemTitle} itemMultiply={ticket.itemMultiply} itemPrice={ticket.itemPrice}></BasketItem>;
+              })}
+          </article>
 
-          {ticketInfo //Sørg for kun at loope gennem billetter der er med i beregningen, altså har en itemMultiply value over 0
-            .filter((ticket) => ticket.itemMultiply > 0)
-            .map((ticket, index) => {
-              return <BasketItem key={index} itemTitle={ticket.itemTitle} itemMultiply={ticket.itemMultiply} itemPrice={ticket.itemPrice}></BasketItem>;
-            })}
-        </article>
+          <article className="flex flex-col gap-2 my-2">
+            <p className="font-rethink small py-1 border-b-[1px] border-tertiary border-solid text-main-1 font-semibold w-max">Camp</p>
 
-        <article className="flex flex-col gap-2 my-2">
-          <p className="font-rethink small py-1 border-b-[1px] border-tertiary border-solid text-main-1 font-semibold w-max">Camp</p>
+            <h4 className="font-rethink">
+              Selected camp:{" "}
+              <span className="font-normal">
+                {chosenCamp} {chosenCamp === "" && <p className="font-rethink small text-feedback-error "> Please choose a camp</p>}
+              </span>
+            </h4>
+            {campInfo
+              .filter((camp) => camp.itemMultiply > 0)
+              .map((camp, index) => {
+                return <BasketItem key={index} itemTitle={camp.itemTitle} itemMultiply={camp.itemMultiply} itemPrice={camp.itemPrice}></BasketItem>;
+              })}
+            {greenCamping === true && <BasketItem itemTitle="Green camping" itemMultiply="1" itemPrice="249"></BasketItem>}
+          </article>
 
-          <h4 className="font-rethink">
-            Selected camp:{" "}
-            <span className="font-normal">
-              {chosenCamp} {chosenCamp === "" && <p className="font-rethink small text-feedback-error "> Please choose a camp</p>}
-            </span>
-          </h4>
-          {campInfo
-            .filter((camp) => camp.itemMultiply > 0)
-            .map((camp, index) => {
-              return <BasketItem key={index} itemTitle={camp.itemTitle} itemMultiply={camp.itemMultiply} itemPrice={camp.itemPrice}></BasketItem>;
-            })}
-          {greenCamping === true && <BasketItem itemTitle="Green camping" itemMultiply="1" itemPrice="249"></BasketItem>}
-        </article>
-
-        <article className="font-rethink text-main-1 border-b-2 border-b-tertiary border-b-solid pb-2 my-1 mb-4 flex justify-between">
-          <h4 className="font-bold">Reservation fee</h4>
-          <h4 className="">99,-</h4>
-        </article>
-      </div>
-      <footer className="font-rethink text-main-1">
-        <span className="font-rethink text-main-1 flex justify-between mb-2">
-          <span>TOTAL</span>
-          <span className="font-bold text-4xl">{totalPrice},-</span>
-        </span>
-        {reservationId !== "" ? <p className="small text-feedback-disabled-2">ReservationID: {reservationId}</p> : ""}
-        <div className="font-rethink text-xs text-feedback-error text-end">
-          {errorCamp && "Please choose a camp to continue"}
-          {errorTents && "You can only buy tents based on the amount of tickets "}
+          <article className="font-rethink text-main-1 border-b-2 border-b-tertiary border-b-solid pb-2 my-1 mb-4 flex justify-between">
+            <h4 className="font-bold">Reservation fee</h4>
+            <h4 className="">99,-</h4>
+          </article>
         </div>
-        <button onClick={handleOpenBasket} className="lg:hidden">
-          open cart
-        </button>
-      </footer>
-    </section>
+        <footer className="font-rethink text-main-1">
+          <span className="font-rethink text-main-1 flex justify-between mb-2">
+            <span>TOTAL</span>
+            <span className="font-bold text-4xl">{totalPrice},-</span>
+          </span>
+          {reservationId !== "" ? <p className="small text-feedback-disabled-2">ReservationID: {reservationId}</p> : ""}
+          <div className="font-rethink text-xs text-feedback-error text-end">
+            {errorCamp && "Please choose a camp to continue"}
+            {errorTents && "You can only buy tents based on the amount of tickets "}
+          </div>
+          <button onClick={handleOpenBasket} className="lg:hidden">
+            open cart
+          </button>
+        </footer>
+      </section>
+    </div>
   );
 }
 
