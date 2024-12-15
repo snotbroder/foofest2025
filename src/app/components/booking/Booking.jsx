@@ -1,15 +1,16 @@
 "use client";
 import { useState } from "react";
 
-import BookingSteps from "../components/booking/BookingSteps";
-import Basket from "../components/booking/Basket";
-import TicketSelectParent from "../components/booking/TicketSelectParent";
-import CampingPage from "../components/booking/CampingPage";
-import CampingExtra from "../components/booking/CampingExtras";
-import ContactPage from "../components/booking/ContactPage";
-import PaymentInfo from "../components/booking/PaymentInfo";
+import BookingSteps from "./BookingSteps";
+import Basket from "./Basket";
+import TicketSelectParent from "./TicketSelectParent";
+import CampingPage from "./CampingPage";
+import CampingExtra from "./CampingExtras";
+import ContactPage from "./ContactPage";
+import Payment from "./Payment";
+import PaymentInfo from "./PaymentInfo";
 
-function BookingPage() {
+export default function Booking({ sendData, data }) {
   const [step, setStep] = useState(0);
   const [selectedCamping, setSelectedCamping] = useState("");
   const [basketTickets, setBasketTickets] = useState([]);
@@ -37,6 +38,7 @@ function BookingPage() {
     setBasketCamp(updatedCamp);
   }
 
+  //
   return (
     <>
       <p>
@@ -124,5 +126,3 @@ function BookingPage() {
     </>
   );
 }
-
-export default BookingPage;

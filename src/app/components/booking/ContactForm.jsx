@@ -7,7 +7,7 @@ function ContactForm({ index }) {
           <label>First Name</label>
           <input
             type="text"
-            name="first_name"
+            name={`first_name_${index}`}
             className="rounded-full pl-2"
             placeholder="John"
             required
@@ -17,7 +17,7 @@ function ContactForm({ index }) {
           <label>Last Name</label>
           <input
             type="text"
-            name="last_name"
+            name={`last_name_${index}`}
             className="rounded-full pl-2"
             placeholder="Doe"
             required
@@ -28,7 +28,7 @@ function ContactForm({ index }) {
           <input
             className="rounded-full pl-2"
             type="email"
-            name="email"
+            name={`email_${index}`}
             placeholder="e.g. john@doe.com"
             required
           ></input>

@@ -1,9 +1,42 @@
 "use client";
 import { useState } from "react";
 import PaymentKind from "./PaymentKind";
+import { postPaymentInfo } from "@/app/api";
 
 function PaymentInfo() {
   const [paymentType, setPaymentType] = useState("Credit Card");
+
+  async function sendData(formData) {
+    console.log("sending data");
+
+    const data = {
+      first_name: formData.get("first_name"),
+      last_name: formData.get("last_name"),
+      email: formData.get("email"),
+      address_line_1: formData.get("adress_1"),
+      adress_line_2: formData.get("adress_2"),
+      city: formData.get("city"),
+      zip_code: formData.get("zip_code"),
+      name_on_card: formData.get("name_on_card"),
+      card_number: formData.get("card_number"),
+      MM: formData.get("MM"),
+      YY: formData.get("YY"),
+      CVV: formData.get("cvv"),
+    };
+    await postPaymentInfo(data);
+  }
+
+  //   async function sendData(formData) {
+  //     "use server";
+  //     console.log("sending data");
+
+  //     const data = {
+  //       first_name: formData.get("first_name"),
+  //       last_name: formData.get("last_name"),
+  //       email: formData.get("email"),
+  //     };
+  //     await postVoluenteerInfo(data);
+  //   }
 
   return (
     <section>
@@ -20,7 +53,7 @@ function PaymentInfo() {
         />
       </div>
       {paymentType === "Credit Card" && (
-        <form action="" className="flex flex-col gap-8 ">
+        <form action={sendData} className="flex flex-col gap-8 ">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-10 align-baseline justify-end ">
             <fieldset>
               <div className="flex flex-col gap-2">
@@ -42,7 +75,7 @@ function PaymentInfo() {
                   <label>Name on Card</label>
                   <input
                     type="text"
-                    name="first_name"
+                    name="name_on_card"
                     className="rounded-full pl-2"
                     placeholder="John"
                     required
@@ -52,14 +85,14 @@ function PaymentInfo() {
                   <label>CardNumber</label>
                   <input
                     type="text"
-                    name="last_name"
+                    name="card_number"
                     className="rounded-full pl-2"
                     placeholder="XXXX-XXXX-XXXX-1234"
                     required
                   ></input>
                 </div>
                 <div>
-                  <label>MM/YY</label>
+                  <label>MM / YY</label>
                   <div className="flex gap-2">
                     <input
                       type="text"
@@ -77,6 +110,17 @@ function PaymentInfo() {
                       required
                     ></input>
                   </div>
+                </div>
+                <div className="flex flex-col w-1/5">
+                  <label>CVV</label>
+                  <input
+                    type="number"
+                    name="cvv"
+                    className="rounded-full pl-2"
+                    placeholder="123"
+                    maxLength="3"
+                    required
+                  ></input>
                 </div>
               </div>
             </fieldset>
@@ -105,23 +149,13 @@ function PaymentInfo() {
                     required
                   ></input>
                 </div>
-                <div className="flex flex-col">
-                  <label>CardNumber</label>
-                  <input
-                    type="text"
-                    name="last_name"
-                    className="rounded-full pl-2"
-                    placeholder="John Doe"
-                    required
-                  ></input>
-                </div>
                 <div>
                   <div className="flex  flex-col md:flex-row lg:flex-col 2xl:flex-row gap-2">
                     <div className="flex flex-col">
                       <label>City</label>
                       <input
                         type="text"
-                        name="ciy"
+                        name="city"
                         className="rounded-full pl-2"
                         placeholder="Copenhagen"
                         required

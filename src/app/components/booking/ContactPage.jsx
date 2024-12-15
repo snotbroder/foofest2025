@@ -1,18 +1,34 @@
 import ContactForm from "./ContactForm";
+import { postGuestInfo } from "@/app/api";
 
 function ContactPage({ basketTickets }) {
+  async function sendData(formData) {
+    const data = [];
+
+    forms.forEach((_, index) => {
+      const personData = {
+        first_name: formData.get(`first_name_${index}`),
+        last_name: formData.get(`last_name_${index}`),
+        email: formData.get(`email_${index}`),
+      };
+
+      data.push(personData);
+    });
+
+    console.log("Data sent:", data);
+    await postGuestInfo(data);
+  }
   const amountOfTicket = basketTickets.reduce(
     (total, ticket) => total + ticket.itemMultiply,
     0
   );
 
   const forms = new Array(amountOfTicket).fill(null);
-  console.log(forms);
-  console.log(forms);
+
   console.log("Total Item Multiply:", amountOfTicket);
   return (
     <div>
-      <form action="" className="flex flex-col gap-8 ">
+      <form action={sendData} className="flex flex-col gap-8 ">
         <fieldset>
           <legend className="font-semibold text-xl  mb-2">
             Contact information
@@ -30,8 +46,6 @@ function ContactPage({ basketTickets }) {
           Sumbit
         </button>
       </form>
-
-      {/* <h1>{amountOfTicket}</h1> */}
     </div>
   );
 }
