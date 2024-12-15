@@ -8,23 +8,26 @@ import TicketSelectParent from "../components/booking/TicketSelectParent";
 import CampingCards from "../components/booking/CampingCards";
 import CampingExtra from "../components/booking/CampingExtras";
 import ContactPage from "../components/booking/ContactPage";
+import { useBasketFunctionality } from "@/stores/basket-functionality";
 
 export default function BookingPage() {
-  const [step, setStep] = useState(0);
+  //const [step, setStep] = useState(0);
 
-  function stepHandler(newStep) {
-    if (newStep <= step) {
-      setStep(newStep);
-    }
-  }
+  // function stepHandler(newStep) {
+  //   if (newStep <= step) {
+  //     setStep(newStep);
+  //   }
+  // }
 
   const fullBasket = useBasketStore((state) => state);
+  const step = useBasketFunctionality((step) => step.bookingStep);
+  const setNewStep = useBasketFunctionality((state) => state.setNewStep);
   return (
     <>
       <p>
         step is <span className="font-bold text-red-600">{step}</span>
       </p>
-      <button
+      {/* <button
         className="border-main-1 border-2"
         onClick={() => {
           setStep((prevState) => prevState - 1);
@@ -32,15 +35,17 @@ export default function BookingPage() {
       >
         step -1
       </button>
+*/}
       <button
         className="border-main-1 border-2"
         onClick={() => {
-          setStep((prevState) => prevState + 1);
+          setNewStep(step + 1);
         }}
       >
         step +1
       </button>
-      <BookingSteps stepHandler={stepHandler} step={step}></BookingSteps>
+
+      <BookingSteps></BookingSteps>
 
       <h1 className="font-spicy text-main-1 text-4xl mb-3">
         {step === 0 && "Select Ticket Type"}
@@ -54,7 +59,6 @@ export default function BookingPage() {
         {step === 0 && (
           <article>
             <TicketSelectParent></TicketSelectParent>
-            <button className="btn-style grid place-self-center lg:place-self-end">Next step</button>
           </article>
         )}
         {step === 1 && (

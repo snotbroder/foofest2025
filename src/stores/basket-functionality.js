@@ -14,9 +14,5 @@ export const useBasketFunctionality = create((set) => ({
     set({}); // Trigger re-render
   },
 
-  // stepHandler(newStep) {
-  //   if (newStep <= step) {
-  //     setStep(newStep);
-  //   }
-  // },
+  setNewStep: (step) => set({ bookingStep: step }),
 }));
