@@ -81,56 +81,60 @@ async function Home() {
         </div>
         <div className="relative after:absolute after:content-[''] after:w-full after:h-[0.5px] after:bg-main-1 after:-bottom-8"></div>
       </section>
-      <section className="flex flex-col items-center py-40 bg-[url('/illustrations/svg/circle.svg')] bg-repeat bg-top bg-container lg:-mx-desktop -mx-mobile bg-opacity-20">
-        <h2 className="font-bold ">News</h2>
+      <section className="flex flex-col items-center py-40 bg-[url('/illustrations/svg/circle.svg')] bg-repeat bg-top bg-container lg:-mx-desktop -mx-mobile bg-opacity-20 ">
+        <div className="mx-auto lg:w-full max-w-[700px] px-4 md:px-0">
+          <h2 className="font-bold ">News</h2>
 
-        <div className="flex flex-col gap-12 ">
-          <article className="bg-tertiary shadow-custom flex flex-col items-start gap-3 text-pretty w-[400px] p-3 md:w-[700px]">
-            <Image
-              className="h-2/3"
-              src="/img/tshirt.webp"
-              width={700}
-              height={700}
-              objectFit="cover"
-              alt="Foo Festival T-shirt"
-            ></Image>
-            <h3 className="font-bold">
-              Buy the t-shirt of this year’s festival
-            </h3>
-            <p>
-              Get your official Foo Festival T-shirt and keep the peace, love,
-              and music alive wherever you go
-            </p>
-          </article>
-          <div className="flex flex-col md:flex-row gap-16 mb-9">
-            <article className="bg-tertiary p-3 shadow-custom flex  text-pretty flex-col gap-3  w-64 md:w-80">
+          <div className="flex flex-col gap-12 items-center lg:items-start">
+            <article className="bg-tertiary shadow-custom flex flex-col items-start gap-3 text-pretty w-[400px] p-3 md:w-[700px]">
               <Image
-                src="/img/quiz.webp"
-                width={300}
-                height={300}
+                className="h-2/3"
+                src="/img/tshirt.webp"
+                width={700}
+                height={700}
                 objectFit="cover"
-                alt="Quiz poster"
+                alt="Foo Festival T-shirt"
               ></Image>
-              <h3 className="font-bold">Join the quiz and win a free ticket</h3>
+              <h3 className="font-bold">
+                Buy the t-shirt of this year’s festival
+              </h3>
               <p>
-                Think you know your music trivia? Test your knowledge in our
-                quiz for a chance to win a ticket to Foo Festival 2024!
+                Get your official Foo Festival T-shirt and keep the peace, love,
+                and music alive wherever you go
               </p>
             </article>
-            <article className="bg-tertiary p-3 shadow-custom flex flex-col text-pretty gap-3  w-64 md:w-80">
-              <Image
-                src="/img/volunteer.webp"
-                width={300}
-                height={300}
-                objectFit="cover"
-                alt="Volunteer poster"
-              ></Image>
-              <h3 className="font-bold">Become a volunteer</h3>
-              <p>
-                Volunteer with us! Enjoy free entry, merch, and unforgettable
-                experiences while helping the festival run smoothly.
-              </p>
-            </article>
+            <div className="flex flex-col md:flex-row gap-16 mb-9">
+              <article className="bg-tertiary p-3 shadow-custom flex  text-pretty flex-col gap-3  w-64 md:w-80">
+                <Image
+                  src="/img/quiz.webp"
+                  width={300}
+                  height={300}
+                  objectFit="cover"
+                  alt="Quiz poster"
+                ></Image>
+                <h3 className="font-bold">
+                  Join the quiz and win a free ticket
+                </h3>
+                <p>
+                  Think you know your music trivia? Test your knowledge in our
+                  quiz for a chance to win a ticket to Foo Festival 2024!
+                </p>
+              </article>
+              <article className="bg-tertiary p-3 shadow-custom flex flex-col text-pretty gap-3  w-64 md:w-80">
+                <Image
+                  src="/img/volunteer.webp"
+                  width={300}
+                  height={300}
+                  objectFit="cover"
+                  alt="Volunteer poster"
+                ></Image>
+                <h3 className="font-bold">Become a volunteer</h3>
+                <p>
+                  Volunteer with us! Enjoy free entry, merch, and unforgettable
+                  experiences while helping the festival run smoothly.
+                </p>
+              </article>
+            </div>
           </div>
         </div>
       </section>

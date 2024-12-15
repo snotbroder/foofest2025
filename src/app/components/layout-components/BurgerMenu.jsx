@@ -38,25 +38,27 @@ function BurgerMenu() {
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-secondary z-40 bg-[url('/img/filterbg.png')] bg-cover	bg-repeat">
-          <ul className="mt-8 font-rethink font-bold text-5xl flex flex-col items-end text-main-1 gap-10 pt-10 lg:mx-desktop mx-mobile relative">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/">Music</Link>
-            </li>
-            <li>
-              <Link href="/">Festival Map</Link>
-            </li>
-            <div className="absolute ">
-              <Image
-                src="illustrations/flowerPurple.svg"
-                width={800}
-                height={800}
-              ></Image>
-            </div>
-          </ul>
+        <div className="fixed inset-0 bg-primary z-10 bg-[url('/img/filterbg.png')] bg-cover	bg-no-repeat">
+          <div className="bg-[url('/illustrations7svg/circle.svg')] bg-cover bg-repeat z-40">
+            <ul className="mt-8 font-rethink font-bold text-5xl flex flex-col items-end text-main-1 gap-10 pt-10 lg:mx-desktop mx-mobile relative">
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/">Music</Link>
+              </li>
+              <li>
+                <Link href="/">Festival Map</Link>
+              </li>
+              <div className="absolute ">
+                <Image
+                  src="illustrations/flowerPurple.svg"
+                  width={800}
+                  height={800}
+                ></Image>
+              </div>
+            </ul>
+          </div>
         </div>
       )}
     </div>
