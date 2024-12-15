@@ -56,10 +56,13 @@ function BurgerMenu() {
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/">Music</Link>
+                <Link href="/lineup">Lineup</Link>
               </li>
               <li>
-                <Link href="/">Festival Map</Link>
+                <Link href="/schedule">Schedule</Link>
+              </li>
+              <li>
+                <Link href="/map">Festival Map</Link>
               </li>
               <li>
                 <div className="text-sm md:text-xs lg:text-lg w-[150px] mx-auto flex justify-end">
