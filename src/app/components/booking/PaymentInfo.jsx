@@ -60,7 +60,7 @@ function PaymentInfo() {
                 </div>
                 <div>
                   <label>MM/YY</label>
-                  <div className="flex">
+                  <div className="flex gap-2">
                     <input
                       type="text"
                       name="MM"
