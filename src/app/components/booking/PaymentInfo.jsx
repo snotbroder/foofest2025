@@ -26,7 +26,7 @@ function PaymentInfo() {
               <legend className="font-semibold text-xl  mb-2">
                 Card information
               </legend>
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-2">
                 <div className="flex flex-col ">
                   <label>Email</label>
                   <input
@@ -38,7 +38,7 @@ function PaymentInfo() {
                     required
                   ></input>
                 </div>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col">
                   <label>Name on Card</label>
                   <input
                     type="text"
@@ -54,18 +54,18 @@ function PaymentInfo() {
                     type="text"
                     name="last_name"
                     className="rounded-full pl-2"
-                    placeholder="Doe"
+                    placeholder="XXXX-XXXX-XXXX-1234"
                     required
                   ></input>
                 </div>
                 <div>
                   <label>MM/YY</label>
-                  <div className="flex  gap-2">
+                  <div className="flex">
                     <input
                       type="text"
                       name="MM"
                       className="rounded-full pl-2 w-1/5"
-                      placeholder="Doe"
+                      placeholder="02"
                       required
                     ></input>
                     <p>/</p>
@@ -73,7 +73,7 @@ function PaymentInfo() {
                       type="text"
                       name="YY"
                       className="rounded-full pl-2 w-1/5"
-                      placeholder="Doe"
+                      placeholder="26"
                       required
                     ></input>
                   </div>
@@ -84,7 +84,7 @@ function PaymentInfo() {
               <legend className="font-semibold text-xl  mb-2">
                 Adress information
               </legend>
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-2">
                 <div className="flex flex-col ">
                   <label>Adress line 1</label>
                   <input
@@ -95,7 +95,7 @@ function PaymentInfo() {
                     required
                   ></input>
                 </div>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col">
                   <label>Adress Line 2</label>
                   <input
                     type="text"
@@ -111,7 +111,7 @@ function PaymentInfo() {
                     type="text"
                     name="last_name"
                     className="rounded-full pl-2"
-                    placeholder="Doe"
+                    placeholder="John Doe"
                     required
                   ></input>
                 </div>
@@ -123,7 +123,7 @@ function PaymentInfo() {
                         type="text"
                         name="ciy"
                         className="rounded-full pl-2"
-                        placeholder="Doe"
+                        placeholder="Copenhagen"
                         required
                       ></input>
                     </div>
@@ -133,7 +133,7 @@ function PaymentInfo() {
                         type="text"
                         name="zip_code"
                         className="rounded-full pl-2 w-1/2"
-                        placeholder="Doe"
+                        placeholder="2500"
                         required
                       ></input>
                     </div>
