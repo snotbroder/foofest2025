@@ -63,7 +63,7 @@ function PaymentInfo() {
                 <div className="flex flex-col ">
                   <label>Email</label>
                   <input
-                    className="rounded-full pl-2"
+                    className="rounded-full pl-2 italic"
                     input="email"
                     type="email"
                     name="email"
@@ -76,7 +76,7 @@ function PaymentInfo() {
                   <input
                     type="text"
                     name="name_on_card"
-                    className="rounded-full pl-2"
+                    className="rounded-full pl-2 italic"
                     placeholder="John"
                     pattern="[A-Za-z]+"
                     required
@@ -87,7 +87,7 @@ function PaymentInfo() {
                   <input
                     type="text"
                     name="card_number"
-                    className="rounded-full pl-2"
+                    className="rounded-full pl-2 italic"
                     placeholder="XXXX-XXXX-XXXX-1234"
                     maxLength="16"
                     min="16"
@@ -100,7 +100,7 @@ function PaymentInfo() {
                     <input
                       type="text"
                       name="MM"
-                      className="rounded-full pl-2 w-1/5"
+                      className="rounded-full pl-2 w-1/5 italic"
                       placeholder="02"
                       maxlength="2"
                       required
@@ -109,19 +109,19 @@ function PaymentInfo() {
                     <input
                       type="text"
                       name="YY"
-                      className="rounded-full pl-2 w-1/5"
+                      className="rounded-full pl-2 w-1/5 italic"
                       placeholder="26"
                       maxlength="2"
                       required
                     ></input>
                   </div>
                 </div>
-                <div className="flex flex-col w-1/5">
+                <div className="flex flex-col w-1/5 italic">
                   <label>CVV</label>
                   <input
                     type="text"
                     name="cvv"
-                    className="rounded-full pl-2 "
+                    className="rounded-full pl-2 italic"
                     placeholder="267"
                     maxlength="3"
                     minLength="3"
@@ -138,19 +138,19 @@ function PaymentInfo() {
                 <div className="flex flex-col ">
                   <label>Adress line 1</label>
                   <input
-                    className="rounded-full pl-2"
+                    className="rounded-full pl-2 italic"
                     type="text"
                     name="adress_1"
                     placeholder="Fun street 1"
                     required
                   ></input>
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col ">
                   <label>Adress Line 2</label>
                   <input
                     type="text"
                     name="adress_2"
-                    className="rounded-full pl-2"
+                    className="rounded-full pl-2 italic"
                     placeholder="Fun street 1"
                   ></input>
                 </div>
@@ -161,7 +161,7 @@ function PaymentInfo() {
                       <input
                         type="text"
                         name="city"
-                        className="rounded-full pl-2"
+                        className="rounded-full pl-2 italic"
                         placeholder="Copenhagen"
                         required
                       ></input>
@@ -171,7 +171,7 @@ function PaymentInfo() {
                       <input
                         type="text"
                         name="zip_code"
-                        className="rounded-full pl-2 w-1/2"
+                        className="rounded-full pl-2 w-1/2 italic"
                         placeholder="2500"
                         required
                       ></input>

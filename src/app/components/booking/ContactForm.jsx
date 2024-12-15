@@ -8,7 +8,7 @@ function ContactForm({ index }) {
           <input
             type="text"
             name={`first_name_${index}`}
-            className="rounded-full pl-2"
+            className="rounded-full pl-2 italic"
             placeholder="John"
             pattern="[A-Za-z]+"
             required
@@ -19,7 +19,7 @@ function ContactForm({ index }) {
           <input
             type="text"
             name={`last_name_${index}`}
-            className="rounded-full pl-2"
+            className="rounded-full pl-2 italic"
             placeholder="Doe"
             pattern="[A-Za-z]+"
             required
@@ -28,10 +28,10 @@ function ContactForm({ index }) {
         <div className="flex flex-col">
           <label>Email</label>
           <input
-            className="rounded-full pl-2"
+            className="rounded-full pl-2 italic"
             type="email"
             name={`email_${index}`}
-            placeholder="e.g. john@doe.com"
+            placeholder="john@doe.com"
             required
           ></input>
         </div>

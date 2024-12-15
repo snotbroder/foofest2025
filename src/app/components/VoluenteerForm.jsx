@@ -25,7 +25,7 @@ async function volunteerForm() {
               <input
                 type="text"
                 name="first_name"
-                className="rounded-full pl-2"
+                className="rounded-full pl-2 italic"
                 placeholder="John"
                 required
               ></input>
@@ -35,7 +35,7 @@ async function volunteerForm() {
               <input
                 type="text"
                 name="last_name"
-                className="rounded-full pl-2"
+                className="rounded-full pl-2 italic"
                 placeholder="Doe"
                 required
               ></input>
@@ -43,7 +43,7 @@ async function volunteerForm() {
             <div className="flex flex-col">
               <label>Email</label>
               <input
-                className="rounded-full pl-2"
+                className="rounded-full pl-2 italic"
                 input="email"
                 type="email"
                 name="email"
@@ -54,7 +54,7 @@ async function volunteerForm() {
             <div className="flex flex-col">
               <label>Phone Number</label>
               <input
-                className="rounded-full pl-2"
+                className="rounded-full pl-2 italic"
                 type="tel"
                 inputMode="decimal"
                 placeholder="XXXX3095"

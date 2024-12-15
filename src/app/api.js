@@ -1,3 +1,6 @@
+const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
 export async function getBands() {
   const headersList = {
     Accept: "*/*",
@@ -87,20 +90,16 @@ export async function postVoluenteerInfo(voluenteerData) {
   let headersList = {
     Accept: "*/*",
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
-    apikey:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndmbWxuam92cmlua3RxZG9sdXFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM4NDAwNTQsImV4cCI6MjA0OTQxNjA1NH0.o3Nekm9csh1IK1J5_vuPveEVC7A8KcGeh8tQhp7OIE8",
+    apikey: key,
     "Content-Type": "application/json",
     Prefer: "return=representation",
   };
 
-  let response = await fetch(
-    "https://wfmlnjovrinktqdoluqa.supabase.co/rest/v1/voluenteerInfo",
-    {
-      method: "POST",
-      headers: headersList,
-      body: JSON.stringify(voluenteerData),
-    }
-  );
+  let response = await fetch(`${url}voluenteerInfo`, {
+    method: "POST",
+    headers: headersList,
+    body: JSON.stringify(voluenteerData),
+  });
 
   let data = await response.json();
   // console.log(data);
@@ -111,20 +110,16 @@ export async function postPaymentInfo(paymentInfo) {
   let headersList = {
     Accept: "*/*",
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
-    apikey:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndmbWxuam92cmlua3RxZG9sdXFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM4NDAwNTQsImV4cCI6MjA0OTQxNjA1NH0.o3Nekm9csh1IK1J5_vuPveEVC7A8KcGeh8tQhp7OIE8",
+    apikey: key,
     "Content-Type": "application/json",
     Prefer: "return=representation",
   };
 
-  let response = await fetch(
-    "https://wfmlnjovrinktqdoluqa.supabase.co/rest/v1/paymentInfo",
-    {
-      method: "POST",
-      headers: headersList,
-      body: JSON.stringify(paymentInfo),
-    }
-  );
+  let response = await fetch(`${url}paymentInfo`, {
+    method: "POST",
+    headers: headersList,
+    body: JSON.stringify(paymentInfo),
+  });
 
   let data = await response.json();
   // console.log(data);
@@ -141,14 +136,11 @@ export async function postGuestInfo(GuestInfo) {
     Prefer: "return=representation",
   };
 
-  let response = await fetch(
-    "https://wfmlnjovrinktqdoluqa.supabase.co/rest/v1/subGuestsInfo",
-    {
-      method: "POST",
-      headers: headersList,
-      body: JSON.stringify(GuestInfo),
-    }
-  );
+  let response = await fetch(`${url}subGuestsInfo`, {
+    method: "POST",
+    headers: headersList,
+    body: JSON.stringify(GuestInfo),
+  });
 
   let data = await response.json();
   // console.log(data);
