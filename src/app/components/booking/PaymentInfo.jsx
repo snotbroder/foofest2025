@@ -78,6 +78,7 @@ function PaymentInfo() {
                     name="name_on_card"
                     className="rounded-full pl-2"
                     placeholder="John"
+                    pattern="[A-Za-z]+"
                     required
                   ></input>
                 </div>
@@ -88,6 +89,8 @@ function PaymentInfo() {
                     name="card_number"
                     className="rounded-full pl-2"
                     placeholder="XXXX-XXXX-XXXX-1234"
+                    maxLength="16"
+                    min="16"
                     required
                   ></input>
                 </div>
@@ -99,6 +102,7 @@ function PaymentInfo() {
                       name="MM"
                       className="rounded-full pl-2 w-1/5"
                       placeholder="02"
+                      maxlength="2"
                       required
                     ></input>
                     <p>/</p>
@@ -107,6 +111,7 @@ function PaymentInfo() {
                       name="YY"
                       className="rounded-full pl-2 w-1/5"
                       placeholder="26"
+                      maxlength="2"
                       required
                     ></input>
                   </div>
@@ -114,11 +119,12 @@ function PaymentInfo() {
                 <div className="flex flex-col w-1/5">
                   <label>CVV</label>
                   <input
-                    type="number"
+                    type="text"
                     name="cvv"
-                    className="rounded-full pl-2"
-                    placeholder="123"
-                    maxLength="3"
+                    className="rounded-full pl-2 "
+                    placeholder="267"
+                    maxlength="3"
+                    minLength="3"
                     required
                   ></input>
                 </div>
@@ -146,7 +152,6 @@ function PaymentInfo() {
                     name="adress_2"
                     className="rounded-full pl-2"
                     placeholder="Fun street 1"
-                    required
                   ></input>
                 </div>
                 <div>

@@ -10,6 +10,7 @@ function ContactForm({ index }) {
             name={`first_name_${index}`}
             className="rounded-full pl-2"
             placeholder="John"
+            pattern="[A-Za-z]+"
             required
           ></input>
         </div>
@@ -20,6 +21,7 @@ function ContactForm({ index }) {
             name={`last_name_${index}`}
             className="rounded-full pl-2"
             placeholder="Doe"
+            pattern="[A-Za-z]+"
             required
           ></input>
         </div>
