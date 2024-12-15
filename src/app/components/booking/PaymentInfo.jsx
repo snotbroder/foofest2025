@@ -23,10 +23,10 @@ function PaymentInfo() {
         <form action="" className="flex flex-col gap-8 ">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-10 align-baseline justify-end ">
             <fieldset>
-              <legend className="font-semibold text-xl  mb-2">
-                Card information
-              </legend>
               <div className="flex flex-col gap-2">
+                <legend className="font-semibold text-xl mb-2  border-b border-feedback-error ">
+                  Card information
+                </legend>
                 <div className="flex flex-col ">
                   <label>Email</label>
                   <input
@@ -81,10 +81,10 @@ function PaymentInfo() {
               </div>
             </fieldset>
             <fieldset>
-              <legend className="font-semibold text-xl  mb-2">
-                Adress information
-              </legend>
               <div className="flex flex-col gap-2">
+                <legend className="font-semibold text-xl border-b border-feedback-error mb-2">
+                  Adress information
+                </legend>
                 <div className="flex flex-col ">
                   <label>Adress line 1</label>
                   <input
