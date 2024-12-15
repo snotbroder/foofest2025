@@ -31,6 +31,7 @@ function CampingCard({ area, space, info }) {
       onClick={() => {
         if (totalTickets > space) {
           alert("Too many tickets in order than space in desired camp");
+          // consol logger at error ikke er defineret, men ellers aktiverer selected stylingen :(
           setChosenCamp(error);
           reserveSpotHandler(error);
         }

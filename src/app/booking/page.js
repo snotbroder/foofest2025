@@ -67,7 +67,6 @@ export default function BookingPage() {
               <CampingCards />
               <CampingExtra></CampingExtra>
             </section>
-            <button className="btn-style grid place-self-center lg:place-self-end">Next step</button>
           </article>
         )}
         {step === 2 && (

@@ -8,14 +8,13 @@ function TicketSelectParent() {
   //Multiply funktion i store som sørger for at opdatere dataen korrekt/de rigtige steder i arrayet
   const updateTicketMultiply = useBasketStore((state) => state.updateTicketMultiply);
 
-  //benyt funktionen i store, som koger begge billettyper ned til én værdi
-  const totalTickets = useBasketStore((state) => state.totalTickets());
-
   const handleUpdate = (ticketType, newAmount) => {
     // opdater ticketAmount i basket store baseret på den ticketType følger med
     updateTicketMultiply(ticketType, newAmount);
   };
 
+  //benyt funktionen i store, som koger begge billettyper ned til én værdi
+  const totalTickets = useBasketStore((state) => state.totalTickets());
   const step = useBasketFunctionality((step) => step.bookingStep);
   const setNewStep = useBasketFunctionality((state) => state.setNewStep);
   return (
