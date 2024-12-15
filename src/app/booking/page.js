@@ -9,6 +9,7 @@ import CampingCards from "../components/booking/CampingCards";
 import CampingExtra from "../components/booking/CampingExtras";
 import ContactPage from "../components/booking/ContactPage";
 import { useBasketFunctionality } from "@/stores/basket-functionality";
+import OverviewPage from "../components/booking/OverviewPage";
 
 export default function BookingPage() {
   //const [step, setStep] = useState(0);
@@ -77,8 +78,8 @@ export default function BookingPage() {
         {step === 3 && <article></article>}
         {step === 4 && (
           <article>
-            <pre>{JSON.stringify(fullBasket, null, 2)}</pre>
-            <button className="btn-style">Confirm booking</button>
+            <OverviewPage></OverviewPage>
+            {/* <pre>{JSON.stringify(fullBasket, null, 2)}</pre> */}
           </article>
         )}
         <Basket></Basket>
