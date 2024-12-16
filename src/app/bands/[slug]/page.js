@@ -60,7 +60,7 @@ async function Band({ params }) {
           className="absolute inset-0 object-cover"
         />
       </div>
-      <div className=" gap-11 grid grid-cols-[3fr_2fr] ">
+      <div className=" lg:gap-11 flex flex-col gap-8  lg:grid lg:grid-cols-[3fr_2fr] ">
         <div className=" bg-secondary grid-cols-[3fr_2fr]  p-11 rounded-md font-rethink text-main-1 flex flex-col gap-4">
           <h3 className=" font-bold ">About</h3>
           <p className="text-base">{band.bio}</p>

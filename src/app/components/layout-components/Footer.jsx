@@ -8,18 +8,9 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className="relative  mt-44  overflow-hidden before:absolute before:content-[''] before:w-full before:h-[0.5px] before:bg-main-1 ">
-      <div className="absolute  w-64 lg:w-fit opacity-60 right-0  top-6 rotate-180">
-        <Image
-          src="illustrations/svg/flowerOrange.svg"
-          width={440}
-          height={440}
-          objectFit="cover"
-          alt="Orange Flower"
-        ></Image>
-      </div>
-      <div className="flex flex-col gap-12 md:gap-10 my-11 md:my-16 mx-mobile md:mx-desktop ">
-        <div className="font-rethink flex gap-7 center flex-col md:flex-row md:gap-40 ">
+    <footer className=" relative mt-60 flex flex-col  lg:flex-row overflow-hidden">
+      <div className="flex flex-col gap-12 md:gap-10  mx-mobile md:mx-desktop relative before:absolute before:content-[''] before:w-screen before:-mx-mobile md:before:-mx-desktop before:h-[0.5px] before:bg-main-1 py-8 before:top-0">
+        <div className="font-rethink flex gap-7  flex-col md:flex-row  md:gap-40 ">
           <ul>
             <li className="font-bold">About</li>
             <li>
@@ -62,11 +53,21 @@ function Footer() {
             </a>
           </li>
         </ul>
+        <span className=" ml-2 mb-1 font-rethink flex items-center gap-1">
+          <FaRegCopyright />
+          2024, Foo Festival
+        </span>
       </div>
-      <span className=" ml-2 mb-1 font-rethink flex items-center gap-1">
-        <FaRegCopyright />
-        2024, Foo Festival
-      </span>
+      <div className="rotate-180  w-80 ">
+        <Image
+          src="illustrations/svg/flowerOrange.svg"
+          width={140}
+          height={140}
+          objectFit="containr"
+          alt="Orange Flower"
+          className="w-auto h-auto -ml-20"
+        ></Image>
+      </div>
     </footer>
   );
 }
