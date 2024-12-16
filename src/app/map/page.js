@@ -1,0 +1,117 @@
+import CtaButton from "../components/CtaButton";
+import FestivalMap from "../components/FestivalMap";
+import { IoIosWater } from "react-icons/io";
+import Image from "next/image";
+import { PiFirstAidFill } from "react-icons/pi";
+import { FaRecycle } from "react-icons/fa";
+import { FaInfoCircle } from "react-icons/fa";
+import { BsLightningChargeFill } from "react-icons/bs";
+
+function map() {
+  return (
+    <div className="mt-40 flex flex-col gap-40">
+      <div className="relative ">
+        <div className="absolute -bottom-64 -left-40 -z-10 opacity-60">
+          <Image
+            src="illustrations/svg/spiralPurple.svg"
+            width={240}
+            height={240}
+            alt="Purple spiral"
+          ></Image>
+        </div>
+        <div className="absolute -bottom-96 -right-20 -z-10 opacity-60">
+          <Image
+            src="illustrations/svg/spiralPink.svg"
+            width={330}
+            height={330}
+            alt="Pink spiral"
+          ></Image>
+        </div>
+        <h1>Festival Map</h1>
+      </div>
+
+      <section className="flex flex-col gap-10 ">
+        <div className="flex flex-col items-center">
+          <h2>Explore the festival grounds with ease!</h2>
+          <p>
+            Use the map to find your favorite stages, locate food stalls, water
+            stations, and other facilities to make the most of your experience.
+          </p>
+        </div>
+        <FestivalMap></FestivalMap>
+      </section>
+      <section className="flex flex-col bg-secondary -mx-mobile text-main-2 lg:-mx-desktop gap-16 py-24 font-rethink">
+        <h3 className="text-center font-bold text-main-2">Good to know</h3>
+        <div className="flex flex-wrap items-start justify-between gap-10  px-8 lg:px-32 text-center ">
+          <div className="flex flex-col items-center ">
+            <IoIosWater className="text-4xl" />
+            <p className="w-44  text-main-2 text-pretty">
+              Stay hydrated! Water stations and toilets are conveniently
+              located.
+            </p>
+          </div>
+          <div className="flex flex-col items-center gap-5">
+            <FaInfoCircle className="text-4xl" />
+            <p className="w-44  text-main-2 ">
+              Visit info points for assistance, directions, or general festival
+              information.
+            </p>
+          </div>
+          <div className="flex flex-col items-center gap-5">
+            <BsLightningChargeFill className="text-4xl" />
+            <p className="w-44  text-main-2 ">
+              Charge your devices at designated charging stations.
+            </p>
+          </div>
+          <div className="flex flex-col items-center gap-5">
+            <PiFirstAidFill className="text-4xl" />
+            <p className="w-44  text-main-2 ">
+              Be safe! First aid stations are clearly marked for any
+              emergencies.
+            </p>
+          </div>
+          <div className="flex flex-col items-center gap-5">
+            <FaRecycle className="text-4xl" />
+            <p className="w-44  text-main-2 ">
+              Keep the festival green by using designated recycling stations.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="flex flex-col max-w-xl items-center mx-auto gap-10 relative">
+        <div className="absolute -left-40 -z-10">
+          <Image
+            src="illustrations/svg/flower2Orange.svg"
+            width={200}
+            height={200}
+            alt="Large orange flower"
+          ></Image>
+        </div>
+        <div className="absolute -top-28 left-0 -z-10">
+          <Image
+            src="illustrations/svg/flower2Orange.svg"
+            width={100}
+            height={100}
+            alt="Small orange flower"
+          ></Image>
+        </div>
+        <div className="absolute -bottom-20 right-0 -z-10">
+          <Image
+            src="illustrations/svg/flower2Orange.svg"
+            width={130}
+            height={130}
+            alt="Medium orange Flower"
+          ></Image>
+        </div>
+        <p className="text-pretty  text-center">
+          Plan Your Experience Use the map to locate your favorite stage or find
+          a relaxing spot. Don’t forget to check out the full festival schedule
+          and discover all the amazing artists performing this year!
+        </p>
+        <CtaButton text="Buy ticket"></CtaButton>
+      </section>
+    </div>
+  );
+}
+
+export default map;
