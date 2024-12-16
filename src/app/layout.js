@@ -24,12 +24,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased mx-mobile lg:mx-desktop`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <header>
           <BurgerMenu />
         </header>
-        <main>{children}</main>
+        <main className="mx-mobile lg:mx-desktop">{children}</main>
         <footer>
           <Footer />
         </footer>
