@@ -29,35 +29,56 @@ function BurgerMenu() {
           ></Image>
         </div>
 
-        <div>
-          <CtaButton text="Buy ticket"></CtaButton>
-        </div>
+        {!isOpen && (
+          <div>
+            <CtaButton text="Buy ticket" />
+          </div>
+        )}
         <div onClick={toggleMenu} className="">
           <BurgerMenuIcon isOpen={isOpen}></BurgerMenuIcon>
         </div>
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-primary z-10 bg-[url('/img/filterbg.png')] bg-cover	bg-no-repeat">
-          <div className="bg-[url('/illustrations7svg/circle.svg')] bg-cover bg-repeat z-40">
-            <ul className="mt-8 font-rethink font-bold text-5xl flex flex-col items-end text-main-1 gap-10 pt-10 lg:mx-desktop mx-mobile relative">
+        <div className="fixed inset-0 bg-primary">
+          <div
+            className="fixed inset-0 z-10 "
+            style={{
+              backgroundImage:
+                "url('/img/filterbg.webp'), url('/illustrations/svg/circle.svg')",
+              backgroundRepeat: "no-repeat, repeat",
+              backgroundSize: "cover, contain",
+              backgroundPosition: "center, top",
+            }}
+          >
+            <ul className="mt-20 font-rethink font-bold text-5xl flex flex-col items-end text-main-1 gap-10 pt-10 lg:mx-desktop mx-mobile relative">
               <li>
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/">Music</Link>
+                <Link href="/lineup">Lineup</Link>
               </li>
               <li>
-                <Link href="/">Festival Map</Link>
+                <Link href="/schedule">Schedule</Link>
               </li>
-              <div className="absolute ">
-                <Image
-                  src="illustrations/flowerPurple.svg"
-                  width={800}
-                  height={800}
-                ></Image>
-              </div>
+              <li>
+                <Link href="/map">Festival Map</Link>
+              </li>
+              <li>
+                <div className="text-sm md:text-xs lg:text-lg w-[150px] mx-auto flex justify-end">
+                  <CtaButton text="Buy ticket" />
+                </div>
+              </li>
             </ul>
+
+            <div className="absolute right-0 -bottom-12 opacity-60">
+              <Image
+                src="illustrations/svg/flowerPurple.svg"
+                width={700}
+                height={700}
+                alt="Purple Flower"
+              ></Image>
+            </div>
           </div>
         </div>
       )}
