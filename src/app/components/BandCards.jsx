@@ -2,7 +2,7 @@ import { getBands } from "../api";
 import BandCard from "./BandCard";
 
 async function BandCards() {
-  const BASE_URL = "https://gabby-dull-drip.glitch.me/logos/";
+  const BASE_URL = "https://gabby-dull-drip.glitch.me";
   const response = await fetch("https://gabby-dull-drip.glitch.me/bands", {
     method: "GET",
   });
