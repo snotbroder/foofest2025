@@ -12,21 +12,17 @@ function BurgerMenu() {
     setIsOpen(!isOpen);
   };
 
-  if (isOpen) {
-    document.body.classList.add("no-scroll");
-  } else {
-    document.body.classList.remove("no-scroll");
-  }
+  // if (isOpen) {
+  //   document.body.classList.add("no-scroll");
+  // } else {
+  //   document.body.classList.remove("no-scroll");
+  // }
+
   return (
     <div>
       <div className=" relative top-5 gap-9 z-50 flex justify-end items-center">
         <div className="absolute left-0 top-6">
-          <Image
-            objectFit="cover"
-            src="illustrations/svg/logo.svg"
-            width={135}
-            height={135}
-          ></Image>
+          <Image objectFit="cover" src="illustrations/svg/logo.svg" width={135} height={135}></Image>
         </div>
 
         {!isOpen && (
@@ -44,8 +40,7 @@ function BurgerMenu() {
           <div
             className="fixed inset-0 z-10 "
             style={{
-              backgroundImage:
-                "url('/img/filterbg.webp'), url('/illustrations/svg/circle.svg')",
+              backgroundImage: "url('/img/filterbg.webp'), url('/illustrations/svg/circle.svg')",
               backgroundRepeat: "no-repeat, repeat",
               backgroundSize: "cover, contain",
               backgroundPosition: "center, top",
@@ -72,12 +67,7 @@ function BurgerMenu() {
             </ul>
 
             <div className="absolute right-0 -bottom-12 opacity-60">
-              <Image
-                src="illustrations/svg/flowerPurple.svg"
-                width={700}
-                height={700}
-                alt="Purple Flower"
-              ></Image>
+              <Image src="illustrations/svg/flowerPurple.svg" width={700} height={700} alt="Purple Flower"></Image>
             </div>
           </div>
         </div>
