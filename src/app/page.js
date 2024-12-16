@@ -8,13 +8,22 @@ export default async function Home() {
   return (
     <div className="">
       <div className="flex gap-5 ">
-        <Link className="text-blue-700 hover:text-red-600 text-xl" href="/sandbox/sofie">
+        <Link
+          className="text-blue-700 hover:text-red-600 text-xl"
+          href="/sandbox/sofie"
+        >
           Sofies sandbox
         </Link>
-        <Link className="text-blue-700 hover:text-red-600 text-xl" href="/sandbox/julie">
+        <Link
+          className="text-blue-700 hover:text-red-600 text-xl"
+          href="/sandbox/julie"
+        >
           Julies sandbox
         </Link>
-        <Link className="text-blue-700 hover:text-red-600 text-xl" href="/sandbox/joris">
+        <Link
+          className="text-blue-700 hover:text-red-600 text-xl"
+          href="/sandbox/joris"
+        >
           Joris' sandbox
         </Link>
       </div>
@@ -22,7 +31,10 @@ export default async function Home() {
       <h2 className="input">TESTING TAILWIND CLASS</h2>
       <h1 className="font-spicy text-main-1">TEXT HERE</h1>
       <p className="text-main-1 font-rethink font-bold">This is a paragraph</p>
-      <p className="text-accent-1 font-rethink font-semibold">This is a paragraph semibold</p>
+      <p>tester sofies push i main</p>
+      <p className="text-accent-1 font-rethink font-semibold">
+        This is a paragraph semibold
+      </p>
       <div className="grid grid-cols-6 text-gray-300">
         {bands.map((band, index) => {
           return (
