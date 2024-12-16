@@ -45,8 +45,12 @@ import ScheduleFilter from "./ScheduleFilter";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function Schedule() {
-  const { data: scheduleData, error, isLoading } = useSWR("https://sudsy-jet-grill.glitch.me/schedule", fetcher);
-  //= useSWR("https://sudsy-jet-grill.glitch.me/Schedule", fetcher);
+  const {
+    data: scheduleData,
+    error,
+    isLoading,
+  } = useSWR("http://localhost:8080/schedule", fetcher);
+  //= useSWR("http://localhost:8080/Schedule", fetcher);
 
   const [pickedDay, setPickedDay] = useState("mon");
   const [pickedStage, setPickedStage] = useState("Midgard");
@@ -58,11 +62,21 @@ function Schedule() {
 
   return (
     <article className=" -mx-mobile flex flex-col justify-center gap-4 ">
-      <ScheduleFilter setPickedDay={setPickedDay} setPickedStage={setPickedStage} pickedDay={pickedDay} pickedStage={pickedStage} />
+      <ScheduleFilter
+        setPickedDay={setPickedDay}
+        setPickedStage={setPickedStage}
+        pickedDay={pickedDay}
+        pickedStage={pickedStage}
+      />
       {schedule.map((event, index) => {
         return (
           <div key={index}>
-            <ScheduleBox artist={event.act} startTime={event.start} endTime={event.end} stage={pickedStage} />
+            <ScheduleBox
+              artist={event.act}
+              startTime={event.start}
+              endTime={event.end}
+              stage={pickedStage}
+            />
           </div>
         );
       })}

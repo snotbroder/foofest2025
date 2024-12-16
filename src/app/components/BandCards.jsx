@@ -2,8 +2,8 @@ import { getBands } from "../api";
 import BandCard from "./BandCard";
 
 async function BandCards() {
-  const BASE_URL = "https://sudsy-jet-grill.glitch.me/";
-  const response = await fetch("https://sudsy-jet-grill.glitch.me/bands", {
+  const BASE_URL = "http://localhost:8080/";
+  const response = await fetch("http://localhost:8080/bands", {
     method: "GET",
   });
   const bands = await response.json();
@@ -13,9 +13,20 @@ async function BandCards() {
       {bands.map((band) => {
         // const bandImage = bandImagePath.startsWith("https://picsum") ? matchingBand.logo
         // : `${endpointBase}/logos/${matchingBand.logo}`;
-        const logo = band.logo.startsWith("https://") ? band.logo : `${BASE_URL}/logos/${band.logo}`;
+        const logo = band.logo.startsWith("https://")
+          ? band.logo
+          : `${BASE_URL}/logos/${band.logo}`;
 
-        return <BandCard alt={`Logo of ${band.name}`} key={band.name} imgSrc={logo} name={band.name} genre={band.genre} slug={band.slug} />;
+        return (
+          <BandCard
+            alt={`Logo of ${band.name}`}
+            key={band.name}
+            imgSrc={logo}
+            name={band.name}
+            genre={band.genre}
+            slug={band.slug}
+          />
+        );
       })}
     </div>
   );
