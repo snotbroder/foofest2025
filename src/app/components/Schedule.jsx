@@ -36,7 +36,7 @@
 
 // export default Schedule;
 "use client";
-
+import Image from "next/image";
 import { useState } from "react";
 import useSWR from "swr";
 import ScheduleBox from "./ScheduleBox";
@@ -45,7 +45,11 @@ import ScheduleFilter from "./ScheduleFilter";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function Schedule() {
-  const { data: scheduleData, error, isLoading } = useSWR("http://localhost:8080/schedule", fetcher);
+  const {
+    data: scheduleData,
+    error,
+    isLoading,
+  } = useSWR("http://localhost:8080/schedule", fetcher);
   //= useSWR("https://gabby-dull-drip.glitch.me/Schedule", fetcher);
 
   const [pickedDay, setPickedDay] = useState("mon");
@@ -57,12 +61,22 @@ function Schedule() {
   const schedule = scheduleData?.[pickedStage]?.[pickedDay] || [];
 
   return (
-    <article className=" -mx-mobile flex flex-col justify-center gap-4">
-      <ScheduleFilter setPickedDay={setPickedDay} setPickedStage={setPickedStage} pickedDay={pickedDay} pickedStage={pickedStage} />
+    <article className=" -mx-mobile flex flex-col justify-center gap-4 ">
+      <ScheduleFilter
+        setPickedDay={setPickedDay}
+        setPickedStage={setPickedStage}
+        pickedDay={pickedDay}
+        pickedStage={pickedStage}
+      />
       {schedule.map((event, index) => {
         return (
           <div key={index}>
-            <ScheduleBox artist={event.act} startTime={event.start} endTime={event.end} stage={pickedStage} />
+            <ScheduleBox
+              artist={event.act}
+              startTime={event.start}
+              endTime={event.end}
+              stage={pickedStage}
+            />
           </div>
         );
       })}

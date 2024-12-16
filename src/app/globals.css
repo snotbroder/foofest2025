@@ -181,6 +181,10 @@ input:user-valid {
   top: 1px;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 /* .logo {
   width: 7.5rem;
   height: 7rem;
