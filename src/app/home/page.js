@@ -2,6 +2,7 @@ import ClickableCard2 from "../components/ClickableCard2";
 import BandCard from "../components/BandCard";
 import Accordion from "../components/Accordion";
 import ClickableCard1 from "../components/ClickableCard1";
+import Hero from "../components/Hero";
 async function Home() {
   const BASE_URL = "http://localhost:8080/logos/";
   const response = await fetch("http://localhost:8080/bands", {
@@ -11,7 +12,7 @@ async function Home() {
 
   return (
     <section className="flex flex-col gap-32 md:gap-48 -mt-16">
-      <section className="bg-[url('/illustrations/patternHero.svg')] bg-cover -mx-mobile lg:-mx-desktop ">
+      {/* <section className="bg-[url('/illustrations/patternHero.svg')] bg-cover -mx-mobile lg:-mx-desktop ">
         <div className="py-80 mx-mobile lg:mx-desktop">
           <h1 className=" display font-spicy">Foo Festival 2025</h1>
           <p className="font-rethink">
@@ -19,11 +20,9 @@ async function Home() {
             <time className="font-bold">July 7th - 13th</time>
           </p>
         </div>
-      </section>
-      <section
-        className="flex flex-wrap justify-center gap-4 items-center relative  md:gap-10 before:content-[url('/illustrations/flower2Green.svg')] before:absolute before:-z-10 before:-top-44 before:left-11 before:opacity-60 
-     "
-      >
+      </section> */}
+      <Hero />
+      <section className="flex flex-wrap justify-center gap-4 items-center relative  md:gap-10 before:content-[url('/illustrations/flower2Green.svg')] before:absolute before:-z-10 before:-top-44 before:left-11 before:opacity-60 ">
         <ClickableCard2
           headline="Schedule"
           text=" Check out the full schedule and don't miss any moment of the festival"

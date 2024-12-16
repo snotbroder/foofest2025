@@ -85,7 +85,7 @@ body {
 
 .imgcontainer::before {
   content: "";
-  background-image: url("/pink-flower.svg");
+  background-image: url("/illustrations/pink-flower.svg");
   position: absolute;
   width: 25rem;
   height: 20rem;
@@ -179,4 +179,17 @@ input:user-valid {
   justify-content: center;
   align-self: center;
   top: 1px;
+}
+
+/* .logo {
+  width: 7.5rem;
+  height: 7rem;
+} */
+
+.shadow-custom:hover {
+  box-shadow: 14px 12px 0px #3a140b;
+  /* transition: ease-in-out; */
+  transform: scale(1.02);
+  /* animation-duration: 2s; */
+  transition: all 0.2s ease-in;
 }
