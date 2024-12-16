@@ -76,7 +76,7 @@ export default function BookingPage() {
         )}
         {step === 2 && (
           <article className="bg-primary rounded-rounded-reg p-10">
-            <ContactPage basketTickets={basketTickets}></ContactPage>
+            <ContactPage></ContactPage>
           </article>
         )}
         {step === 3 && (
