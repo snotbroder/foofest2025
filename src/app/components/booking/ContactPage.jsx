@@ -15,7 +15,6 @@ function ContactPage({ basketTickets }) {
       data.push(personData);
     });
 
-    console.log("Data sent:", data);
     await postGuestInfo(data);
   }
   const amountOfTicket = basketTickets.reduce(
