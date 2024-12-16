@@ -13,13 +13,18 @@ function BurgerMenu() {
   };
 
   return (
-    <div className="bg-primary -mx-mobile lg:-mx-desktop py-6">
-      <div className="mx-desktop z-50 flex justify-between place-items-center">
+    <div className="bg-primary  py-6">
+      <div className="lg:mx-desktop z-50 flex justify-between place-items-center">
         <div className="">
-          <Image objectFit="cover" src="illustrations/svg/logo.svg" width={90} height={90}></Image>
+          <Image
+            objectFit="cover"
+            src="illustrations/svg/logo.svg"
+            width={90}
+            height={90}
+          ></Image>
         </div>
 
-        <section className="flex justify-end gap-6 place-items-center">
+        <section className="flex justify-end  place-items-center">
           {!isOpen && (
             <div>
               <CtaButton text="Buy ticket" />
@@ -34,9 +39,10 @@ function BurgerMenu() {
       {isOpen && (
         <div className=" inset-0 bg-primary">
           <div
-            className="fixed inset-0 z-10 "
+            className="inset-0 z-10 "
             style={{
-              backgroundImage: "url('/img/filterbg.webp'), url('/illustrations/svg/circle.svg')",
+              backgroundImage:
+                "url('/img/filterbg.webp'), url('/illustrations/svg/circle.svg')",
               backgroundRepeat: "no-repeat, repeat",
               backgroundSize: "cover, contain",
               backgroundPosition: "center, top",
@@ -63,7 +69,12 @@ function BurgerMenu() {
             </ul>
 
             <div className="absolute right-0 -bottom-12 opacity-60">
-              <Image src="illustrations/svg/flowerPurple.svg" width={700} height={700} alt="Purple Flower"></Image>
+              <Image
+                src="illustrations/svg/flowerPurple.svg"
+                width={700}
+                height={700}
+                alt="Purple Flower"
+              ></Image>
             </div>
           </div>
         </div>

@@ -8,8 +8,8 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className="relative  mt-44 md:-mx-desktop -mx-mobile overflow-hidden before:absolute before:content-[''] before:w-full before:h-[0.5px] before:bg-main-1 ">
-      <div className="absolute -right-28 opacity-60 w-96 top-6 rotate-180">
+    <footer className="relative  mt-44  overflow-hidden before:absolute before:content-[''] before:w-full before:h-[0.5px] before:bg-main-1 ">
+      <div className="absolute  w-64 lg:w-fit opacity-60 right-0  top-6 rotate-180">
         <Image
           src="illustrations/svg/flowerOrange.svg"
           width={440}
