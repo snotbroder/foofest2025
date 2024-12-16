@@ -5,8 +5,8 @@ import CtaButton from "../components/CtaButton";
 import Image from "next/image";
 import Hero from "../components/Hero";
 async function Home() {
-  const BASE_URL = "http://localhost:8080/logos/";
-  const response = await fetch("http://localhost:8080/bands", {
+  const BASE_URL = "https://gabby-dull-drip.glitch.me/logos/";
+  const response = await fetch("https://gabby-dull-drip.glitch.me/bands", {
     method: "GET",
   });
   const bands = await response.json();

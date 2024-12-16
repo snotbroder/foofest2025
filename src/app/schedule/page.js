@@ -61,7 +61,7 @@ export default page;
 //     data: scheduleData,
 //     error,
 //     isLoading,
-//   } = useSWR("http://localhost:8080/schedule", fetcher);
+//   } = useSWR("https://gabby-dull-drip.glitch.me/schedule", fetcher);
 
 //   if (error) return <div>Error loading schedule: {error.message}</div>;
 //   if (isLoading) return <div>Loading schedule...</div>;
