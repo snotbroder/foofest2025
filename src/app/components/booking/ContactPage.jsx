@@ -1,7 +1,7 @@
 import ContactForm from "./ContactForm";
 import { postGuestInfo } from "@/app/api";
 import { useBasketStore } from "@/stores/basket-stores";
-function ContactPage({ basketTickets }) {
+function ContactPage() {
   async function sendData(formData) {
     const data = [];
 

@@ -175,7 +175,6 @@ export async function postGuestInfo(GuestInfo) {
     Accept: "*/*",
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
     apikey: key,
-    Prefer: "return=representation",
   };
 
   let response = await fetch(`${url}subGuestsInfo`, {
