@@ -7,12 +7,12 @@ export async function getBands() {
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
   };
 
-  const response = await fetch("https://gabby-dull-drip.glitch.me/bands", {
+  const response = await fetch("https://sudsy-jet-grill.glitch.me/bands", {
     method: "GET",
     headers: headersList,
   });
 
-  // const response = await fetch("http://https://gabby-dull-drip.glitch.me/bands", {
+  // const response = await fetch("https://sudsy-jet-grill.glitch.me/bands", {
   //   method: "GET",
   //   headers: headersList,
   // });
@@ -30,11 +30,11 @@ export async function getSchedule() {
     Accept: "*/*",
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
   };
-  // const response = await fetch("http://https://gabby-dull-drip.glitch.me/Schedule/Midgard", {
+  // const response = await fetch("https://sudsy-jet-grill.glitch.me/Schedule/Midgard", {
   //   method: "GET",
   //   headers: headersList,
   // });
-  let response = await fetch("https://gabby-dull-drip.glitch.me/Schedule", {
+  let response = await fetch("https://sudsy-jet-grill.glitch.me/Schedule", {
     method: "GET",
     headers: headersList,
   });
@@ -49,12 +49,12 @@ export async function getSpots() {
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
   };
 
-  // let response = await fetch("http://https://gabby-dull-drip.glitch.me/available-spots", {
+  // let response = await fetch("https://sudsy-jet-grill.glitch.me/available-spots", {
   //   method: "GET",
   //   headers: headersList,
   // });
 
-  let response = await fetch("https://gabby-dull-drip.glitch.me/available-spots", {
+  let response = await fetch("https://sudsy-jet-grill.glitch.me/available-spots", {
     method: "GET",
     headers: headersList,
   });
@@ -70,12 +70,12 @@ export async function getProgram(stage, day) {
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
   };
 
-  // let response = await fetch("http://https://gabby-dull-drip.glitch.me/schedule/", {
+  // let response = await fetch("https://sudsy-jet-grill.glitch.me/schedule/", {
   //   method: "GET",
   //   headers: headersList,
   // });
 
-  let response = await fetch("https://gabby-dull-drip.glitch.me/Schedule", {
+  let response = await fetch("https://sudsy-jet-grill.glitch.me/Schedule", {
     method: "GET",
     headers: headersList,
   });
@@ -195,13 +195,13 @@ export async function reserveSpot(selectedArea, ticketAmount) {
     amount: ticketAmount,
   });
 
-  // let response = await fetch("http://https://gabby-dull-drip.glitch.me/reserve-spot", {
+  // let response = await fetch("https://sudsy-jet-grill.glitch.me/reserve-spot", {
   //   method: "PUT",
   //   body: bodyContent,
   //   headers: headersList,
   // });
   try {
-    let response = await fetch("https://gabby-dull-drip.glitch.me/reserve-spot", {
+    let response = await fetch("https://sudsy-jet-grill.glitch.me/reserve-spot", {
       method: "PUT",
       body: bodyContent,
       headers: headersList,
@@ -224,13 +224,13 @@ export async function fulfillReservation(reservationId) {
     id: reservationId,
   });
 
-  // let response = await fetch("http://https://gabby-dull-drip.glitch.me/fullfill-reservation", {
+  // let response = await fetch("https://sudsy-jet-grill.glitch.me/fullfill-reservation", {
   //   method: "POST",
   //   body: bodyContent,
   //   headers: headersList,
   // });
   try {
-    let response = await fetch("https://gabby-dull-drip.glitch.me/fullfill-reservation", {
+    let response = await fetch("https://sudsy-jet-grill.glitch.me/fullfill-reservation", {
       method: "POST",
       body: bodyContent,
       headers: headersList,
