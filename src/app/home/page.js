@@ -1,7 +1,8 @@
 import ClickableCard2 from "../components/ClickableCard2";
 import BandCard from "../components/BandCard";
 import Accordion from "../components/Accordion";
-import ClickableCard1 from "../components/ClickableCard1";
+import CtaButton from "../components/CtaButton";
+import Image from "next/image";
 import Hero from "../components/Hero";
 async function Home() {
   const BASE_URL = "http://localhost:8080/logos/";
@@ -11,8 +12,8 @@ async function Home() {
   const bands = await response.json();
 
   return (
-    <section className="flex flex-col gap-32 md:gap-48 -mt-16">
-      {/* <section className="bg-[url('/illustrations/patternHero.svg')] bg-cover -mx-mobile lg:-mx-desktop ">
+    <section className="flex flex-col gap-32 md:gap-48 -mt-16 ">
+      <section className="bg-[url('/illustrations/patternHero.svg')] bg-cover -mx-mobile lg:-mx-desktop -mt-10">
         <div className="py-80 mx-mobile lg:mx-desktop">
           <h1 className=" display font-spicy">Foo Festival 2025</h1>
           <p className="font-rethink">
@@ -20,7 +21,8 @@ async function Home() {
             <time className="font-bold">July 7th - 13th</time>
           </p>
         </div>
-      </section> */}
+      </section>{" "}
+      */}
       <Hero />
       <section className="flex flex-wrap justify-center gap-4 items-center relative  md:gap-10 before:content-[url('/illustrations/flower2Green.svg')] before:absolute before:-z-10 before:-top-44 before:left-11 before:opacity-60 ">
         <ClickableCard2
@@ -39,7 +41,50 @@ async function Home() {
           href=""
         ></ClickableCard2>
       </section>
-      <section className=" bg-secondary -mx-mobile lg:-mx-desktop">
+      <section className="flex flex-col items-center gap-28">
+        <div className="flex flex-wrap justify-center gap-4 items-center relative  md:gap-10 ">
+          <div className="absolute -z-10 -top-36 left-0 mx-auto opacity-60 xl:-left-28">
+            <Image
+              src="illustrations/svg/flower2Pink.svg"
+              width={250}
+              height={250}
+              objectFit="cover"
+              alt="Pink Flowe"
+            ></Image>
+          </div>
+          <div className="absolute -left-10  top-28  xl:-left-20 -z-10 mx-auto   opacity-60 ">
+            <Image
+              src="illustrations/svg/flower2Pink.svg"
+              width={150}
+              height={150}
+              objectFit="cover"
+              alt="Small Pink Flower"
+            ></Image>
+          </div>
+          <ClickableCard2
+            headline="Schedule"
+            text=" Check out the full schedule and don't miss any moment of the festival"
+            href="/schedule"
+          ></ClickableCard2>
+          <ClickableCard2
+            headline="Map"
+            text=" Find your way around the Foo Festival with our easy-to-follow map."
+            href="/map"
+          ></ClickableCard2>
+          <ClickableCard2
+            headline="Lineup"
+            text=" Check out our amazing lineup of bands and performers, and don't miss your favourite artists "
+            href="/lineup"
+          ></ClickableCard2>
+        </div>
+        <div>
+          <CtaButton text="Buy Ticket"></CtaButton>
+        </div>
+      </section>
+      <section
+        className="relative flex flex-col items-center
+      before:h-[0.5px] before:bg-main-1 before:w-full  before:content-[''] before:absolute after:absolute after:w-full after:h-[0.5px] after:bg-main-1 after:content-[''] after:-bottom-20"
+      >
         <div className="py-14 mx-mobile gap-6 lg:mx-desktop flex flex-col ">
           <h2 className="font-bold text-center lg:text-start">Line up 2025</h2>
 
@@ -62,28 +107,71 @@ async function Home() {
               })}
           </div>
         </div>
+        <div className="relative ">
+          <CtaButton text="Buy Ticket"></CtaButton>
+        </div>
       </section>
-      <section className="flex flex-col gap">
-        <h2 className="font-bold ">News</h2>
-        <div className="flex justify-center gap-12 flex-wrap">
-          <ClickableCard1
-            header="Buy the t-shirt of this year’s festival"
-            text=" Get your official Foo Festival T-shirt and keep the peace, love, and music alive wherever you go"
-            src="/img/tshirt.webp"
-            alt=""
-          ></ClickableCard1>
-          <ClickableCard1
-            header="Join the quiz and win a free ticket"
-            text="Think you know your music trivia? Test your knowledge in our quiz for a chance to win a ticket to Foo Festival 2024!"
-            src="/img/musicquiz.webp"
-            alt=""
-          ></ClickableCard1>
-          <ClickableCard1
-            header="Become a volunteer"
-            text="Volunteer with us! Enjoy free entry, merch, and unforgettable experiences while helping the festival run smoothly."
-            src="/img/volunteerPoster.webp"
-            alt=""
-          ></ClickableCard1>
+      <section
+        className="flex flex-col items-center py-40 
+  bg-[url('/img/filterbg.webp'),url('/illustrations/svg/circle.svg')] 
+  bg-repeat 
+  bg-[top_center] bg-[contain]
+  lg:-mx-desktop -mx-mobile"
+      >
+        <div className="mx-auto lg:w-full max-w-[700px] px-4 md:px-0">
+          <h2 className="font-bold ">News</h2>
+
+          <div className="flex flex-col gap-12 items-center lg:items-start">
+            <article className="bg-tertiary shadow-custom flex flex-col items-start gap-3 text-pretty w-[400px] p-3 md:w-[700px]">
+              <Image
+                className="h-2/3"
+                src="/img/tshirt.webp"
+                width={700}
+                height={700}
+                objectFit="cover"
+                alt="Foo Festival T-shirt"
+              ></Image>
+              <h3 className="font-bold">
+                Buy the t-shirt of this year’s festival
+              </h3>
+              <p>
+                Get your official Foo Festival T-shirt and keep the peace, love,
+                and music alive wherever you go
+              </p>
+            </article>
+            <div className="flex flex-col md:flex-row gap-16 mb-9">
+              <article className="bg-tertiary p-3 shadow-custom flex  text-pretty flex-col gap-3  w-64 md:w-80">
+                <Image
+                  src="/img/quiz.webp"
+                  width={300}
+                  height={300}
+                  objectFit="cover"
+                  alt="Quiz poster"
+                ></Image>
+                <h3 className="font-bold">
+                  Join the quiz and win a free ticket
+                </h3>
+                <p>
+                  Think you know your music trivia? Test your knowledge in our
+                  quiz for a chance to win a ticket to Foo Festival 2024!
+                </p>
+              </article>
+              <article className="bg-tertiary p-3 shadow-custom flex flex-col text-pretty gap-3  w-64 md:w-80">
+                <Image
+                  src="/img/volunteer.webp"
+                  width={300}
+                  height={300}
+                  objectFit="cover"
+                  alt="Volunteer poster"
+                ></Image>
+                <h3 className="font-bold">Become a volunteer</h3>
+                <p>
+                  Volunteer with us! Enjoy free entry, merch, and unforgettable
+                  experiences while helping the festival run smoothly.
+                </p>
+              </article>
+            </div>
+          </div>
         </div>
       </section>
       <section>
