@@ -42,7 +42,7 @@ function ContactPage() {
         </fieldset>
         <button
           type="submit"
-          className="bg-accent-1 text-sm shadow-lg shadow-black flex self-start px-4 py-0.5"
+          className="bg-accent-1 text-sm button flex self-start px-4 py-0.5"
         >
           Sumbit
         </button>

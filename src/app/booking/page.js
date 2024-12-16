@@ -11,6 +11,7 @@ import ContactPage from "../components/booking/ContactPage";
 import PaymentInfo from "../components/booking/PaymentInfo";
 import { useBasketFunctionality } from "@/stores/basket-functionality";
 import OverviewPage from "../components/booking/OverviewPage";
+import CtaButton from "../components/CtaButton";
 
 export default function BookingPage() {
   //const [step, setStep] = useState(0);
@@ -69,7 +70,9 @@ export default function BookingPage() {
               <CampingCards />
               <CampingExtra></CampingExtra>
             </section>
-            <button className="btn-style grid place-self-center lg:place-self-end">Next step</button>
+            {/* <button className=" font-rethink text-main-2 font-sm bg-accent-1 px-4 py-2 hover:text-main-1 uppercase font-bold max-w-[100%] shadow-[4px_4px_0px_#3a140b] transform scale-[1.02] transition-all duration-200 ease-in hover:shadow-[8px_8px_0px_#3a140b] grid place-self-center lg:place-self-end">
+              Next step
+            </button> */}
           </article>
         )}
         {step === 2 && (

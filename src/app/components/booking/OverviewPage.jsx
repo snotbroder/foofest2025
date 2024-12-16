@@ -22,7 +22,7 @@ function OverviewPage() {
 
   return (
     <>
-      <button className="btn-style" onClick={fulfillReservationHandler}>
+      <button className="button" onClick={fulfillReservationHandler}>
         Complete
       </button>
     </>

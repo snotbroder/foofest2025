@@ -18,7 +18,10 @@ export default function Booking({ sendData, data }) {
   console.log(basketTickets);
 
   //Bare for at visualisere den samlede data:
-  const basketArray = [{ "ticket info": basketTickets }, { "choosen camp": selectedCamping, "camp info": basketCamp }];
+  const basketArray = [
+    { "ticket info": basketTickets },
+    { "choosen camp": selectedCamping, "camp info": basketCamp },
+  ];
 
   function stepHandler(newStep) {
     if (newStep <= step) {
@@ -67,18 +70,33 @@ export default function Booking({ sendData, data }) {
       <section className="lg:grid grid-cols-[2fr_1fr] grid-rows-1 gap-4 ">
         {step === 0 && (
           <article>
-            <TicketSelectParent onBasketUpdate={handleTicketUpdate}></TicketSelectParent>
+            <TicketSelectParent
+              onBasketUpdate={handleTicketUpdate}
+            ></TicketSelectParent>
 
-            <button className="btn-style grid place-self-center lg:place-self-end">Next step</button>
+            <button className="button grid place-self-center lg:place-self-end">
+              Next step
+            </button>
           </article>
         )}
         {step === 1 && (
           <article>
             <section className="lg:grid grid-cols-2">
-              <CampingPage regularTickets={basketTickets[0].itemMultiply} vipTickets={basketTickets[1].itemMultiply} selectedCamping={selectedCamping} setSelectedCamping={setSelectedCamping}></CampingPage>
-              <CampingExtra regularTickets={basketTickets[0].itemMultiply} vipTickets={basketTickets[1].itemMultiply} onBasketUpdate={handleCampUpdate}></CampingExtra>
+              <CampingPage
+                regularTickets={basketTickets[0].itemMultiply}
+                vipTickets={basketTickets[1].itemMultiply}
+                selectedCamping={selectedCamping}
+                setSelectedCamping={setSelectedCamping}
+              ></CampingPage>
+              <CampingExtra
+                regularTickets={basketTickets[0].itemMultiply}
+                vipTickets={basketTickets[1].itemMultiply}
+                onBasketUpdate={handleCampUpdate}
+              ></CampingExtra>
             </section>
-            <button className="btn-style grid place-self-center lg:place-self-end">Next step</button>
+            <button className="button grid place-self-center lg:place-self-end">
+              Next step
+            </button>
           </article>
         )}
         {step === 2 && (
@@ -92,7 +110,11 @@ export default function Booking({ sendData, data }) {
           </article>
         )}
         {step === 4 && <article></article>}
-        <Basket selectedCamping={selectedCamping} basketCamp={basketCamp} basketTickets={basketTickets}></Basket>
+        <Basket
+          selectedCamping={selectedCamping}
+          basketCamp={basketCamp}
+          basketTickets={basketTickets}
+        ></Basket>
       </section>
       <pre>
         Data as JSON

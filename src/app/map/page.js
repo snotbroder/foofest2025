@@ -105,10 +105,10 @@ function map() {
         </div>
         <p className="text-pretty  text-center">
           Plan Your Experience Use the map to locate your favorite stage or find
-          a relaxing spot. Don’t forget to check out the full festival schedule
+          a relaxing spot. Don't forget to check out the full festival schedule
           and discover all the amazing artists performing this year!
         </p>
-        <CtaButton text="Buy ticket"></CtaButton>
+        <CtaButton href="/" text="Buy ticket"></CtaButton>
       </section>
     </div>
   );

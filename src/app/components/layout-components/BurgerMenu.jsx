@@ -16,13 +16,18 @@ function BurgerMenu() {
     <div className="bg-primary -mx-mobile lg:-mx-desktop py-6">
       <div className="mx-desktop z-50 flex justify-between place-items-center">
         <div className="">
-          <Image objectFit="cover" src="illustrations/svg/logo.svg" width={90} height={90}></Image>
+          <Image
+            objectFit="cover"
+            src="illustrations/svg/logo.svg"
+            width={90}
+            height={90}
+          ></Image>
         </div>
 
         <section className="flex justify-end gap-6 place-items-center">
           {!isOpen && (
             <div>
-              <CtaButton text="Buy ticket" />
+              <CtaButton href="/" text="Buy ticket" />
             </div>
           )}
           <div onClick={toggleMenu} className="">
@@ -36,7 +41,8 @@ function BurgerMenu() {
           <div
             className="fixed inset-0 z-10 "
             style={{
-              backgroundImage: "url('/img/filterbg.webp'), url('/illustrations/svg/circle.svg')",
+              backgroundImage:
+                "url('/img/filterbg.webp'), url('/illustrations/svg/circle.svg')",
               backgroundRepeat: "no-repeat, repeat",
               backgroundSize: "cover, contain",
               backgroundPosition: "center, top",
@@ -57,13 +63,18 @@ function BurgerMenu() {
               </li>
               <li>
                 <div className="text-sm md:text-xs lg:text-lg w-[150px] mx-auto flex justify-end">
-                  <CtaButton text="Buy ticket" />
+                  <CtaButton href="/" text="Buy ticket" />
                 </div>
               </li>
             </ul>
 
             <div className="absolute right-0 -bottom-12 opacity-60">
-              <Image src="illustrations/svg/flowerPurple.svg" width={700} height={700} alt="Purple Flower"></Image>
+              <Image
+                src="illustrations/svg/flowerPurple.svg"
+                width={700}
+                height={700}
+                alt="Purple Flower"
+              ></Image>
             </div>
           </div>
         </div>
