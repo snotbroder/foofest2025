@@ -58,7 +58,7 @@ function Footer() {
           2024, Foo Festival
         </span>
       </div>
-      <div className="rotate-180  w-80 ">
+      <div className="rotate-180  w-80 opacity-60">
         <Image
           src="illustrations/svg/flowerOrange.svg"
           width={140}

@@ -3,8 +3,8 @@ import Image from "next/image";
 import { motion } from "motion/react";
 function Hero() {
   return (
-    <article>
-      <section className="bg-[url('/illustrations/patternHero.svg')] bg-cover -mx-mobile lg:-mx-desktop ">
+    <article className="bg-[url('/img/filterbg.webp')] bg-cover ">
+      <section className="bg-[url('/illustrations/patternHero.svg')] bg-cover -mx-mobile lg:-mx-desktop after:content-[''] after:h-1 after:bg-secondary after:w-full after:absolute after:opacity-60 ">
         <div className="pt-32 pb-32 md:pb-2 mx-mobile lg:mx-desktop relative grid grid-cols-[2fr_1fr] ">
           {/* <motion.div className=" logo bg-[url('/illustrations/logo2.svg')] bg-cover mb-14"></motion.div> */}
           <div className="row-[2/4]">

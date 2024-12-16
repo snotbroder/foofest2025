@@ -12,7 +12,7 @@ async function Home() {
   const bands = await response.json();
 
   return (
-    <section className="flex flex-col gap-32 md:gap-48 -mt-16 ">
+    <section className="flex flex-col gap-32 md:gap-48 ">
       <Hero />
 
       <section className="flex flex-col items-center gap-28">
