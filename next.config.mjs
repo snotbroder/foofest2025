@@ -13,6 +13,10 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "source.unsplash",
+      },
+      {
+        protocol: "https",
         hostname: "gabby-dull-drip.glitch.me",
       },
     ],
