@@ -2,7 +2,7 @@ import ContactForm from "./ContactForm";
 import { postGuestInfo } from "@/app/api";
 import { useBasketStore } from "@/stores/basket-stores";
 function ContactPage() {
-  async function sendData(formData) {
+  function sendData(formData) {
     const data = [];
 
     forms.forEach((_, index) => {
@@ -15,7 +15,7 @@ function ContactPage() {
       data.push(personData);
     });
 
-    await postGuestInfo(data);
+    postGuestInfo(data);
   }
 
   const totalTickets = useBasketStore((state) => state.totalTickets());
