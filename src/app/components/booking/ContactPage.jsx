@@ -1,7 +1,7 @@
 import ContactForm from "./ContactForm";
 import { postGuestInfo } from "@/app/api";
-import { useBasketStore } from "@/stores/basket-stores";
-function ContactPage() {
+
+function ContactPage({ basketTickets }) {
   async function sendData(formData) {
     const data = [];
 
@@ -17,16 +17,14 @@ function ContactPage() {
 
     await postGuestInfo(data);
   }
+  const amountOfTicket = basketTickets.reduce(
+    (total, ticket) => total + ticket.itemMultiply,
+    0
+  );
 
-  const totalTickets = useBasketStore((state) => state.totalTickets());
-  // const amountOfTicket = basketTickets.reduce(
-  //   (total, ticket) => total + ticket.itemMultiply,
-  //   0
-  // );
+  const forms = new Array(amountOfTicket).fill(null);
 
-  const forms = new Array(totalTickets).fill(null);
-
-  console.log("Total Item Multiply:", totalTickets);
+  console.log("Total Item Multiply:", amountOfTicket);
   return (
     <div>
       <form action={sendData} className="flex flex-col gap-8 ">
