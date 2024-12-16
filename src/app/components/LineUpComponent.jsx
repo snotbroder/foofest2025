@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useSWR from "swr";
 import BandCard from "./BandCard";
 import { IoMdArrowDropdown } from "react-icons/io";
@@ -9,32 +9,33 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function LineUpComponent() {
   const BASE_URL = "http://localhost:8080/logos/";
-
-  let { data, error, isLoading } = useSWR(
-    "http://localhost:8080/bands",
-    fetcher
-  );
-
+  const BANDS_URL = "http://localhost:8080/bands";
   let [isListAscending, setIsListAscending] = useState(false);
-  let [dataThatIsMapping, setDataThatIsMapping] = useState(data || []);
+  let [dataThatIsMapping, setDataThatIsMapping] = useState([]);
   let [pickedGenre, setPickedGenre] = useState("");
 
+  let { data, error, isLoading } = useSWR(BANDS_URL, fetcher);
+
+  useEffect(() => {
+    if (!isLoading) {
+      setDataThatIsMapping(data);
+    }
+  }, [data]);
+
   function handleAscending() {
+    let sortedBands = [];
     if (isListAscending === true) {
-      let sortedBands = [...data].sort((a, b) => {
+      sortedBands = data.sort((a, b) => {
         return a.name.localeCompare(b.name);
       });
-      setDataThatIsMapping(sortedBands);
     } else {
-      let sortedBands = data.sort((b, a) => {
-        return a.name.localeCompare(a.name);
+      sortedBands = data.sort((a, b) => {
+        return b.name.localeCompare(a.name);
       });
-      setDataThatIsMapping(sortedBands);
     }
+    setDataThatIsMapping(sortedBands);
     setIsListAscending(!isListAscending);
   }
-
-  const currentData = dataThatIsMapping.length > 0 ? dataThatIsMapping : data;
 
   if (error) return <div>Error loading schedule: {error.message}</div>;
   if (isLoading) return <div>Loading schedule...</div>;
@@ -51,7 +52,7 @@ function LineUpComponent() {
             id="select-genre"
             onChange={(e) => setPickedGenre(e.target.value)}
           >
-            <option>FILTER BY GENRE</option>
+            <option value="">FILTER BY GENRE</option>
             {genres.map((genre, index) => {
               return (
                 <option value={genre} key={index}>
@@ -75,7 +76,7 @@ function LineUpComponent() {
       </div>
       <div className="bg-secondary -mx-mobile lg:-mx-desktop pt-16 mt-10 md:mt-20">
         <div className="flex flex-wrap justify-center md:justify-between gap-10 mx-mobile pb-16 lg:mx-desktop">
-          {currentData.map((band) => {
+          {dataThatIsMapping.map((band) => {
             const logo = band.logo.startsWith("http")
               ? band.logo
               : `${BASE_URL}${band.logo}`;
