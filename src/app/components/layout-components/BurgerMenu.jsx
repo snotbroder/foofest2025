@@ -12,12 +12,6 @@ function BurgerMenu() {
     setIsOpen(!isOpen);
   };
 
-  // if (isOpen) {
-  //   document.body.classList.add("no-scroll");
-  // } else {
-  //   document.body.classList.remove("no-scroll");
-  // }
-
   return (
     <div>
       <div className=" relative top-5 gap-9 z-50 flex justify-end items-center">
@@ -36,7 +30,7 @@ function BurgerMenu() {
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-primary">
+        <div className=" inset-0 bg-primary">
           <div
             className="fixed inset-0 z-10 "
             style={{
