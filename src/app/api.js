@@ -54,13 +54,10 @@ export async function getSpots() {
   //   headers: headersList,
   // });
 
-  let response = await fetch(
-    "https://gabby-dull-drip.glitch.me/available-spots",
-    {
-      method: "GET",
-      headers: headersList,
-    }
-  );
+  let response = await fetch("https://gabby-dull-drip.glitch.me/available-spots", {
+    method: "GET",
+    headers: headersList,
+  });
 
   let data = await response.json();
   // console.log(data);
@@ -205,7 +202,7 @@ export async function reserveSpot(selectedArea, ticketAmount) {
   //   headers: headersList,
   // });
   try {
-    let response = await fetch("http://localhost:8080/reserve-spot", {
+    let response = await fetch("http://https://gabby-dull-drip.glitch.me/reserve-spot", {
       method: "PUT",
       body: bodyContent,
       headers: headersList,
@@ -218,7 +215,7 @@ export async function reserveSpot(selectedArea, ticketAmount) {
     console.error("Fejl", error);
   }
 }
-
+//http://localhost:8080
 export async function fulfillReservation(reservationId) {
   let headersList = {
     "Content-Type": "application/json",
@@ -234,7 +231,7 @@ export async function fulfillReservation(reservationId) {
   //   headers: headersList,
   // });
   try {
-    let response = await fetch("http://localhost:8080/fullfill-reservation", {
+    let response = await fetch("http://https://gabby-dull-drip.glitch.me/fullfill-reservation", {
       method: "POST",
       body: bodyContent,
       headers: headersList,
