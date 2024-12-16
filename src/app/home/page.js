@@ -22,7 +22,6 @@ async function Home() {
           </p>
         </div>
       </section>{" "}
-      */}
       <Hero />
       <section className="flex flex-wrap justify-center gap-4 items-center relative  md:gap-10 before:content-[url('/illustrations/flower2Green.svg')] before:absolute before:-z-10 before:-top-44 before:left-11 before:opacity-60 ">
         <ClickableCard2
