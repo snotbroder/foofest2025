@@ -11,6 +11,7 @@ import ContactPage from "../components/booking/ContactPage";
 import PaymentInfo from "../components/booking/PaymentInfo";
 import { useBasketFunctionality } from "@/stores/basket-functionality";
 import OverviewPage from "../components/booking/OverviewPage";
+// just in case
 
 export default function BookingPage() {
   //const [step, setStep] = useState(0);
