@@ -11,13 +11,10 @@ const nextConfig = {
         hostname: "localhost",
         port: "8080",
       },
+
       {
         protocol: "https",
-        hostname: "source.unsplash",
-      },
-      {
-        protocol: "https",
-        hostname: "gabby-dull-drip.glitch.me",
+        hostname: "sudsy-jet-grill.glitch.me",
       },
     ],
   },
