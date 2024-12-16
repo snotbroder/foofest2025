@@ -13,20 +13,22 @@ function BurgerMenu() {
   };
 
   return (
-    <div>
-      <div className=" relative top-5 gap-9 z-50 flex justify-end items-center">
-        <div className="absolute left-0 top-6">
-          <Image objectFit="cover" src="illustrations/svg/logo.svg" width={135} height={135}></Image>
+    <div className="bg-primary -mx-mobile lg:-mx-desktop py-6">
+      <div className="mx-desktop z-50 flex justify-between place-items-center">
+        <div className="">
+          <Image objectFit="cover" src="illustrations/svg/logo.svg" width={90} height={90}></Image>
         </div>
 
-        {!isOpen && (
-          <div>
-            <CtaButton text="Buy ticket" />
+        <section className="flex justify-end gap-6 place-items-center">
+          {!isOpen && (
+            <div>
+              <CtaButton text="Buy ticket" />
+            </div>
+          )}
+          <div onClick={toggleMenu} className="">
+            <BurgerMenuIcon isOpen={isOpen}></BurgerMenuIcon>
           </div>
-        )}
-        <div onClick={toggleMenu} className="">
-          <BurgerMenuIcon isOpen={isOpen}></BurgerMenuIcon>
-        </div>
+        </section>
       </div>
 
       {isOpen && (
