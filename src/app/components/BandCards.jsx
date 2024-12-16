@@ -13,7 +13,7 @@ async function BandCards() {
       {bands.map((band) => {
         // const bandImage = bandImagePath.startsWith("https://picsum") ? matchingBand.logo
         // : `${endpointBase}/logos/${matchingBand.logo}`;
-        const logo = band.logo.startsWith("https://source.unsplash") ? band.logo : `${BASE_URL}/logos/${band.logo}`;
+        const logo = band.logo.startsWith("https://") ? band.logo : `${BASE_URL}/logos/${band.logo}`;
 
         return <BandCard alt={`Logo of ${band.name}`} key={band.name} imgSrc={logo} name={band.name} genre={band.genre} slug={band.slug} />;
       })}
