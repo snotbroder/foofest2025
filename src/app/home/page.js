@@ -4,8 +4,8 @@ import Accordion from "../components/Accordion";
 import ClickableCard1 from "../components/ClickableCard1";
 import Hero from "../components/Hero";
 async function Home() {
-  const BASE_URL = "http://https://gabby-dull-drip.glitch.me/logos/";
-  const response = await fetch("http://https://gabby-dull-drip.glitch.me/bands", {
+  const BASE_URL = "https://gabby-dull-drip.glitch.me/logos/";
+  const response = await fetch("https://gabby-dull-drip.glitch.me/bands", {
     method: "GET",
   });
   const bands = await response.json();
