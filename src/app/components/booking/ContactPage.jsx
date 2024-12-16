@@ -1,22 +1,50 @@
-function ContactPage() {
+import ContactForm from "./ContactForm";
+import { postGuestInfo } from "@/app/api";
+
+function ContactPage({ basketTickets }) {
+  async function sendData(formData) {
+    const data = [];
+
+    forms.forEach((_, index) => {
+      const personData = {
+        first_name: formData.get(`first_name_${index}`),
+        last_name: formData.get(`last_name_${index}`),
+        email: formData.get(`email_${index}`),
+      };
+
+      data.push(personData);
+    });
+
+    await postGuestInfo(data);
+  }
+  const amountOfTicket = basketTickets.reduce(
+    (total, ticket) => total + ticket.itemMultiply,
+    0
+  );
+
+  const forms = new Array(amountOfTicket).fill(null);
+
+  console.log("Total Item Multiply:", amountOfTicket);
   return (
-    <div className="grid lg:grid-cols-2 gap-6">
-      <section>
-        <h3 className="font-rethink font-bold text-main-1 text-2xl border-b-2 border-solid border-tertiary py-2">Your information (Guest 1)</h3>
-        <form className="flex flex-col gap-2 py-4" action="none">
-          <div className="flex flex-col gap-2">
-            <label htmlFor="first-name">First name</label>
-            <input id="first-name" placeholder="John" type="text" />
+    <div>
+      <form action={sendData} className="flex flex-col gap-8 ">
+        <fieldset>
+          <legend className="font-semibold text-xl  mb-2">
+            Contact information
+          </legend>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {forms.map((_, index) => {
+              return <ContactForm key={index} index={index} />;
+            })}
           </div>
-          <div className="flex flex-col gap-2">
-            <label htmlFor="last-name">Last name</label>
-            <input id="last-name" placeholder="Doe" type="text" />
-          </div>
-        </form>
-      </section>
-      <section>
-        <h3 className="font-rethink  text-main-1 text-2xl border-b-2 border-solid border-tertiary py-2">Address</h3>
-      </section>
+        </fieldset>
+        <button
+          type="submit"
+          className="bg-accent-1 text-sm shadow-lg shadow-black flex self-start px-4 py-0.5"
+        >
+          Sumbit
+        </button>
+      </form>
     </div>
   );
 }

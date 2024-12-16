@@ -8,6 +8,7 @@ import TicketSelectParent from "../components/booking/TicketSelectParent";
 import CampingCards from "../components/booking/CampingCards";
 import CampingExtra from "../components/booking/CampingExtras";
 import ContactPage from "../components/booking/ContactPage";
+import PaymentInfo from "../components/booking/PaymentInfo";
 import { useBasketFunctionality } from "@/stores/basket-functionality";
 import OverviewPage from "../components/booking/OverviewPage";
 
@@ -68,11 +69,19 @@ export default function BookingPage() {
               <CampingCards />
               <CampingExtra></CampingExtra>
             </section>
+            <button className="btn-style grid place-self-center lg:place-self-end">
+              Next step
+            </button>
           </article>
         )}
         {step === 2 && (
           <article className="bg-primary rounded-rounded-reg p-10">
-            <ContactPage></ContactPage>
+            <ContactPage basketTickets={basketTickets}></ContactPage>
+          </article>
+        )}
+        {step === 3 && (
+          <article className="bg-primary rounded-rounded-reg p-10">
+            <PaymentInfo />
           </article>
         )}
         {step === 3 && <article></article>}
