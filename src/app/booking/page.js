@@ -69,9 +69,7 @@ export default function BookingPage() {
               <CampingCards />
               <CampingExtra></CampingExtra>
             </section>
-            <button className="btn-style grid place-self-center lg:place-self-end">
-              Next step
-            </button>
+            <button className="btn-style grid place-self-center lg:place-self-end">Next step</button>
           </article>
         )}
         {step === 2 && (
@@ -88,7 +86,6 @@ export default function BookingPage() {
         {step === 4 && (
           <article>
             <OverviewPage></OverviewPage>
-            {/* <pre>{JSON.stringify(fullBasket, null, 2)}</pre> */}
           </article>
         )}
         <Basket></Basket>
