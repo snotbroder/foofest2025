@@ -202,7 +202,7 @@ export async function reserveSpot(selectedArea, ticketAmount) {
   //   headers: headersList,
   // });
   try {
-    let response = await fetch("http://https://gabby-dull-drip.glitch.me/reserve-spot", {
+    let response = await fetch("https://gabby-dull-drip.glitch.me/reserve-spot", {
       method: "PUT",
       body: bodyContent,
       headers: headersList,
@@ -231,7 +231,7 @@ export async function fulfillReservation(reservationId) {
   //   headers: headersList,
   // });
   try {
-    let response = await fetch("http://https://gabby-dull-drip.glitch.me/fullfill-reservation", {
+    let response = await fetch("https://gabby-dull-drip.glitch.me/fullfill-reservation", {
       method: "POST",
       body: bodyContent,
       headers: headersList,

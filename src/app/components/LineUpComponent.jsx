@@ -8,9 +8,9 @@ import { IoMdArrowDropdown } from "react-icons/io";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function LineUpComponent() {
-  const BASE_URL = "http://https://gabby-dull-drip.glitch.me/logos/";
+  const BASE_URL = "https://gabby-dull-drip.glitch.me/logos/";
 
-  let { data, error, isLoading } = useSWR("http://https://gabby-dull-drip.glitch.me/bands", fetcher);
+  let { data, error, isLoading } = useSWR("https://gabby-dull-drip.glitch.me/bands", fetcher);
 
   let [isListAscending, setIsListAscending] = useState(false);
   let [dataThatIsMapping, setDataThatIsMapping] = useState(data || []);

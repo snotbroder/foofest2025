@@ -5,7 +5,7 @@ import useSWR from "swr";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 function CampingCards() {
-  const { data: fetchSpotsData, error, isLoading } = useSWR("http://https://gabby-dull-drip.glitch.me/available-spots", fetcher);
+  const { data: fetchSpotsData, error, isLoading } = useSWR("https://gabby-dull-drip.glitch.me/available-spots", fetcher);
   if (error) return <div>Error loading available spots: {error.message}</div>;
   if (isLoading) return <div>Loading spots...</div>;
   const fetchSpots = fetchSpotsData;

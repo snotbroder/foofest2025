@@ -45,7 +45,7 @@ import ScheduleFilter from "./ScheduleFilter";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function Schedule() {
-  const { data: scheduleData, error, isLoading } = useSWR("http://https://gabby-dull-drip.glitch.me/schedule", fetcher);
+  const { data: scheduleData, error, isLoading } = useSWR("https://gabby-dull-drip.glitch.me/schedule", fetcher);
   //= useSWR("https://gabby-dull-drip.glitch.me/Schedule", fetcher);
 
   const [pickedDay, setPickedDay] = useState("mon");
