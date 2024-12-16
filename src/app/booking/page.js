@@ -1,5 +1,8 @@
-"use client";
-import { useState } from "react";
+export const metadata = {
+  title: "Booking",
+  description: "none",
+};
+
 import { useBasketStore } from "@/stores/basket-stores";
 
 import BookingSteps from "../components/booking/BookingSteps";
