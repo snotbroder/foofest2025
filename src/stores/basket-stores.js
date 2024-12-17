@@ -24,10 +24,11 @@ export const useBasketStore = create((set, get) => ({
     set((state) => ({
       campInfo: state.campInfo.map((tent) => (tent.itemTitle === tentType ? { ...tent, itemMultiply: multiply } : tent)),
     })),
+
+  // jeg bruger reduce for at reducere arrayet til en enkel værdi. 0 er initial value
   totalTickets: () => {
     const { ticketInfo } = get(); // hent nuværende data
     return ticketInfo.reduce((total, ticket) => total + ticket.itemMultiply, 0);
-    // jeg bruger reduce for at reducere arrayet til en enkel værdi. 0 er initial value
   },
   //opdater valgt camp state
   setChosenCamp: (area) => set({ chosenCamp: area }),

@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 import { useBasketStore } from "@/stores/basket-stores";
 
@@ -83,14 +82,16 @@ export default function BookingPage() {
           </article>
         )}
         {step === 3 && <article></article>}
-        {step === 4 && (
-          <article className="-order-1">
-            <OverviewPage></OverviewPage>
-          </article>
-        )}
+        {step ===
+          4(
+            <article className="-order-1">
+              <OverviewPage></OverviewPage>
+            </article>
+          )}
         {step === 5 && (
           <article>
             <h1>Thank you for your money ;)</h1>
+            Back to home
           </article>
         )}
         <Basket></Basket>
