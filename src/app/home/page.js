@@ -107,19 +107,6 @@ async function Home() {
                     slug={band.slug}
                   />
                 );
-                const logo = band.logo.startsWith("http")
-                  ? band.logo
-                  : `${BASE_URL}${band.logo}`;
-                return (
-                  <BandCard
-                    alt={`Logo of ${band.name}`}
-                    key={band.name}
-                    imgSrc={logo}
-                    name={band.name}
-                    genre={band.genre}
-                    slug={band.slug}
-                  />
-                );
               })}
           </div>
         </div>
