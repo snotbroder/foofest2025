@@ -17,6 +17,7 @@ function TicketSelectParent() {
   const totalTickets = useBasketStore((state) => state.totalTickets());
   const step = useBasketFunctionality((step) => step.bookingStep);
   const setNewStep = useBasketFunctionality((state) => state.setNewStep);
+  //nn
   return (
     <>
       <TicketSelectCard onAmountChange={(amount) => handleUpdate("vip ticket", amount)} ticketName="VIP TICKET" variant="vip" variantImage="vip-image" price="1299" subText="Best Offer"></TicketSelectCard>
