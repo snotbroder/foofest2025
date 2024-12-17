@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Hero from "../app/components/Hero";
 async function Home() {
-  const BASE_URL = "http://localhost:8080/logos/";
+  const BASE_URL = "https://sudsy-jet-grill.glitch.me/";
   const response = await fetch("https://sudsy-jet-grill.glitch.me/bands", {
     method: "GET",
   });
