@@ -20,9 +20,9 @@ function ScheduleForBand({ schedule, bandName, band }) {
     });
   });
   return (
-    <div className="font-rethink flex flex-col gap-8 ">
+    <div className=" flex flex-col gap-8 ">
       <div className="flex flex-col gap-2">
-        <h3 className="font-bold ">Schedule</h3>
+        <h3>Schedule</h3>
         {scheduleItems.length > 0 ? (
           scheduleItems.map((item, index) => (
             <div key={index} className="flex flex-col gap-2 ">
@@ -30,8 +30,8 @@ function ScheduleForBand({ schedule, bandName, band }) {
                 <span className="font-bold">Day: </span>
                 {item.day}
               </p>
-              <p className="font-bold">
-                <span>Where: </span>
+              <p>
+                <span className="font-bold">Where: </span>
                 {item.stage}
               </p>
               <p>

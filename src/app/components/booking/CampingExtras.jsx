@@ -58,7 +58,7 @@ function CampingExtra() {
   return (
     <section>
       <article className="bg-main-2 border-solid border-2 border-main-1 rounded-rounded-reg max-h-max p-8 flex flex-col gap-2">
-        <h3 className="font-rethink text-main-1 font-bold text-2xl">
+        <h3>
           Extras <span className="font-normal italic">optional</span>
         </h3>
         <form className="flex gap-6 font-rethink text-main-1">
@@ -86,9 +86,7 @@ function CampingExtra() {
           </p>
           <section className="flex flex-col gap-6">
             <div className="flex justify-between place-items-center gap-2">
-              <h4 className="font-bold text-main-1 font-rethink">
-                2 person tent +299,-
-              </h4>
+              <h4>2 person tent +299,-</h4>
               <AmountBtn
                 maxAmount={sharedMaxAmount + twoPersonTent}
                 onAmountChange={(amount) =>
@@ -97,9 +95,7 @@ function CampingExtra() {
               ></AmountBtn>
             </div>
             <div className="flex justify-between place-items-center gap-2">
-              <h4 className="font-bold font-rethink text-main-1">
-                3 person tent +399,-
-              </h4>
+              <h4>3 person tent +399,-</h4>
               <AmountBtn
                 maxAmount={sharedMaxAmount + threePersonTent}
                 onAmountChange={(amount) =>

@@ -61,7 +61,7 @@ async function Home() {
       before:h-[0.5px] before:bg-main-1 before:w-full  before:content-[''] before:absolute after:absolute after:w-full after:h-[0.5px] after:bg-main-1 after:content-[''] after:-bottom-20"
       >
         <div className="py-14 mx-mobile gap-6 lg:mx-desktop flex flex-col ">
-          <h2 className="font-bold text-center lg:text-start">Line up 2025</h2>
+          <h2 className=" text-center lg:text-start">Line up 2025</h2>
 
           <div className="flex flex-wrap justify-center lg:justify-between gap-6 ">
             {bands.length > 0 &&
@@ -94,7 +94,7 @@ async function Home() {
   lg:-mx-desktop -mx-mobile border-t-2 border-b-2 border-tertiary"
       >
         <div className="mx-auto lg:w-full max-w-[700px] px-4 md:px-0">
-          <h2 className="font-bold ">News</h2>
+          <h2 className=" ">News</h2>
 
           <div className="flex flex-col gap-12 items-center lg:items-start">
             <article className="bg-tertiary shadow-custom flex flex-col items-start gap-3 text-pretty w-[15rem] p-3 lg:w-[44rem]">
@@ -106,9 +106,7 @@ async function Home() {
                 objectFit="cover"
                 alt="Foo Festival T-shirt"
               ></Image>
-              <h3 className="font-bold">
-                Buy the t-shirt of this year’s festival
-              </h3>
+              <h3 className="">Buy the t-shirt of this year’s festival</h3>
               <p>
                 Get your official Foo Festival T-shirt and keep the peace, love,
                 and music alive wherever you go
@@ -123,9 +121,7 @@ async function Home() {
                   objectFit="cover"
                   alt="Quiz poster"
                 ></Image>
-                <h3 className="font-bold">
-                  Join the quiz and win a free ticket
-                </h3>
+                <h3>Join the quiz and win a free ticket</h3>
                 <p>
                   Think you know your music trivia? Test your knowledge in our
                   quiz for a chance to win a ticket to Foo Festival 2024!
@@ -140,7 +136,7 @@ async function Home() {
                     objectFit="cover"
                     alt="Volunteer poster"
                   ></Image>
-                  <h3 className="font-bold">Become a volunteer</h3>
+                  <h3>Become a volunteer</h3>
                   <p>
                     Volunteer with us! Enjoy free entry, merch, and
                     unforgettable experiences while helping the festival run

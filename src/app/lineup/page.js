@@ -11,7 +11,7 @@ function Lineup() {
     <div className="">
       <div className="relative"></div>
       <div className="flex flex-col gap-16 pt-48">
-        <h1 className="font-spicy text-6xl">Lineup 2025</h1>
+        <h1>Lineup 2025</h1>
         {/* <LineUpFilter pickedGenre={"jazz"} /> */}
         <LineUpComponent />
         {/* <BandCards></BandCards> */}

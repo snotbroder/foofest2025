@@ -7,8 +7,8 @@ import { motion } from "motion/react";
 
 function Benefits() {
   return (
-    <section className="bg-secondary -mx-mobile px-4 py-20 text-main-2 flex   flex-col lg:-mx-desktop text-lg gap-20  font-rethink text-center justify-center ">
-      <h1 className="text-3xl md:text-4xl font-semibold">BENEFITS</h1>
+    <section className="bg-secondary -mx-mobile px-4 py-20 text-main-2 flex   flex-col lg:-mx-desktop text-lg gap-20 k text-center justify-center ">
+      <h1>BENEFITS</h1>
       <div className=" flex-col flex lg:flex-row gap-20 text-center justify-center items-center ">
         <motion.div
           className="flex flex-col gap-2 items-center max-w-36"
