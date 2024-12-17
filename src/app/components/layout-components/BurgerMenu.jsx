@@ -14,14 +14,14 @@ function BurgerMenu() {
   return (
     <div className="bg-primary relative  py-6   z-50     bg-[url('/img/filterbg.webp')] bg-no-repeat bg-cover">
       <div className="lg:mx-desktop  flex justify-between place-items-center">
-        <div className="w-16 md:w-fit">
+        <Link href="/" className="w-16 md:w-fit">
           <Image
             objectFit="cover"
             src="illustrations/svg/logo.svg"
             width={90}
             height={90}
           ></Image>
-        </div>
+        </Link>
 
         <section className="flex justify-end gap-6 place-items-center">
           <div>

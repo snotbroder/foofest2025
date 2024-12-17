@@ -23,7 +23,7 @@ async function Home() {
               width={250}
               height={250}
               objectFit="cover"
-              alt="Pink Flowe"
+              alt="Pink Flower"
             ></Image>
           </div>
           <div className="absolute -left-10  top-28  xl:-left-20 -z-10 mx-auto   opacity-60 ">
@@ -52,7 +52,7 @@ async function Home() {
           ></ClickableCard2>
         </div>
         <div>
-          <CtaButton href="/" text="Buy Ticket"></CtaButton>
+          <CtaButton href="/tickets" text="Buy Ticket"></CtaButton>
         </div>
       </section>
       <section
@@ -82,7 +82,7 @@ async function Home() {
           </div>
         </div>
         <div className="relative ">
-          <CtaButton href="/" text="Buy Ticket"></CtaButton>
+          <CtaButton href="/tickets" text="Buy Ticket"></CtaButton>
         </div>
       </section>
       <section
