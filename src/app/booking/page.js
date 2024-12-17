@@ -85,6 +85,7 @@ export default function BookingPage() {
       >
         step +1
       </button>
+      {}
     </>
   );
 }
