@@ -45,7 +45,7 @@ function LineUpComponent() {
 
   return (
     <article>
-      <div className=" text-lg font-bold justify-center sm:flex-row  lg:text-3xl  flex-col inline-flex gap-8 font-rethink text-main-1 my-6">
+      <div className="font-bold justify-center flex-row  text-2xl sm:text-3xl inline-flex gap-8 font-rethink text-main-1 my-6">
         <div className="select-container ">
           <select
             className="select-box"
