@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/299B836/svg" viewBox="0 0 1425.06 965.17">
   <defs>
-    <style>
-      .cls-1 {
-        fill: #fff;
-        stroke: #99B836;
-        stroke-miterlimit: 10;
-      }
-    </style>
   </defs>
   <ellipse cx="712.53" cy="482.59" rx="801.76" ry="312.25" transform="translate(-145.7 419.12) rotate(-29.88)"/>
   <ellipse class="cls-1" cx="676.68" cy="388.54" rx="269" ry="108.81" transform="translate(-103.61 388.76) rotate(-29.88)"/>
