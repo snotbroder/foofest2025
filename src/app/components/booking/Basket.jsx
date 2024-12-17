@@ -124,15 +124,16 @@ function Basket() {
         <footer className="font-rethink text-main-1">
           <span className="font-rethink text-main-1 flex justify-between mb-2">
             <span>TOTAL</span>
-            <span className="font-bold text-4xl">{totalPrice},-</span>
+            <span className="font-bold text-4xl my-2">{totalPrice},-</span>
           </span>
           {reservationId !== "" ? <p className="small text-feedback-disabled-2">ReservationID: {reservationId}</p> : ""}
           <div className="font-rethink text-xs text-feedback-error text-end">
             {errorCamp && "Please choose a camp to continue"}
             {errorTents && "You can only buy tents based on the amount of tickets "}
           </div>
-          <button onClick={handleOpenBasket} className="lg:hidden">
-            open cart
+          <button onClick={handleOpenBasket} className="button lg:hidden">
+            {openBasket ? "close " : "open "}
+            cart
           </button>
         </footer>
       </section>

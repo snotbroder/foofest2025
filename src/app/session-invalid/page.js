@@ -10,7 +10,7 @@ function sessionInvalid() {
       <h1>Oops</h1>
       <p>ur session was invalid, propably bcuz the time ran out</p>
       <p className="small text-feedback-disabled-2">n00b :P</p>
-      <button className="btn-style" onClick={redirectToBooking}>
+      <button className="button" onClick={redirectToBooking}>
         Back to booking
       </button>
     </>
