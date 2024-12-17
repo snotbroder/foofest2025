@@ -6,9 +6,7 @@ import { useBasketFunctionality } from "@/stores/basket-functionality";
 
 function TicketSelectParent() {
   //Multiply funktion i store som sørger for at opdatere dataen korrekt/de rigtige steder i arrayet
-  const updateTicketMultiply = useBasketStore(
-    (state) => state.updateTicketMultiply
-  );
+  const updateTicketMultiply = useBasketStore((state) => state.updateTicketMultiply);
 
   const handleUpdate = (ticketType, newAmount) => {
     // opdater ticketAmount i basket store baseret på den ticketType følger med
@@ -21,20 +19,9 @@ function TicketSelectParent() {
   const setNewStep = useBasketFunctionality((state) => state.setNewStep);
   return (
     <>
-      <TicketSelectCard
-        onAmountChange={(amount) => handleUpdate("vip ticket", amount)}
-        ticketName="VIP TICKET"
-        variant="type1"
-        price="1299"
-        subText="Best Offer"
-      ></TicketSelectCard>
+      <TicketSelectCard onAmountChange={(amount) => handleUpdate("vip ticket", amount)} ticketName="VIP TICKET" variant="vip" price="1299" subText="Best Offer"></TicketSelectCard>
 
-      <TicketSelectCard
-        onAmountChange={(amount) => handleUpdate("regular ticket", amount)}
-        ticketName="REGULAR TICKET"
-        variant="type2"
-        price="799"
-      ></TicketSelectCard>
+      <TicketSelectCard onAmountChange={(amount) => handleUpdate("regular ticket", amount)} ticketName="REGULAR TICKET" variant="regular" price="799"></TicketSelectCard>
       <button
         onClick={() => {
           if (totalTickets === 0) {

@@ -50,8 +50,7 @@ body {
 
 .regular {
   cursor: pointer;
-  border: 2px solid black;
-  box-shadow: 10px 10px black;
+  border: 2px solid var(--main-1);
   background-image: url(/illustrations/svg/spiralPink.svg);
   background-position: -80% 280%;
   background-repeat: no-repeat;
@@ -60,8 +59,7 @@ body {
 
 .vip {
   cursor: pointer;
-  border: 2px solid black;
-  box-shadow: 10px 10px black;
+  border: 2px solid var(--main-1);
   background-image: url(/illustrations/svg/lp2.svg);
   background-position: -500% 170%, 100%;
   background-size: 104%;
