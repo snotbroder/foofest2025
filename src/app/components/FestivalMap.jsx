@@ -21,15 +21,13 @@ function FestivalMap() {
       name: "Alfheim",
       top: "34%",
       left: "30%",
-      description:
-        "Perfect for families, with a calm and family-friendly environment.",
+      description: "Perfect for families, with a calm and family-friendly environment.",
     },
     {
       name: "Nilheim",
       top: "23%",
       left: "60%",
-      description:
-        "A raw and edgy vibe for those who crave a bold and energetic atmosphere. Currently full.",
+      description: "A raw and edgy vibe for those who crave a bold and energetic atmosphere. Currently full.",
     },
     {
       name: "Muspelheim",
@@ -41,8 +39,7 @@ function FestivalMap() {
       name: "Svartheim",
       top: "75%",
       left: "10%",
-      description:
-        "Enjoy a peaceful escape surrounded by the beauty of the forest.",
+      description: "Enjoy a peaceful escape surrounded by the beauty of the forest.",
     },
     {
       name: "Midgård",
@@ -97,16 +94,9 @@ function FestivalMap() {
       >
         {icon && <IconMarker icon={icon} bgColor={bgColor || "#333"} />}
 
-        {name && (
-          <h5 className="uppercase group-hover:scale-110 transition-transform text-sm mt-1">
-            {name}
-          </h5>
-        )}
+        {name && <h5 className="uppercase group-hover:scale-110 transition-transform text-sm mt-1">{name}</h5>}
 
-        <div
-          className="hidden group-hover:flex bg-main-2 text-main-1 p-4 rounded-sm shadow-lg absolute z-50 w-[150px] md:w-[200px]"
-          style={{ top: "110%", left: "50%", transform: "translateX(-50%)" }}
-        >
+        <div className="hidden group-hover:flex bg-main-2 text-main-1 p-4 rounded-sm shadow-lg absolute z-50 w-[150px] md:w-[200px]" style={{ top: "110%", left: "50%", transform: "translateX(-50%)" }}>
           <p className="text-xs">{description}</p>
         </div>
       </div>
@@ -114,14 +104,8 @@ function FestivalMap() {
   }
 
   return (
-    <div className="relative w-full lg:max-w-[1200px] mx-auto ">
-      <Image
-        src="/img/map.webp"
-        width={1200}
-        height={1200}
-        objectFit="contain"
-        alt="Festival Map"
-      />
+    <div className="relative w-full lg:max-w-[1200px] mx-auto border-2 border-main-1 rounded-rounded-reg">
+      <Image src="/img/map.webp" width={1200} height={1200} objectFit="contain" alt="Festival Map" />
       {markers.map((marker, index) => (
         <Mapmark
           key={index}

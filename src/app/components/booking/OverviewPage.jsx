@@ -29,19 +29,10 @@ function OverviewPage() {
     <section>
       <article className="flex flex-col gap-6 mb-6">
         <h3>Policies</h3>
-        <p>
-          Please note, that by clicking the button below, you accept our terms
-          and conditions.
-        </p>
-        <p className="italic">
-          The festival will not be held liable for inclement weather nor
-          cancellations.
-        </p>
+        <p>Please note, that by clicking the button below, you accept our terms and conditions.</p>
+        <p className="italic">The festival will not be held liable for inclement weather nor cancellations.</p>
       </article>
-      <button
-        className="button grid place-self-center"
-        onClick={fulfillReservationHandler}
-      >
+      <button className="button grid place-self-start" onClick={fulfillReservationHandler}>
         Complete purchase
       </button>
     </section>

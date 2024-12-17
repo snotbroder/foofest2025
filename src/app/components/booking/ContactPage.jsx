@@ -1,6 +1,7 @@
 import ContactForm from "./ContactForm";
 import { postGuestInfo } from "@/app/api";
 import { useBasketStore } from "@/stores/basket-stores";
+import { useBasketFunctionality } from "@/stores/basket-functionality";
 function ContactPage() {
   function sendData(formData) {
     const data = [];
@@ -18,11 +19,9 @@ function ContactPage() {
     postGuestInfo(data);
   }
 
+  const step = useBasketFunctionality((step) => step.bookingStep);
+  const setNewStep = useBasketFunctionality((state) => state.setNewStep);
   const totalTickets = useBasketStore((state) => state.totalTickets());
-  // const amountOfTicket = basketTickets.reduce(
-  //   (total, ticket) => total + ticket.itemMultiply,
-  //   0
-  // );
 
   const forms = new Array(totalTickets).fill(null);
 
@@ -31,9 +30,7 @@ function ContactPage() {
     <div>
       <form action={sendData} className="flex flex-col gap-8 ">
         <fieldset>
-          <legend className="font-semibold text-xl  mb-2">
-            Contact information
-          </legend>
+          <legend className="font-rethink text-2xl mb-6 text-main-1">Contact information</legend>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {forms.map((_, index) => {
               return <ContactForm key={index} index={index} />;
@@ -41,6 +38,9 @@ function ContactPage() {
           </div>
         </fieldset>
         <button
+          onClick={() => {
+            setNewStep(step + 1);
+          }}
           type="submit"
           className="bg-accent-1 text-sm button flex self-start px-4 py-0.5"
         >

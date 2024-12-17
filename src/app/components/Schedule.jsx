@@ -8,11 +8,7 @@ import ScheduleFilter from "./ScheduleFilter";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function Schedule() {
-  const {
-    data: scheduleData,
-    error,
-    isLoading,
-  } = useSWR("https://sudsy-jet-grill.glitch.me/schedule", fetcher);
+  const { data: scheduleData, error, isLoading } = useSWR("https://sudsy-jet-grill.glitch.me/schedule", fetcher);
 
   const [pickedDay, setPickedDay] = useState("mon");
   const [pickedStage, setPickedStage] = useState("Midgard");
@@ -23,23 +19,13 @@ function Schedule() {
   const schedule = scheduleData?.[pickedStage]?.[pickedDay] || [];
 
   return (
-    <article className="-mx-mobile flex flex-col justify-center gap-4 ">
-      <ScheduleFilter
-        setPickedDay={setPickedDay}
-        setPickedStage={setPickedStage}
-        pickedDay={pickedDay}
-        pickedStage={pickedStage}
-      />
-      <div className="mt-8">
+    <article className=" flex flex-col justify-center gap-4 ">
+      <ScheduleFilter setPickedDay={setPickedDay} setPickedStage={setPickedStage} pickedDay={pickedDay} pickedStage={pickedStage} />
+      <div className="mt-8 -mx-mobile sm:mx-0">
         {schedule.map((event, index) => {
           return (
             <div key={index}>
-              <ScheduleBox
-                artist={event.act}
-                startTime={event.start}
-                endTime={event.end}
-                stage={pickedStage}
-              />
+              <ScheduleBox artist={event.act} startTime={event.start} endTime={event.end} stage={pickedStage} />
             </div>
           );
         })}

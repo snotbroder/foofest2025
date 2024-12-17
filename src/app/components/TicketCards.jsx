@@ -1,26 +1,3 @@
-// import TicketCard from "./TicketCard";
-
-// function TicketCards() {
-//   return (
-//     <div className="flex flex-col gap-10">
-//       <TicketCard
-//         title="REGULAR"
-//         price="799.-"
-//         text="lorum"
-//         ticketType="regular"
-//       />
-//       <TicketCard
-//         title="VIP"
-//         price="799.-"
-//         text="lorum"
-//         ticketType="vip"
-//         labelText="Best Offer"
-//       />
-//     </div>
-//   );
-// }
-
-// export default TicketCards;
 import TicketCard from "./TicketCard";
 import TicketInfo from "./TicketInfo";
 
@@ -28,31 +5,12 @@ function TicketCards() {
   return (
     <section className="flex  items-center flex-col gap-24">
       <div className="flex flex-col items-center justify-center sm:justify-center sm:flex-row gap-10 sm:gap-20 lg:gap-32 ">
-        <TicketCard
-          title="REGULAR"
-          price="799.-"
-          text="Standard ticket"
-          ticketType="regular"
-          design="regular"
-        />
-        <TicketInfo
-          ticketType="REGULAR"
-          pText="Join the excitement with our standard regular ticket. Gain general admission access to the event and be part of the incredible atmosphere."
-          design="vip"
-        />
+        <TicketCard title="REGULAR" price="799.-" text="Standard ticket" ticketType="regular" design="regular" />
+        <TicketInfo ticketType="REGULAR" pText="Join the excitement with our standard regular ticket. Gain general admission access to the event and be part of the incredible atmosphere." design="vip" />
       </div>
       <div className="flex flex-col items-center justify-center sm:justify-center sm:flex-row gap-10 sm:gap-20 lg:gap-32">
-        <TicketCard
-          title="VIP"
-          price="799.-"
-          text="Luxury Ticket"
-          ticketType="vip"
-          labelText="Best Offer"
-        />
-        <TicketInfo
-          ticketType="VIP"
-          pText="Experience unparalleled luxury with our exclusive VIP ticket. Enjoy premium seating, complimentary refreshments, and early access to the venue."
-        />
+        <TicketCard title="VIP" price="799.-" text="Luxury Ticket" ticketType="vip" labelText="Best Offer" />
+        <TicketInfo ticketType="VIP" pText="Experience unparalleled luxury with our exclusive VIP ticket. Enjoy premium seating, complimentary refreshments, and early access to the venue." />
       </div>
     </section>
   );

@@ -6,9 +6,7 @@ async function Band({ params }) {
   const { slug } = await params;
   const BASE_URL = "https://sudsy-jet-grill.glitch.me/logos/";
 
-  const response = await fetch(
-    `https://sudsy-jet-grill.glitch.me/bands/${slug}`
-  );
+  const response = await fetch(`https://sudsy-jet-grill.glitch.me/bands/${slug}`);
   const band = await response.json();
 
   const responseBands = await fetch(`https://sudsy-jet-grill.glitch.me/bands`);
@@ -25,68 +23,45 @@ async function Band({ params }) {
     const remainingCount = 4 - similarBands.length; //regner ud hvor mange der mangler for at få et array mmed fire
 
     // laver en liste som bruges til at vælge tilfældige bands
-    const availableBands = allBands.filter(
-      (b) => !similarBands.includes(b) && b.slug !== band.slug
-    );
+    const availableBands = allBands.filter((b) => !similarBands.includes(b) && b.slug !== band.slug);
     //for hver band der mangler for at få fire vælges bands fra availableBands listen
     for (let i = 0; i < remainingCount; i++) {
-      const randomBand =
-        availableBands[Math.floor(Math.random() * availableBands.length)];
+      const randomBand = availableBands[Math.floor(Math.random() * availableBands.length)];
       similarBands.push(randomBand); //de forksellige bands bliver tilføjet til similarBands
       availableBands.splice(availableBands.indexOf(randomBand), 1);
     }
   }
 
-  const scheduleResponse = await fetch(
-    `https://sudsy-jet-grill.glitch.me/schedule`
-  );
+  const scheduleResponse = await fetch(`https://sudsy-jet-grill.glitch.me/schedule`);
   const schedule = await scheduleResponse.json();
 
   //få fat i alle billederne, hvis de mangler http bliver det tilføjet
-  const logo = band.logo.startsWith("http")
-    ? band.logo
-    : `${BASE_URL}${band.logo}`;
+  const logo = band.logo.startsWith("http") ? band.logo : `${BASE_URL}${band.logo}`;
 
   return (
-    <section className="flex  flex-col gap-20 lg:gap-36">
-      <div className="w-screen lg:-mx-desktop -mx-mobile h-[50vh] relative flex flex-col justify-end items-center ">
+    <section className="flex flex-col gap-20 lg:gap-32 -mt-16">
+      <div className="w-screen lg:-mx-desktop -mx-mobile h-[50vh] relative flex flex-col justify-end items-center border-b-2 border-tertiary ">
         <div className="z-20 text-main-2  pb-6 ">
-          <h1 className="text-main-2">{band.name}</h1>
+          <h1 className="text-main-1 bg-primary px-2 rounded-rounded-reg">{band.name}</h1>
         </div>
-        <Image
-          src={logo}
-          alt={`Logo of ${band.name}`}
-          fill
-          className="absolute inset-0 object-cover"
-        />
+        <Image src={logo} alt={`Logo of ${band.name}`} fill className="absolute inset-0 object-cover" />
       </div>
       <div className=" lg:gap-11 flex flex-col gap-8  lg:grid lg:grid-cols-[3fr_2fr] ">
-        <div className=" bg-secondary grid-cols-[3fr_2fr]  p-11 rounded-md  text-main-1 flex flex-col gap-4">
+        <div className=" bg-secondary grid-cols-[3fr_2fr] -mx-mobile md:mx-0 p-10 rounded-md  text-main-1 flex flex-col gap-4 ">
           <h3>About</h3>
           <p className="text-base">{band.bio}</p>
         </div>
 
         <ScheduleForBand schedule={schedule} bandName={band.name} band={band} />
       </div>
-      <div className="flex relative flex-col  gap-10 before:content[''] before:w-full before:absolute before:h-[1px] before:bg-feedback-disabled-1 before:-top-8">
+      <div className="flex flex-col gap-6 border-t-2 py-6 border-primary">
         <h3 className=" text-center">You might also like</h3>
         <div className="flex flex-wrap relative justify-center md:justify-between gap-3 ">
           {similarBands.length > 0 ? (
-            similarBands.map((similarBand) => {
-              const logo = similarBand.logo.startsWith("http")
-                ? similarBand.logo
-                : `${BASE_URL}${similarBand.logo}`;
+            similarBands.slice(0, 4).map((similarBand) => {
+              const logo = similarBand.logo.startsWith("http") ? similarBand.logo : `${BASE_URL}${similarBand.logo}`;
 
-              return (
-                <BandCard
-                  alt={`Logo of ${similarBand.name}`}
-                  key={similarBand.slug}
-                  imgSrc={logo}
-                  name={similarBand.name}
-                  genre={similarBand.genre}
-                  slug={similarBand.slug}
-                />
-              );
+              return <BandCard alt={`Logo of ${similarBand.name}`} key={similarBand.slug} imgSrc={logo} name={similarBand.name} genre={similarBand.genre} slug={similarBand.slug} />;
             })
           ) : (
             <p>No similar bands found</p>

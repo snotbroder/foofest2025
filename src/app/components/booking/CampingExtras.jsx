@@ -6,39 +6,28 @@ function CampingExtra() {
   //hent state data fra store
   const ticketInfo = useBasketStore((state) => state.ticketInfo);
   const campInfo = useBasketStore((state) => state.campInfo);
-  const updateTentMultiply = useBasketStore(
-    (state) => state.updateTentMultiply
-  );
+  const updateTentMultiply = useBasketStore((state) => state.updateTentMultiply);
 
-  const toggleGreenCamping = useBasketStore(
-    (state) => state.toggleGreenCamping
-  );
+  const toggleGreenCamping = useBasketStore((state) => state.toggleGreenCamping);
 
   //beregn totaler, men først når de kaldes (inden i handle update)
-  const calculateTotalTickets = (tickets) =>
-    tickets.reduce((total, ticket) => total + ticket.itemMultiply, 0);
-  const calculateTotalTents = (tents) =>
-    tents.reduce((total, tent) => total + tent.itemMultiply, 0);
+  const calculateTotalTickets = (tickets) => tickets.reduce((total, ticket) => total + ticket.itemMultiply, 0);
+  const calculateTotalTents = (tents) => tents.reduce((total, tent) => total + tent.itemMultiply, 0);
 
   //totals der kaldes i handleUpdate, og send dynamisk data fra basket store med
   const totalTicketsInOrder = calculateTotalTickets(ticketInfo);
   const totalTentsAllocated = calculateTotalTents(campInfo);
 
   //finder data for nuværende antal telte i store
-  const twoPersonTent =
-    campInfo.find((tent) => tent.itemTitle === "two person tent")
-      ?.itemMultiply || 0;
-  const threePersonTent =
-    campInfo.find((tent) => tent.itemTitle === "three person tent")
-      ?.itemMultiply || 0;
+  const twoPersonTent = campInfo.find((tent) => tent.itemTitle === "two person tent")?.itemMultiply || 0;
+  const threePersonTent = campInfo.find((tent) => tent.itemTitle === "three person tent")?.itemMultiply || 0;
   //beregner max værdi til AmountBtn, så den kan give feedback til brugeren hvis aktiveret
   const sharedMaxAmount = totalTicketsInOrder - totalTentsAllocated;
 
   //håndteres når der ændres i AmountBtn
   const handleUpdate = (tentType, newAmount) => {
     //beregn hvor mange telte er valgt i store
-    const currentTentAmount =
-      campInfo.find((tent) => tent.itemTitle === tentType)?.itemMultiply || 0;
+    const currentTentAmount = campInfo.find((tent) => tent.itemTitle === tentType)?.itemMultiply || 0;
     const proposedTotal = totalTentsAllocated - currentTentAmount + newAmount;
 
     //Hvis der er flere ønskede antal telte er højere end billetter i ordren
@@ -62,12 +51,7 @@ function CampingExtra() {
           Extras <span className="font-normal italic">optional</span>
         </h3>
         <form className="flex gap-6 font-rethink text-main-1">
-          <input
-            className="w-10 h-auto"
-            id="green-camping"
-            type="checkbox"
-            onChange={toggleGreenCamping || false}
-          />
+          <input className="w-10 h-auto" id="green-camping" type="checkbox" onChange={toggleGreenCamping || false} />
           <div className="flex flex-col gap-1">
             <label className="font-bold" htmlFor="green-camping">
               Green Camping +249,-
@@ -81,27 +65,15 @@ function CampingExtra() {
           <div className="font-rethink text-main-1 border-b-2 border-b-tertiary border-b-solid my-1 pb-2 flex justify-between">
             <h3>Tents</h3>
           </div>
-          <p className=" small italic mt-2 mb-4">
-            Festival staff will set the tent up for you
-          </p>
+          <p className=" small italic mt-2 mb-4">Festival staff will set the tent up for you</p>
           <section className="flex flex-col gap-6">
             <div className="flex justify-between place-items-center gap-2">
               <h4>2 person tent +299,-</h4>
-              <AmountBtn
-                maxAmount={sharedMaxAmount + twoPersonTent}
-                onAmountChange={(amount) =>
-                  handleUpdate("two person tent", amount)
-                }
-              ></AmountBtn>
+              <AmountBtn maxAmount={sharedMaxAmount + twoPersonTent} onAmountChange={(amount) => handleUpdate("two person tent", amount)}></AmountBtn>
             </div>
             <div className="flex justify-between place-items-center gap-2">
               <h4>3 person tent +399,-</h4>
-              <AmountBtn
-                maxAmount={sharedMaxAmount + threePersonTent}
-                onAmountChange={(amount) =>
-                  handleUpdate("three person tent", amount)
-                }
-              ></AmountBtn>
+              <AmountBtn maxAmount={sharedMaxAmount + threePersonTent} onAmountChange={(amount) => handleUpdate("three person tent", amount)}></AmountBtn>
             </div>
           </section>
         </section>
@@ -112,7 +84,7 @@ function CampingExtra() {
             console.log("no");
           } else setNewStep(step + 1);
         }}
-        className="button bg-accent-1 grid place-self-center lg:place-self-end"
+        className="button grid place-self-center lg:place-self-end mt-6"
       >
         Next step
       </button>

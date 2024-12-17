@@ -1,14 +1,9 @@
-import {
-  FaFacebook,
-  FaInstagram,
-  FaSpotify,
-  FaRegCopyright,
-} from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaSpotify, FaRegCopyright } from "react-icons/fa";
 import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className=" relative mt-60 flex flex-col  lg:flex-row overflow-hidden">
+    <footer className="relative mt-16 flex flex-col  lg:flex-row overflow-hidden">
       <div className="flex flex-col gap-12 md:gap-10  mx-mobile md:mx-desktop relative before:absolute before:content-[''] before:w-screen before:-mx-mobile md:before:-mx-desktop before:h-[0.5px] before:bg-main-1 py-8 before:top-0">
         <div className="font-rethink flex gap-7  flex-col md:flex-row  md:gap-40 ">
           <ul>
@@ -59,14 +54,7 @@ function Footer() {
         </span>
       </div>
       <div className="rotate-180  w-80 opacity-60">
-        <Image
-          src="illustrations/svg/flowerOrange.svg"
-          width={140}
-          height={140}
-          objectFit="containr"
-          alt="Orange Flower"
-          className="w-auto h-auto -ml-20"
-        ></Image>
+        <Image src="illustrations/svg/flowerOrange.svg" width={140} height={140} objectFit="containr" alt="Orange Flower" className="w-auto h-auto -ml-20"></Image>
       </div>
     </footer>
   );

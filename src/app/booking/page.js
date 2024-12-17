@@ -26,27 +26,6 @@ export default function BookingPage() {
   const setNewStep = useBasketFunctionality((state) => state.setNewStep);
   return (
     <>
-      <p>
-        step is <span className=" text-red-600">{step}</span>
-      </p>
-      {/* <button
-        className="border-main-1 border-2"
-        onClick={() => {
-          setStep((prevState) => prevState - 1);
-        }}
-      >
-        step -1
-      </button>
-*/}
-      <button
-        className="border-main-1 border-2"
-        onClick={() => {
-          setNewStep(step + 1);
-        }}
-      >
-        step +1
-      </button>
-
       <BookingSteps></BookingSteps>
 
       <h1 className="  mb-3">
@@ -84,7 +63,6 @@ export default function BookingPage() {
             <PaymentInfo />
           </article>
         )}
-        {step === 3 && <article></article>}
         {step === 4 && (
           <article className="-order-1">
             <OverviewPage></OverviewPage>
@@ -98,11 +76,17 @@ export default function BookingPage() {
         )}
         <Basket></Basket>
       </section>
-      <pre>
-        Data as JSON
-        {JSON.stringify(fullBasket, null, 2)}
-        {/* {JSON.stringify(basketArray, null, 2)} */}
-      </pre>
+      <p>
+        step is <span className=" text-red-600">{step}</span>
+      </p>
+      <button
+        className="border-main-1 border-2"
+        onClick={() => {
+          setNewStep(step + 1);
+        }}
+      >
+        step +1
+      </button>
     </>
   );
 }

@@ -5,7 +5,7 @@ function TicketInfo({ ticketType, pText }) {
     <div className="border-2 border-main-1 inline-flex h-fit p-6 max-w-2xl flex-col gap-5 items-center justify-start rounded-rounded-reg">
       <h3>{ticketType} </h3>
       <p>{pText}</p>
-      <CtaButton href="/booking" text="BUY TICKET" />
+      <CtaButton href="/booking" text="go to booking" />
     </div>
   );
 }
