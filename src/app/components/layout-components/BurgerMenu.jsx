@@ -35,8 +35,8 @@ function BurgerMenu() {
       </div>
 
       {openBurgerMenu ? (
-        <div className=" inset-0 relative h-full -z-10">
-          <ul className=" font-rethink font-bold text-5xl flex flex-col items-end text-main-1 gap-10 py-16 px-8 absolute lg:px-32 bg-primary  bg-[url('/img/filterbg.webp')] bg-no-repeat bg-cover w-screen">
+        <nav className=" inset-0 relative h-full -z-10">
+          <ul className=" font-rethink font-bold text-5xl flex flex-col items-end text-main-1 gap-10 py-16 px-8 absolute lg:px-32 bg-primary  bg-[url('/img/filterbg.webp')] bg-no-repeat bg-cover w-screen  ">
             <li onClick={openBurgerMenu}>
               <Link href="/">Home</Link>
             </li>
@@ -59,7 +59,7 @@ function BurgerMenu() {
               ></Image>
             </div>
           </ul>
-        </div>
+        </nav>
       ) : (
         ""
       )}
