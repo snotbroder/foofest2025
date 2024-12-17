@@ -2,6 +2,7 @@ import ClickableCard2 from "../app/components/ClickableCard2";
 import BandCard from "../app/components/BandCard";
 import Accordion from "../app/components/Accordion";
 import CtaButton from "../app/components/CtaButton";
+import Link from "next/link";
 import Image from "next/image";
 import Hero from "../app/components/Hero";
 async function Home() {
@@ -90,7 +91,7 @@ async function Home() {
   bg-[url('/img/filterbg.webp'),url('/illustrations/svg/circle.svg')] 
   bg-repeat 
   bg-[top_center] bg-[contain]
-  lg:-mx-desktop -mx-mobile"
+  lg:-mx-desktop -mx-mobile border-t-2 border-b-2 border-tertiary"
       >
         <div className="mx-auto lg:w-full max-w-[700px] px-4 md:px-0">
           <h2 className="font-bold ">News</h2>
@@ -130,24 +131,23 @@ async function Home() {
                   quiz for a chance to win a ticket to Foo Festival 2024!
                 </p>
               </article>
-              <article className="bg-tertiary p-3 shadow-custom flex flex-col text-pretty gap-3 w-[15rem] lg:w-[20rem] ">
-                <Image
-                  src="/img/volunteer.webp"
-                  width={300}
-                  height={300}
-                  objectFit="cover"
-                  alt="Volunteer poster"
-                ></Image>
-                <h3 className="font-bold">Become a volunteer</h3>
-                <p>
-                  Volunteer with us! Enjoy free entry, merch, and unforgettable
-                  experiences while helping the festival run smoothly.
-                </p>
-                <p>
-                  Volunteer with us! Enjoy free entry, merch, and unforgettable
-                  experiences while helping the festival run smoothly.
-                </p>
-              </article>
+              <Link href="/volunteer">
+                <article className="bg-tertiary p-3 shadow-custom flex flex-col text-pretty gap-3 w-[15rem] lg:w-[20rem] h-full ">
+                  <Image
+                    src="/img/volunteer.webp"
+                    width={300}
+                    height={300}
+                    objectFit="cover"
+                    alt="Volunteer poster"
+                  ></Image>
+                  <h3 className="font-bold">Become a volunteer</h3>
+                  <p>
+                    Volunteer with us! Enjoy free entry, merch, and
+                    unforgettable experiences while helping the festival run
+                    smoothly.
+                  </p>
+                </article>
+              </Link>
             </div>
           </div>
         </div>
