@@ -1,9 +1,9 @@
-import ClickableCard2 from "../components/ClickableCard2";
-import BandCard from "../components/BandCard";
-import Accordion from "../components/Accordion";
-import CtaButton from "../components/CtaButton";
+import ClickableCard2 from "../app/components/ClickableCard2";
+import BandCard from "../app/components/BandCard";
+import Accordion from "../app/components/Accordion";
+import CtaButton from "../app/components/CtaButton";
 import Image from "next/image";
-import Hero from "../components/Hero";
+import Hero from "../app/components/Hero";
 async function Home() {
   const BASE_URL = "http://localhost:8080/logos/";
   const response = await fetch("https://sudsy-jet-grill.glitch.me/bands", {
