@@ -2,7 +2,7 @@ import ContactForm from "./ContactForm";
 import { postGuestInfo } from "@/app/api";
 import { useBasketStore } from "@/stores/basket-stores";
 function ContactPage() {
-  async function sendData(formData) {
+  function sendData(formData) {
     const data = [];
 
     forms.forEach((_, index) => {
@@ -15,7 +15,7 @@ function ContactPage() {
       data.push(personData);
     });
 
-    await postGuestInfo(data);
+    postGuestInfo(data);
   }
 
   const totalTickets = useBasketStore((state) => state.totalTickets());
@@ -42,7 +42,7 @@ function ContactPage() {
         </fieldset>
         <button
           type="submit"
-          className="bg-accent-1 text-sm shadow-lg shadow-black flex self-start px-4 py-0.5"
+          className="bg-accent-1 text-sm button flex self-start px-4 py-0.5"
         >
           Sumbit
         </button>

@@ -54,10 +54,13 @@ export async function getSpots() {
   //   headers: headersList,
   // });
 
-  let response = await fetch("https://sudsy-jet-grill.glitch.me/available-spots", {
-    method: "GET",
-    headers: headersList,
-  });
+  let response = await fetch(
+    "https://sudsy-jet-grill.glitch.me/available-spots",
+    {
+      method: "GET",
+      headers: headersList,
+    }
+  );
 
   let data = await response.json();
   // console.log(data);
@@ -167,22 +170,19 @@ export async function postPaymentInfo(paymentInfo) {
   return data;
 }
 
-export async function postGuestInfo(GuestInfo) {
+export function postGuestInfo(GuestInfo) {
   let headersList = {
     Accept: "*/*",
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+    "Content-Type": "application/json",
     apikey: key,
   };
 
-  let response = await fetch(`${url}subGuestsInfo`, {
+  fetch(`${url}subGuestsInfo`, {
     method: "POST",
     headers: headersList,
     body: JSON.stringify(GuestInfo),
   });
-
-  let data = await response.json();
-  // console.log(data);
-  return data;
 }
 
 export async function reserveSpot(selectedArea, ticketAmount) {
@@ -201,11 +201,14 @@ export async function reserveSpot(selectedArea, ticketAmount) {
   //   headers: headersList,
   // });
   try {
-    let response = await fetch("https://sudsy-jet-grill.glitch.me/reserve-spot", {
-      method: "PUT",
-      body: bodyContent,
-      headers: headersList,
-    });
+    let response = await fetch(
+      "https://sudsy-jet-grill.glitch.me/reserve-spot",
+      {
+        method: "PUT",
+        body: bodyContent,
+        headers: headersList,
+      }
+    );
 
     let data = await response.json(); //omg husk json
     console.log(data);
@@ -230,11 +233,14 @@ export async function fulfillReservation(reservationId) {
   //   headers: headersList,
   // });
   try {
-    let response = await fetch("https://sudsy-jet-grill.glitch.me/fullfill-reservation", {
-      method: "POST",
-      body: bodyContent,
-      headers: headersList,
-    });
+    let response = await fetch(
+      "https://sudsy-jet-grill.glitch.me/fullfill-reservation",
+      {
+        method: "POST",
+        body: bodyContent,
+        headers: headersList,
+      }
+    );
 
     let data = await response.json();
     console.log(data);

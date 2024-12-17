@@ -41,7 +41,7 @@ function TicketSelectParent() {
             console.log("no");
           } else setNewStep(step + 1);
         }}
-        className="btn-style grid place-self-center lg:place-self-end"
+        className="button grid place-self-center lg:place-self-end"
       >
         Next step
       </button>

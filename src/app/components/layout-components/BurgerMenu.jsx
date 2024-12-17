@@ -27,7 +27,7 @@ function BurgerMenu() {
         <section className="flex justify-end  place-items-center">
           {!isOpen && (
             <div>
-              <CtaButton text="Buy ticket" />
+              <CtaButton href="/" text="Buy ticket" />
             </div>
           )}
           <div onClick={toggleMenu} className="">
@@ -63,7 +63,7 @@ function BurgerMenu() {
               </li>
               <li>
                 <div className="text-sm md:text-xs lg:text-lg w-[150px] mx-auto flex justify-end">
-                  <CtaButton text="Buy ticket" />
+                  <CtaButton href="/" text="Buy ticket" />
                 </div>
               </li>
             </ul>

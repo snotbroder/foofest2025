@@ -107,7 +107,7 @@ input:user-valid {
   border-color: green;
 } */
 
-.btn-style {
+.button {
   color: #fff8db;
   font-family: "Rethink Sans";
   font-size: 1rem;
@@ -120,33 +120,15 @@ input:user-valid {
   font-weight: 700;
   position: relative;
   max-width: 40%;
-  &::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #3a140b;
-    z-index: -1;
-    content: "";
-    width: 100%;
-    height: 100%;
-    margin-left: 0.25rem;
-    margin-top: 0.25rem;
-    transition: all;
-    transition-duration: 0.075s;
-  }
-  &:hover {
-    color: #fff8db;
-    transition: all;
-    transition-duration: 0.075s;
-    &::after {
-      margin-left: 0;
-      margin-top: 0;
-    }
-  }
-  &:active {
-    background-color: #3a140b;
-    color: #fff8db;
-  }
+  box-shadow: 4px 4px 0px #3a140b;
+  transform: scale(1.02);
+  transition: all 0.2s ease-in;
+}
+.button:hover {
+  box-shadow: 8px 8px 0px #3a140b;
+  transform: scale(1.02);
+  transition: all 0.2s ease-in;
+  color: #3a140b;
 }
 
 .select-container {
@@ -184,11 +166,6 @@ input:user-valid {
 .no-scroll {
   overflow: hidden;
 }
-
-/* .logo {
-  width: 7.5rem;
-  height: 7rem;
-} */
 
 .shadow-custom:hover {
   box-shadow: 14px 12px 0px #3a140b;

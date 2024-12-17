@@ -25,8 +25,22 @@ async function Home() {
               objectFit="cover"
               alt="Pink Flowe"
             ></Image>
+            <Image
+              src="illustrations/svg/flower2Pink.svg"
+              width={250}
+              height={250}
+              objectFit="cover"
+              alt="Pink Flowe"
+            ></Image>
           </div>
           <div className="absolute -left-10  top-28  xl:-left-20 -z-10 mx-auto   opacity-60 ">
+            <Image
+              src="illustrations/svg/flower2Pink.svg"
+              width={150}
+              height={150}
+              objectFit="cover"
+              alt="Small Pink Flower"
+            ></Image>
             <Image
               src="illustrations/svg/flower2Pink.svg"
               width={150}
@@ -50,9 +64,24 @@ async function Home() {
             text=" Check out our amazing lineup of bands and performers, and don't miss your favourite artists "
             href="/lineup"
           ></ClickableCard2>
+          <ClickableCard2
+            headline="Schedule"
+            text=" Check out the full schedule and don't miss any moment of the festival"
+            href="/schedule"
+          ></ClickableCard2>
+          <ClickableCard2
+            headline="Map"
+            text=" Find your way around the Foo Festival with our easy-to-follow map."
+            href="/map"
+          ></ClickableCard2>
+          <ClickableCard2
+            headline="Lineup"
+            text=" Check out our amazing lineup of bands and performers, and don't miss your favourite artists "
+            href="/lineup"
+          ></ClickableCard2>
         </div>
         <div>
-          <CtaButton text="Buy Ticket"></CtaButton>
+          <CtaButton href="/" text="Buy Ticket"></CtaButton>
         </div>
       </section>
       <section
@@ -78,11 +107,24 @@ async function Home() {
                     slug={band.slug}
                   />
                 );
+                const logo = band.logo.startsWith("http")
+                  ? band.logo
+                  : `${BASE_URL}${band.logo}`;
+                return (
+                  <BandCard
+                    alt={`Logo of ${band.name}`}
+                    key={band.name}
+                    imgSrc={logo}
+                    name={band.name}
+                    genre={band.genre}
+                    slug={band.slug}
+                  />
+                );
               })}
           </div>
         </div>
         <div className="relative ">
-          <CtaButton text="Buy Ticket"></CtaButton>
+          <CtaButton href="/" text="Buy Ticket"></CtaButton>
         </div>
       </section>
       <section
@@ -139,6 +181,10 @@ async function Home() {
                   alt="Volunteer poster"
                 ></Image>
                 <h3 className="font-bold">Become a volunteer</h3>
+                <p>
+                  Volunteer with us! Enjoy free entry, merch, and unforgettable
+                  experiences while helping the festival run smoothly.
+                </p>
                 <p>
                   Volunteer with us! Enjoy free entry, merch, and unforgettable
                   experiences while helping the festival run smoothly.

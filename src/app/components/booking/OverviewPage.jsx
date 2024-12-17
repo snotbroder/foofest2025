@@ -34,6 +34,9 @@ function OverviewPage() {
       </article>
       <button className="btn-style grid place-self-center" onClick={fulfillReservationHandler}>
         Complete purchase
+    <>
+      <button className="button" onClick={fulfillReservationHandler}>
+        Complete
       </button>
     </section>
   );
