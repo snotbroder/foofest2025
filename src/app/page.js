@@ -82,7 +82,7 @@ async function Home() {
           </div>
         </div>
         <div className="relative ">
-          <CtaButton href="/tickets" text="Buy Ticket"></CtaButton>
+          <CtaButton href="/lineup" text="See lineup"></CtaButton>
         </div>
       </section>
       <section
