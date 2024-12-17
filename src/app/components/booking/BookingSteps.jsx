@@ -8,7 +8,7 @@ function BookingSteps() {
   const setNewStep = useBasketFunctionality((state) => state.setNewStep);
   return (
     <>
-      <ul className="flex flex-col gap-2 lg:flex-row lg:justify-between font-rethink my-6">
+      <ul className="flex flex-col gap-2 lg:flex-row lg:justify-between font-rethink my-6 py-4 border-t-[1px] border-b-[1px] border-tertiary border-solid">
         {stepNames.map((stepName, index) => (
           <li
             key={index}
