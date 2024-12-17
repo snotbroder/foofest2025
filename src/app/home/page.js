@@ -25,22 +25,8 @@ async function Home() {
               objectFit="cover"
               alt="Pink Flowe"
             ></Image>
-            <Image
-              src="illustrations/svg/flower2Pink.svg"
-              width={250}
-              height={250}
-              objectFit="cover"
-              alt="Pink Flowe"
-            ></Image>
           </div>
           <div className="absolute -left-10  top-28  xl:-left-20 -z-10 mx-auto   opacity-60 ">
-            <Image
-              src="illustrations/svg/flower2Pink.svg"
-              width={150}
-              height={150}
-              objectFit="cover"
-              alt="Small Pink Flower"
-            ></Image>
             <Image
               src="illustrations/svg/flower2Pink.svg"
               width={150}
