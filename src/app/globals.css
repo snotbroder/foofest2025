@@ -67,6 +67,17 @@ body {
   background-color: #d76f2d;
 }
 
+.vip-image {
+  background-image: url(/illustrations/svg/lp2.svg);
+  background-position: 120% 20%, 10%;
+  background-size: 50%;
+}
+.regular-image {
+  background-image: url(/illustrations/svg/spiralPink.svg);
+  background-position: 110% 90%, 10%;
+  background-size: 50%;
+}
+
 .cardlabel {
   position: absolute;
   left: 10%;

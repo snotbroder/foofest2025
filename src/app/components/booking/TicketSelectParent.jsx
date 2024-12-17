@@ -19,9 +19,9 @@ function TicketSelectParent() {
   const setNewStep = useBasketFunctionality((state) => state.setNewStep);
   return (
     <>
-      <TicketSelectCard onAmountChange={(amount) => handleUpdate("vip ticket", amount)} ticketName="VIP TICKET" variant="vip" price="1299" subText="Best Offer"></TicketSelectCard>
+      <TicketSelectCard onAmountChange={(amount) => handleUpdate("vip ticket", amount)} ticketName="VIP TICKET" variant="vip" variantImage="vip-image" price="1299" subText="Best Offer"></TicketSelectCard>
 
-      <TicketSelectCard onAmountChange={(amount) => handleUpdate("regular ticket", amount)} ticketName="REGULAR TICKET" variant="regular" price="799"></TicketSelectCard>
+      <TicketSelectCard onAmountChange={(amount) => handleUpdate("regular ticket", amount)} ticketName="REGULAR TICKET" variant="regular" variantImage="regular-image" price="799"></TicketSelectCard>
       <button
         onClick={() => {
           if (totalTickets === 0) {

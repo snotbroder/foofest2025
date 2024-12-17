@@ -2,7 +2,7 @@
 import { useState } from "react";
 import AmountBtn from "../AmountBtn";
 
-function TicketSelectCard({ variant, ticketName, price, subText, onAmountChange }) {
+function TicketSelectCard({ variant, ticketName, price, subText, onAmountChange, variantImage }) {
   const [amount, setAmount] = useState(0);
 
   function handleAmountChange(newAmount) {
@@ -11,7 +11,7 @@ function TicketSelectCard({ variant, ticketName, price, subText, onAmountChange 
   }
 
   return (
-    <article className={` ${variant} bg-no-repeat bg-right-top bg-contain data-[variant=type1]:bg-tertiary data-[variant=type2]:bg-primary rounded-rounded-reg p-8 flex flex-col gap-3 place-items-center lg:flex-row lg:justify-between lg:place-items-center lg:p-10 mb-3`}>
+    <article className={` ${variant} ${variantImage} bg-no-repeat bg-right-top bg-contain data-[variant=type1]:bg-tertiary data-[variant=type2]:bg-primary rounded-rounded-reg p-8 flex flex-col gap-3 place-items-center lg:flex-row lg:justify-between lg:place-items-center lg:p-10 mb-3`}>
       <div>
         <header className="flex gap-3 place-items-center">
           <h2 className="font-rethink font-bold ">{ticketName}</h2>
