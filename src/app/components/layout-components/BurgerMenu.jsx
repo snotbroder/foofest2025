@@ -25,7 +25,7 @@ function BurgerMenu() {
 
         <section className="flex justify-end gap-6 place-items-center">
           <div>
-            <CtaButton href="/" text="Buy ticket" />
+            <CtaButton href="/tickets" text="Buy ticket" />
           </div>
 
           <div onClick={handleOpenBurgerMenu} className="">
