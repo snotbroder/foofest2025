@@ -20,35 +20,32 @@ function ScheduleForBand({ schedule, bandName, band }) {
     });
   });
   return (
-    <div className="font-rethink relative flex flex-col gap-4 ">
-      <div className="before:-mr-mobile lg:before:-mr-desktop before:w-[34vw] before:h-auto before:content-[url('/illustrations/spiralPink.svg')] before:absolute before:-right-10 before:-z-10 before:opacity-60 ">
-        <h3 className="font-bold text-2xl">Schedule</h3>
+    <div className="font-rethink flex flex-col gap-8 ">
+      <div className="flex flex-col gap-2">
+        <h3 className="font-bold ">Schedule</h3>
         {scheduleItems.length > 0 ? (
           scheduleItems.map((item, index) => (
             <div key={index} className="flex flex-col gap-2 ">
-              <div className="flex gap-2 ">
-                <p className="font-bold">Day:</p>
-                <span>{item.day}</span>
-              </div>
-              <div className="flex  gap-2">
-                <p className="font-bold">Where:</p>
-                <span>{item.stage}</span>
-              </div>
-              <div className="flex  gap-2">
-                <p className="font-bold">When:</p>
-                <span>
-                  {item.end} - {item.start}
-                </span>
-              </div>
+              <p>
+                <span className="font-bold">Day: </span>
+                {item.day}
+              </p>
+              <p className="font-bold">
+                <span>Where: </span>
+                {item.stage}
+              </p>
+              <p>
+                <span className="font-bold">When: </span>
+                {item.end} - {item.start}
+              </p>
             </div>
           ))
         ) : (
           <p>No schedule available for this band</p>
         )}
       </div>
-      <div className="w-full h-[1.5px] bg-primary"></div>
-      <div>
-        <h3 className="text-1xl font-bold">Band members</h3>
+      <div className=" relative before:absolute before:content-[''] before:h-[1px] before:bg-primary before:w-full before:-top-4">
+        <h3 className=" font-bold">Band members</h3>
         <ul>{band.members.join(", ")}</ul>
       </div>
     </div>

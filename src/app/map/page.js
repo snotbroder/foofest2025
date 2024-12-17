@@ -10,8 +10,8 @@ import { BsLightningChargeFill } from "react-icons/bs";
 function map() {
   return (
     <div className="mt-40 flex flex-col gap-40">
-      <div className="relative ">
-        <div className="absolute -bottom-64 -left-40 -z-10 opacity-60">
+      <div className="relative -mx-mobile lg:-mx-desktop">
+        <div className="absolute -bottom-40 left-0 -z-10 opacity-60 w-40 lg:w-fit">
           <Image
             src="illustrations/svg/spiralPurple.svg"
             width={240}
@@ -19,7 +19,7 @@ function map() {
             alt="Purple spiral"
           ></Image>
         </div>
-        <div className="absolute -bottom-96 -right-20 -z-10 opacity-60">
+        <div className="absolute top-0 right-0 -z-10 opacity-60 w-48 lg:w-fit">
           <Image
             src="illustrations/svg/spiralPink.svg"
             width={330}
@@ -42,7 +42,7 @@ function map() {
       </section>
       <section className="flex flex-col bg-secondary -mx-mobile text-main-2 lg:-mx-desktop gap-16 py-24 font-rethink">
         <h3 className="text-center font-bold text-main-2">Good to know</h3>
-        <div className="flex flex-wrap items-start justify-between gap-10  px-8 lg:px-32 text-center ">
+        <div className="flex flex-wrap items-start justify-between gap-10   lg:px-32 text-center ">
           <div className="flex flex-col items-center ">
             <IoIosWater className="text-4xl" />
             <p className="w-44  text-main-2 text-pretty">
