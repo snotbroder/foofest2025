@@ -165,9 +165,9 @@ export async function postPaymentInfo(paymentInfo) {
     body: JSON.stringify(paymentInfo),
   });
 
-  let data = await response.json();
+  // let data = await response.json();
   // console.log(data);
-  return data;
+  // return data;
 }
 
 export function postGuestInfo(GuestInfo) {
