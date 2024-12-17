@@ -14,7 +14,7 @@ function BurgerMenu() {
   return (
     <div className="bg-primary relative  py-6   z-50     bg-[url('/img/filterbg.webp')] bg-no-repeat bg-cover">
       <div className="lg:mx-desktop  flex justify-between place-items-center">
-        <div className="">
+        <div className="w-16 md:w-fit">
           <Image
             objectFit="cover"
             src="illustrations/svg/logo.svg"
@@ -36,21 +36,21 @@ function BurgerMenu() {
 
       {openBurgerMenu ? (
         <div className=" inset-0 relative h-full -z-10">
-          <ul className=" font-rethink font-bold text-5xl flex flex-col items-end text-main-1 gap-10 py-16 lg:px-64 lg:-mx-desktop -mx-mobile relative px-16 bg-primary  bg-[url('/img/filterbg.webp')] bg-no-repeat bg-cover">
-            <li>
+          <ul className=" font-rethink font-bold text-5xl flex flex-col items-end text-main-1 gap-10 py-16 px-8 absolute lg:px-32 bg-primary  bg-[url('/img/filterbg.webp')] bg-no-repeat bg-cover w-screen">
+            <li onClick={openBurgerMenu}>
               <Link href="/">Home</Link>
             </li>
-            <li>
+            <li onClick={openBurgerMenu}>
               <Link href="/lineup">Lineup</Link>
             </li>
-            <li>
+            <li onClick={openBurgerMenu}>
               <Link href="/schedule">Schedule</Link>
             </li>
-            <li>
+            <li onClick={openBurgerMenu}>
               <Link href="/map">Festival Map</Link>
             </li>
 
-            <div className="absolute left-0 bottom-12 opacity-60">
+            <div className="absolute left-20 bottom-12 opacity-20">
               <Image
                 src="illustrations/svg/flowerPurple.svg"
                 width={200}
