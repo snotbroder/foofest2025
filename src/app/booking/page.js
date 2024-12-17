@@ -34,7 +34,8 @@ export default function BookingPage() {
         {step === 3 && "Payment Information"}
         {step === 4 && "Booking Overview"}
       </h1>
-      <BookingSteps></BookingSteps>
+      {step < 5 && <BookingSteps></BookingSteps>}
+
       <section className="lg:grid grid-cols-[2fr_1fr] grid-rows-1 gap-4 ">
         {step === 0 && (
           <article>
@@ -72,6 +73,9 @@ export default function BookingPage() {
             <h1>Booking completed</h1>
             <p className="mb-6">Thank you for your money ;)</p>
             <CtaButton href={"/"} text="Back to home"></CtaButton>
+            <section className="mt-16 pt-6 border-t-2 border-tertiary">
+              <Accordion></Accordion>
+            </section>
           </article>
         )}
         {step < 5 ? <Basket></Basket> : ""}

@@ -2,16 +2,16 @@
 import { redirect } from "next/navigation";
 
 function sessionInvalid() {
-  function redirectToBooking() {
-    redirect("/booking");
+  function redirectToHome() {
+    redirect("/");
   }
   return (
     <>
-      <h1>Oops</h1>
-      <p>ur session was invalid, propably bcuz the time ran out</p>
-      <p className="small text-feedback-disabled-2">n00b :P</p>
-      <button className="button" onClick={redirectToBooking}>
-        Back to booking
+      <h1>Oops!</h1>
+      <h3>Your session expired</h3>
+      <p>Your booking did not complete, please try again.</p>
+      <button className="button mt-6" onClick={redirectToHome}>
+        Back to home
       </button>
     </>
   );
