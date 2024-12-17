@@ -26,8 +26,6 @@ export default function BookingPage() {
   const setNewStep = useBasketFunctionality((state) => state.setNewStep);
   return (
     <>
-      <BookingSteps></BookingSteps>
-
       <h1 className="  mb-3">
         {step === 0 && "Select Ticket Type"}
         {step === 1 && "Select Camp"}
@@ -35,7 +33,7 @@ export default function BookingPage() {
         {step === 3 && "Payment Information"}
         {step === 4 && "Booking Overview"}
       </h1>
-
+      <BookingSteps></BookingSteps>
       <section className="lg:grid grid-cols-[2fr_1fr] grid-rows-1 gap-4 ">
         {step === 0 && (
           <article>

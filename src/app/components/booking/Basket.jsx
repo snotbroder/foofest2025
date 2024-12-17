@@ -79,7 +79,7 @@ function Basket() {
   }
   return (
     <div>
-      <section className="fixed shadow-[-1px_-9px_56px_-13px_rgba(0,0,0,0.50)] md:shadow-none lg:shadow-none max-h-max -mx-mobile row-span-1 row-start-1 col-start-2 lg:mx-0 lg:relative    bottom-0 after:text-main-2  w-full bg-main-2 border-y-2 lg:border-2 border-main-1 border-solid p-8 rounded-rounded-reg ">
+      <section className="fixed shadow-[-1px_-9px_56px_-13px_rgba(0,0,0,0.50)] md:shadow-none lg:shadow-none max-h-max -mx-mobile row-span-1 row-start-1 col-start-2 lg:mx-0 lg:relative    bottom-0 after:text-main-2  w-full bg-main-2 border-y-2 lg:border-2 border-main-1 border-solid p-8 rounded-rounded-reg z-50 ">
         <article className="font-rethink place-self-end">
           <Countdown onComplete={sessionInvalid} date={countdownDate} renderer={renderer} />
         </article>{" "}
