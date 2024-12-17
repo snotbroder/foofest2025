@@ -2,7 +2,7 @@
 import { useState } from "react";
 import AmountBtn from "../AmountBtn";
 
-function TicketSelectCard({ variant, ticketName, price, subText, onAmountChange, variantImage }) {
+function TicketSelectCard({ variant, ticketName, price, subText, onAmountChange, variantImage, storedValue }) {
   const [amount, setAmount] = useState(0);
 
   function handleAmountChange(newAmount) {
@@ -19,7 +19,7 @@ function TicketSelectCard({ variant, ticketName, price, subText, onAmountChange,
         </header>
         <h3>{price},-</h3>
       </div>
-      <AmountBtn maxAmount={10} onAmountChange={handleAmountChange} />
+      <AmountBtn storedValue={storedValue} maxAmount={10} onAmountChange={handleAmountChange} />
     </article>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-function AmountBtn({ onAmountChange, maxAmount }) {
-  const [amount, setAmount] = useState(0);
+function AmountBtn({ onAmountChange, maxAmount, storedValue }) {
+  const [amount, setAmount] = useState(storedValue);
 
   // Tilføj 1 når der klikkes på + knap, men tjek at det valgte amount ikke er mere end den satte maxAmount prop
   function add() {

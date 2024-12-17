@@ -85,7 +85,7 @@ export default function BookingPage() {
       >
         step +1
       </button>
-      {}
+      <pre>{JSON.stringify(fullBasket, null, 2)}</pre>
     </>
   );
 }
