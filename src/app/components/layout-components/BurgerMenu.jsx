@@ -36,7 +36,7 @@ function BurgerMenu() {
 
       {openBurgerMenu ? (
         <div className=" inset-0 relative h-full -z-10">
-          <ul className=" font-rethink font-bold text-5xl flex flex-col items-end text-main-1 gap-10 py-16 lg:px-64 lg:-mx-desktop -mx-mobile relative px-16 bg-primary  bg-[url('/img/filterbg.webp')] bg-no-repeat bg-cover">
+          <ul className=" font-rethink font-bold text-xl md:text-2xl lg:text-5xl flex flex-col items-end text-main-1 gap-10 py-16 lg:px-64 lg:-mx-desktop -mx-mobile relative px-16 bg-primary  bg-[url('/img/filterbg.webp')] bg-no-repeat bg-cover">
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -50,7 +50,7 @@ function BurgerMenu() {
               <Link href="/map">Festival Map</Link>
             </li>
 
-            <div className="absolute left-0 bottom-12 opacity-60">
+            <div className="absolute right-40 bottom-40 opacity-60">
               <Image
                 src="illustrations/svg/flowerPurple.svg"
                 width={200}
