@@ -51,7 +51,7 @@ p.small {
 }
 
 .display {
-  font-size: 6rem;
+  font-size: clamp(2.5rem, 5vw, 6rem);
   color: var(--main-1);
 }
 body {
