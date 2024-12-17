@@ -11,6 +11,7 @@ import PaymentInfo from "../components/booking/PaymentInfo";
 import { useBasketFunctionality } from "@/stores/basket-functionality";
 import OverviewPage from "../components/booking/OverviewPage";
 import CtaButton from "../components/CtaButton";
+import Accordion from "../components/Accordion";
 
 export default function BookingPage() {
   //const [step, setStep] = useState(0);
@@ -67,12 +68,13 @@ export default function BookingPage() {
           </article>
         )}
         {step === 5 && (
-          <article>
-            <h1>Thank you for your money ;)</h1>
-            Back to home
+          <article className="col-span-2">
+            <h1>Booking completed</h1>
+            <p className="mb-6">Thank you for your money ;)</p>
+            <CtaButton href={"/"} text="Back to home"></CtaButton>
           </article>
         )}
-        <Basket></Basket>
+        {step < 5 ? <Basket></Basket> : ""}
       </section>
       <p>
         step is <span className=" text-red-600">{step}</span>
@@ -85,7 +87,7 @@ export default function BookingPage() {
       >
         step +1
       </button>
-      <pre>{JSON.stringify(fullBasket, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(fullBasket, null, 2)}</pre> */}
     </>
   );
 }

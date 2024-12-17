@@ -44,6 +44,16 @@ function CampingExtra() {
   const step = useBasketFunctionality((state) => state.bookingStep);
   const setNewStep = useBasketFunctionality((state) => state.setNewStep);
 
+  const twoTentStored = useBasketStore((state) => {
+    const twoTentStored = state.campInfo.find((item) => item.itemTitle === "two person tent");
+    return twoTentStored.itemMultiply;
+  });
+
+  const threeTentStored = useBasketStore((state) => {
+    const threeTentStored = state.campInfo.find((item) => item.itemTitle === "three person tent");
+    return threeTentStored.itemMultiply;
+  });
+
   return (
     <section>
       <article className="bg-main-2 border-solid border-2 border-main-1 rounded-rounded-reg max-h-max p-8 flex flex-col gap-2">
@@ -69,11 +79,11 @@ function CampingExtra() {
           <section className="flex flex-col gap-6">
             <div className="flex justify-between place-items-center gap-2">
               <h4>2 person tent +299,-</h4>
-              <AmountBtn maxAmount={sharedMaxAmount + twoPersonTent} onAmountChange={(amount) => handleUpdate("two person tent", amount)}></AmountBtn>
+              <AmountBtn storedValue={twoTentStored} maxAmount={sharedMaxAmount + twoPersonTent} onAmountChange={(amount) => handleUpdate("two person tent", amount)}></AmountBtn>
             </div>
             <div className="flex justify-between place-items-center gap-2">
               <h4>3 person tent +399,-</h4>
-              <AmountBtn maxAmount={sharedMaxAmount + threePersonTent} onAmountChange={(amount) => handleUpdate("three person tent", amount)}></AmountBtn>
+              <AmountBtn storedValue={threeTentStored} maxAmount={sharedMaxAmount + threePersonTent} onAmountChange={(amount) => handleUpdate("three person tent", amount)}></AmountBtn>
             </div>
           </section>
         </section>
@@ -84,7 +94,7 @@ function CampingExtra() {
             console.log("no");
           } else setNewStep(step + 1);
         }}
-        className="button grid place-self-center lg:place-self-end mt-6"
+        className={`button mt-6 grid place-self-center lg:place-self-end ${reservationId === "" ? "opacity-60 cursor-not-allowed" : ""}`}
       >
         Next step
       </button>

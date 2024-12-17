@@ -2,6 +2,7 @@
 import { fulfillReservation } from "@/app/api";
 import { useBasketStore } from "@/stores/basket-stores";
 import { useBasketFunctionality } from "@/stores/basket-functionality";
+import CtaButton from "../CtaButton";
 function OverviewPage() {
   const reservationId = useBasketStore((state) => state.reservationId);
   const setNewStep = useBasketFunctionality((state) => state.setNewStep);
@@ -32,9 +33,11 @@ function OverviewPage() {
         <p>Please note, that by clicking the button below, you accept our terms and conditions.</p>
         <p className="italic">The festival will not be held liable for inclement weather nor cancellations.</p>
       </article>
-      <button className="button grid place-self-start" onClick={fulfillReservationHandler}>
+      <button className={`button my-6 grid place-self-center lg:place-self-start ${reservationId === "" ? "opacity-60 cursor-not-allowed" : ""}`} onClick={fulfillReservationHandler}>
         Complete purchase
       </button>
+
+      {reservationId === "" ? <CtaButton href="/booking" text="Retry booking"></CtaButton> : ""}
     </section>
   );
 }
