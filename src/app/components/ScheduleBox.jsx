@@ -1,7 +1,7 @@
 function ScheduleBox({ endTime, startTime, artist, logo, stage }) {
   return (
     <div className="flex flex-col lg:px-32 relative">
-      <span className="bg-secondary px-2  flex justify-between ">
+      <span className="bg-tertiary lg:rounded-rounded-reg text-main-2 px-2 py-0.5   flex justify-between ">
         <div>Time</div>
         <div>Band</div>
         <div>Stage</div>

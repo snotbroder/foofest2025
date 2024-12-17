@@ -37,12 +37,9 @@ function ScheduleFilter({
       short: "sun",
     },
   ];
-  console.log(pickedDay);
   return (
-    <article className="lg:px-32 lg:mt-48 flex flex-col gap-10">
-      <h1 className="font-spicy ">Schedule</h1>
-
-      <div className="flex flex-col gap-5 align-middle justify-center items-center relative">
+    <article className="lg:px-32  flex flex-col gap-10">
+      <div className="flex flex-col gap-5 align-middle sm:justify-center sm:items-center px-2 relative">
         <div className="absolute mx-auto -right-52 hidden -top-24 lg:block opacity-60 ">
           <Image
             alt="Orange Flower"
@@ -75,7 +72,7 @@ function ScheduleFilter({
             height={210}
           ></Image>
         </div>
-        <div className="list-none text-main-1 flex gap-4">
+        <div className="list-none text-main-1 flex-wrap  flex gap-4">
           {stageArray.map((stage, index) => {
             return (
               <li
@@ -83,8 +80,10 @@ function ScheduleFilter({
                 onClick={() => {
                   setPickedStage(stage);
                 }}
-                className={`cursor-pointer uppercase font-semibold  ${
-                  pickedStage === stage ? "text-feedback-error" : " text-main-1"
+                className={` lg:text-lg cursor-pointer uppercase font-semibold  ${
+                  pickedStage === stage
+                    ? "text-main-2 font-semibold bg-secondary rounded-rounded-reg px-3"
+                    : " text-main-1"
                 }`}
               >
                 {stage}
@@ -92,7 +91,7 @@ function ScheduleFilter({
             );
           })}
         </div>
-        <div className="list-none   text-main-1 flex gap-16">
+        <div className="list-none gap-4 flex-wrap  text-main-1 flex lg:gap-16">
           {daysArray.map((day) => {
             return (
               <li
@@ -100,8 +99,10 @@ function ScheduleFilter({
                 onClick={() => {
                   setPickedDay(day.short);
                 }}
-                className={`cursor-pointer uppercase text-main-1 ${
-                  pickedDay === day.short ? "underline" : ""
+                className={`cursor-pointer uppercase text-main-1 lg:text-lg ${
+                  pickedDay === day.short
+                    ? "text-main-2 font-semibold bg-secondary rounded-rounded-reg px-3"
+                    : ""
                 }`}
               >
                 {day.short}
