@@ -27,7 +27,7 @@ export default function BookingPage() {
   return (
     <>
       <p>
-        step is <span className="font-bold text-red-600">{step}</span>
+        step is <span className=" text-red-600">{step}</span>
       </p>
       {/* <button
         className="border-main-1 border-2"
@@ -49,7 +49,7 @@ export default function BookingPage() {
 
       <BookingSteps></BookingSteps>
 
-      <h1 className="font-spicy text-main-1 text-4xl mb-3">
+      <h1 className="  mb-3">
         {step === 0 && "Select Ticket Type"}
         {step === 1 && "Select Camp"}
         {step === 2 && "Guest Information"}

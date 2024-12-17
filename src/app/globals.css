@@ -9,33 +9,40 @@
   --background: var(--main-2);
 }
 h1 {
+  font-family: "Spicy Rice";
   font-size: clamp(2.5rem, 8vw, 3.8125rem);
   color: var(--main-1);
 }
 
 h2 {
+  font-family: "Rethink Sans";
   font-size: clamp(1.875rem, 6vw, 2.1875rem);
   color: var(--main-1);
 }
 
 h3 {
+  font-family: "Rethink Sans";
   font-size: clamp(1.25rem, 4vw, 1.4375rem);
   color: var(--main-1);
+  font-weight: 500;
 }
 
 h4 {
+  font-family: "Rethink Sans";
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--main-1);
 }
 
 p {
+  font-family: "Rethink Sans";
   font-size: clamp(1rem, 2vw, 1.125rem);
   color: var(--main-1);
 }
 
 p.small {
   font-size: clamp(0.625rem, 1.5vw, 0.825rem);
+  font-family: "Rethink Sans";
 }
 
 .display {

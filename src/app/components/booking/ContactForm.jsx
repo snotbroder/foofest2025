@@ -3,7 +3,7 @@ function ContactForm({ index }) {
     <div>
       <section>
         <div className="flex flex-col gap-1">
-          <h4 className="font-semibold">Information for person {index + 1}</h4>
+          <h4>Information for person {index + 1}</h4>
           <label>First Name</label>
           <input
             type="text"

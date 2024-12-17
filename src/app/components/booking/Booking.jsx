@@ -60,7 +60,7 @@ export default function Booking({ sendData, data }) {
         step +1
       </button>
       <BookingSteps stepHandler={stepHandler} step={step}></BookingSteps>
-      <h1 className="font-spicy text-main-1 text-4xl mb-3">
+      <h1 className=" mb-3">
         {step === 0 && "Select Ticket Type"}
         {step === 1 && "Select Camp"}
         {step === 2 && "Guest Information"}

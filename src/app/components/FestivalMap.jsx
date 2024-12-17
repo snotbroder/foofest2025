@@ -98,7 +98,7 @@ function FestivalMap() {
         {icon && <IconMarker icon={icon} bgColor={bgColor || "#333"} />}
 
         {name && (
-          <h5 className="font-bold text-main-1 uppercase group-hover:scale-110 transition-transform text-sm mt-1">
+          <h5 className="uppercase group-hover:scale-110 transition-transform text-sm mt-1">
             {name}
           </h5>
         )}
@@ -114,7 +114,7 @@ function FestivalMap() {
   }
 
   return (
-    <div className="relative w-full lg:max-w-[1200px] mx-auto font-rethink">
+    <div className="relative w-full lg:max-w-[1200px] mx-auto ">
       <Image
         src="/img/map.webp"
         width={1200}

@@ -4,9 +4,7 @@ function Accordion() {
   return (
     <article className="">
       <div className="  bg-primary mt-10 p-8 flex flex-col gap-4 text-main-1 rounded-rounded-reg -mr-mobile -ml-mobile md:mx-auto md:max-w-2xl">
-        <h4 className=" font-bold border-b border-feedback-error font-rethink text-2xl">
-          FAQ
-        </h4>
+        <h4 className=" border-b border-feedback-error ">FAQ</h4>
         <div className="flex flex-col gap-4">
           <AccordionBox
             question="Can i get refund on my ticket?"

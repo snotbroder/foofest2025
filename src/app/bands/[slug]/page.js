@@ -48,9 +48,9 @@ async function Band({ params }) {
     : `${BASE_URL}${band.logo}`;
 
   return (
-    <section className="flex font-rethink flex-col gap-20 lg:gap-36">
+    <section className="flex  flex-col gap-20 lg:gap-36">
       <div className="w-screen lg:-mx-desktop -mx-mobile h-[50vh] relative flex flex-col justify-end items-center ">
-        <div className="z-20 text-main-2 font-spicy pb-6 ">
+        <div className="z-20 text-main-2  pb-6 ">
           <h1 className="text-main-2">{band.name}</h1>
         </div>
         <Image
@@ -61,15 +61,15 @@ async function Band({ params }) {
         />
       </div>
       <div className=" lg:gap-11 flex flex-col gap-8  lg:grid lg:grid-cols-[3fr_2fr] ">
-        <div className=" bg-secondary grid-cols-[3fr_2fr]  p-11 rounded-md font-rethink text-main-1 flex flex-col gap-4">
-          <h3 className=" font-bold ">About</h3>
+        <div className=" bg-secondary grid-cols-[3fr_2fr]  p-11 rounded-md  text-main-1 flex flex-col gap-4">
+          <h3>About</h3>
           <p className="text-base">{band.bio}</p>
         </div>
 
         <ScheduleForBand schedule={schedule} bandName={band.name} band={band} />
       </div>
       <div className="flex relative flex-col  gap-10 before:content[''] before:w-full before:absolute before:h-[1px] before:bg-feedback-disabled-1 before:-top-8">
-        <h3 className="text-2xl font-bold text-center">You might also like</h3>
+        <h3 className=" text-center">You might also like</h3>
         <div className="flex flex-wrap relative justify-center md:justify-between gap-3 ">
           {similarBands.length > 0 ? (
             similarBands.map((similarBand) => {
