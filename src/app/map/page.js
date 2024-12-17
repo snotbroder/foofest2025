@@ -108,7 +108,7 @@ function map() {
           a relaxing spot. Don't forget to check out the full festival schedule
           and discover all the amazing artists performing this year!
         </p>
-        <CtaButton href="/" text="Buy ticket"></CtaButton>
+        <CtaButton href="/tickets" text="Buy ticket"></CtaButton>
       </section>
     </div>
   );
