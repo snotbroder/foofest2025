@@ -52,8 +52,8 @@ body {
   cursor: pointer;
   border: 2px solid black;
   box-shadow: 10px 10px black;
-  background-image: url(/sun-illu.svg), url(/vintage-filter.svg);
-  background-position: -10% -100%, 100%;
+  background-image: url(/illustrations/svg/spiralPink.svg);
+  background-position: -80% 280%;
   background-repeat: no-repeat;
   background-color: #dbd976;
 }
@@ -62,7 +62,7 @@ body {
   cursor: pointer;
   border: 2px solid black;
   box-shadow: 10px 10px black;
-  background-image: url(/vinyl-1.svg), url(/vintage-filter.svg);
+  background-image: url(/illustrations/svg/lp.svg);
   background-position: -600% 200%, 100%;
   background-size: 104%;
   background-repeat: no-repeat;

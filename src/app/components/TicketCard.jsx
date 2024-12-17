@@ -1,5 +1,5 @@
 function TicketCard({
-  bgColor,
+  design,
   title,
   ticketType,
   text,
@@ -10,7 +10,7 @@ function TicketCard({
   return (
     <div>
       <div
-        className={` bg-primary flex flex-col gap-4 pt-6 p-8  w-56 h-72 ${ticketType} `}
+        className={`${design} bg-primary flex flex-col gap-4 pt-6 p-8  w-56 h-72 ${ticketType} `}
       >
         <h2 className=" font-rethink font-semibold text-main-1 text-3xl">
           {title}
