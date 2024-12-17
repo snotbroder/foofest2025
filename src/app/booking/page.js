@@ -1,8 +1,4 @@
-export const metadata = {
-  title: "Booking",
-  description: "none",
-};
-
+"use client";
 import { useBasketStore } from "@/stores/basket-stores";
 
 import BookingSteps from "../components/booking/BookingSteps";
@@ -87,8 +83,14 @@ export default function BookingPage() {
         )}
         {step === 3 && <article></article>}
         {step === 4 && (
-          <article>
+          <article className="-order-1">
             <OverviewPage></OverviewPage>
+          </article>
+        )}
+        {step === 5 && (
+          <article>
+            <h1>Thank you for your money ;)</h1>
+            Back to home
           </article>
         )}
         <Basket></Basket>
