@@ -6,15 +6,14 @@ import BurgerMenuIcon from "./BurgerMenuIcon";
 import CtaButton from "../CtaButton";
 
 function BurgerMenu() {
-  const [isOpen, setIsOpen] = useState("");
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
+  function handleOpenBurgerMenu() {
+    setOpenBurgerMenu((prevState) => !prevState);
+  }
 
   return (
-    <div className="bg-primary  py-6">
-      <div className="lg:mx-desktop z-50 flex justify-between place-items-center">
+    <div className="bg-primary relative  py-6   z-50     bg-[url('/img/filterbg.webp')] bg-no-repeat bg-cover">
+      <div className="lg:mx-desktop  flex justify-between place-items-center">
         <div className="">
           <Image
             objectFit="cover"
@@ -24,60 +23,45 @@ function BurgerMenu() {
           ></Image>
         </div>
 
-        <section className="flex justify-end  place-items-center">
-          {!isOpen && (
-            <div>
-              <CtaButton href="/" text="Buy ticket" />
-            </div>
-          )}
-          <div onClick={toggleMenu} className="">
-            <BurgerMenuIcon isOpen={isOpen}></BurgerMenuIcon>
+        <section className="flex justify-end gap-6 place-items-center">
+          <div>
+            <CtaButton href="/" text="Buy ticket" />
+          </div>
+
+          <div onClick={handleOpenBurgerMenu} className="">
+            <BurgerMenuIcon openBurgerMenu={openBurgerMenu}></BurgerMenuIcon>
           </div>
         </section>
       </div>
 
-      {isOpen && (
-        <div className=" inset-0 bg-primary">
-          <div
-            className="inset-0 z-10 "
-            style={{
-              backgroundImage:
-                "url('/img/filterbg.webp'), url('/illustrations/svg/circle.svg')",
-              backgroundRepeat: "no-repeat, repeat",
-              backgroundSize: "cover, contain",
-              backgroundPosition: "center, top",
-            }}
-          >
-            <ul className="mt-20 font-rethink font-bold text-5xl flex flex-col items-end text-main-1 gap-10 pt-10 lg:mx-desktop mx-mobile relative">
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/lineup">Lineup</Link>
-              </li>
-              <li>
-                <Link href="/schedule">Schedule</Link>
-              </li>
-              <li>
-                <Link href="/map">Festival Map</Link>
-              </li>
-              <li>
-                <div className="text-sm md:text-xs lg:text-lg w-[150px] mx-auto flex justify-end">
-                  <CtaButton href="/" text="Buy ticket" />
-                </div>
-              </li>
-            </ul>
+      {openBurgerMenu ? (
+        <div className=" inset-0 relative h-full -z-10">
+          <ul className=" font-rethink font-bold text-5xl flex flex-col items-end text-main-1 gap-10 py-16 lg:px-64 lg:-mx-desktop -mx-mobile relative px-16 bg-primary  bg-[url('/img/filterbg.webp')] bg-no-repeat bg-cover">
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/lineup">Lineup</Link>
+            </li>
+            <li>
+              <Link href="/schedule">Schedule</Link>
+            </li>
+            <li>
+              <Link href="/map">Festival Map</Link>
+            </li>
 
-            <div className="absolute right-0 -bottom-12 opacity-60">
+            <div className="absolute left-0 bottom-12 opacity-60">
               <Image
                 src="illustrations/svg/flowerPurple.svg"
-                width={700}
-                height={700}
+                width={200}
+                height={200}
                 alt="Purple Flower"
               ></Image>
             </div>
-          </div>
+          </ul>
         </div>
+      ) : (
+        ""
       )}
     </div>
   );
