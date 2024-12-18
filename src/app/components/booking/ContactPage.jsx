@@ -16,6 +16,8 @@ function ContactPage() {
         last_name: formData.get(`last_name_${index}`),
         email: formData.get(`email_${index}`),
       };
+      // Jeg bruger "_", en palceholder, i forEach fordi mit forms-array er tomt, så hvert element er undefined.
+      //  Jeg bruger udelukkende index-værdien til at hente specefikt data for hver perosn ved hjælp af formData.get.
 
       data.push(personData);
     });
@@ -27,7 +29,8 @@ function ContactPage() {
   const setNewStep = useBasketFunctionality((state) => state.setNewStep);
   const totalTickets = useBasketStore((state) => state.totalTickets());
 
-  const forms = new Array(totalTickets).fill(null);
+  const forms = Array.from({ length: totalTickets });
+  // Laver et array, hvis længde svarer til værdien af totatalTickets. Derved får et objekt i forms-array, for hver person der vil købe billet.
 
   console.log("Total Item Multiply:", totalTickets);
   return (
