@@ -15,7 +15,13 @@ function BurgerMenu() {
     <div className="bg-primary relative py-6 placeholder-main-1 px-8 lg:px-0 mb-16 z-50 border-y-2 border-tertiary bg-[url('/img/filterbg.webp')] bg-no-repeat bg-cover">
       <div className="lg:mx-desktop  flex justify-between place-items-center">
         <Link href="/" className="w-16 md:w-fit">
-          <Image objectFit="cover" src="illustrations/svg/logo.svg" width={90} height={90}></Image>
+          <Image
+            objectFit="cover"
+            src="/illustrations/svg/logo.svg"
+            width={90}
+            height={90}
+            alt="Foo Festival logo"
+          ></Image>
         </Link>
 
         <section className="flex justify-end gap-6 place-items-center">
@@ -46,7 +52,12 @@ function BurgerMenu() {
             </li>
 
             <div className="absolute left-20 bottom-12 opacity-20">
-              <Image src="illustrations/svg/flowerPurple.svg" width={200} height={200} alt="Purple Flower"></Image>
+              <Image
+                src="/illustrations/svg/flowerPurple.svg"
+                width={200}
+                height={200}
+                alt="Purple Flower"
+              ></Image>
             </div>
           </ul>
         </nav>
