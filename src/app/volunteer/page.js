@@ -36,13 +36,17 @@ function voluenteer() {
         <div className="flex flex-wrap items-center justify-center md:justify-between xl:justify-between  gap-10 ">
           <ClickableCard1
             src="/img/tshirt.webp"
-            header="Safe space"
+            header="Safe Person"
             alt="img"
           />
-          <ClickableCard1 src="/img/tshirt.webp" header="Safe hhh" alt="img" />
           <ClickableCard1
             src="/img/tshirt.webp"
-            header="Safe space"
+            header="Supervisor"
+            alt="img"
+          />
+          <ClickableCard1
+            src="/img/tshirt.webp"
+            header="Tent installer"
             alt="img"
           />
         </div>

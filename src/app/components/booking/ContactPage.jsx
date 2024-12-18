@@ -51,7 +51,7 @@ function ContactPage() {
           type="submit"
           className="bg-accent-1 text-sm button flex self-start px-4 py-0.5"
         >
-          Sumbit
+          Submit
         </button>
       </form>
     </div>

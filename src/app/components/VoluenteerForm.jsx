@@ -58,7 +58,7 @@ function volunteerForm() {
           </div>
         </fieldset>
         <button className="button grid place-self-start" type="submit">
-          Sumbit
+          Submit
         </button>
       </form>
     </section>

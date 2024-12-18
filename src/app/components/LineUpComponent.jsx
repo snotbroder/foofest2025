@@ -76,8 +76,8 @@ function LineUpComponent() {
           </button>
         </div>
       </div>
-      <div className="bg-secondary -mx-mobile lg:-mx-desktop py-16">
-        <div className="flex flex-wrap justify-center md:justify-between gap-10 mx-mobile pb-16 lg:mx-desktop">
+      <div className="bg-[url('/illustrations/svg/circle.svg')] bg-contain bg-repeat-y bg-no-repeat-x  -mx-mobile lg:-mx-desktop py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center place-items-center gap-10 mx-mobile pb-16 lg:mx-desktop">
           {currentData.map((band) => {
             const logo = band.logo.startsWith("http")
               ? band.logo

@@ -80,18 +80,6 @@ export default function BookingPage() {
         )}
         {step < 5 ? <Basket></Basket> : ""}
       </section>
-      <p>
-        step is <span className=" text-red-600">{step}</span>
-      </p>
-      <button
-        className="border-main-1 border-2"
-        onClick={() => {
-          setNewStep(step + 1);
-        }}
-      >
-        step +1
-      </button>
-      {/* <pre>{JSON.stringify(fullBasket, null, 2)}</pre> */}
     </>
   );
 }

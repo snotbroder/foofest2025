@@ -7,8 +7,8 @@ export default function BandCard({ genre, imgSrc, alt, name, slug }) {
     <div className=" w-52 xl:w-64 flex flex-col shadow-custom ">
       <Link href={`/bands/${slug}`}>
         <div className="relative h-[130px] xl:h-[200px]   ">
-          <div className="absolute  right-0 top-5 text-main-2 bg-tertiary uppercase py-0.5 px-5 z-10  ">
-            <p className="p.small">{genre}</p>
+          <div className="absolute  right-0 top-5 rounded-rounded-reg mr-1  bg-tertiary uppercase py-0.5 px-5 z-10  ">
+            <p className="small  text-main-2">{genre}</p>
           </div>
           <Image
             className="fill"
