@@ -157,7 +157,7 @@ function PaymentInfo() {
                       <input
                         type="text"
                         name="zip_code"
-                        className="w-1/3"
+                        className="w-1/2"
                         placeholder="2500"
                         required
                       ></input>
