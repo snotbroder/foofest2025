@@ -16,7 +16,7 @@ function TicketCard({
         <h3 className="  text-2xl">{price}</h3>
         <p>{text}</p>
         <div
-          className={`bg-secondary font-rethink flex self-end  rounded-rounded-reg px-2 cardlabel cardlabel-container ${label}`}
+          className={`bg-secondary text-main-2 font-rethink flex self-end  rounded-rounded-reg px-2 cardlabel cardlabel-container ${label}`}
         >
           {labelText}
         </div>
