@@ -133,19 +133,6 @@ label {
   color: var(--main-1);
   font-family: "Rethink Sans";
 }
-/* 
-input:focus {
-  outline: 2px solid #3a140b;
-  outline-offset: 2px;
-}
-
-input:user-invalid {
-  border-color: red;
-}
-
-input:user-valid {
-  border-color: green;
-} */
 
 .button {
   color: #fff8db;
@@ -210,8 +197,10 @@ input:user-valid {
 
 .shadow-custom:hover {
   box-shadow: 14px 12px 0px #3a140b;
-  /* transition: ease-in-out; */
   transform: scale(1.02);
-  /* animation-duration: 2s; */
-  transition: all 0.2s ease-in;
+  transition: all 0.2s linear;
+}
+
+.shadow-custom {
+  transition: all 0.1s linear;
 }

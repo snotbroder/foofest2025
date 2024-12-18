@@ -1,4 +1,9 @@
-import { FaFacebook, FaInstagram, FaSpotify, FaRegCopyright } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaSpotify,
+  FaRegCopyright,
+} from "react-icons/fa";
 import Image from "next/image";
 
 function Footer() {
@@ -8,15 +13,9 @@ function Footer() {
         <div className="font-rethink flex gap-7  flex-col md:flex-row  md:gap-40 ">
           <ul>
             <li className="font-bold">About</li>
-            <li>
-              <a href="">About Foo Festival</a>
-            </li>
-            <li>
-              <a href="">Job and Intership</a>
-            </li>
-            <li>
-              <a href="">Press</a>
-            </li>
+            <li>About Foo Festival</li>
+            <li>Job and Intership</li>
+            <li>Press</li>
           </ul>
           <ul>
             <li className="font-bold">Information</li>
@@ -33,19 +32,13 @@ function Footer() {
         </div>
         <ul className="flex gap-8 text-4xl text-secondary">
           <li>
-            <a href="">
-              <FaFacebook />
-            </a>
+            <FaFacebook />
           </li>
           <li>
-            <a href="">
-              <FaInstagram />
-            </a>
+            <FaInstagram />
           </li>
           <li>
-            <a href="">
-              <FaSpotify />
-            </a>
+            <FaSpotify />
           </li>
         </ul>
         <span className=" ml-2 mb-1 font-rethink flex items-center gap-1">
@@ -54,7 +47,14 @@ function Footer() {
         </span>
       </div>
       <div className="rotate-180  w-80 opacity-60">
-        <Image src="illustrations/svg/flowerOrange.svg" width={140} height={140} objectFit="containr" alt="Orange Flower" className="w-auto h-auto -ml-20"></Image>
+        <Image
+          src="illustrations/svg/flowerOrange.svg"
+          width={140}
+          height={140}
+          objectFit="containr"
+          alt="Orange Flower"
+          className="w-auto h-auto -ml-20"
+        ></Image>
       </div>
     </footer>
   );

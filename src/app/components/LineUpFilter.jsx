@@ -17,17 +17,6 @@ async function LineUpFilter() {
           );
         })}
       </select>
-      {/* 
-      <div>
-        {bands.map((band) => {
-          return (
-            <div key={band.id}>
-              <h1>{band.name}</h1>
-              <h2>{band.genre}</h2>
-            </div>
-          );
-        })}
-      </div> */}
     </div>
   );
 }

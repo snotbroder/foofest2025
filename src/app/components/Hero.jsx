@@ -41,7 +41,7 @@ function Hero() {
           >
             <Image
               className="justify-self-end"
-              src="/illustrations/pink-flower.svg"
+              src="/illustrations/svg/spiralPink.svg"
               width={200}
               height={200}
               alt="pink flower"
