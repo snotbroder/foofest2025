@@ -71,7 +71,7 @@ function PaymentInfo() {
                     type="text"
                     name="name_on_card"
                     placeholder="John"
-                    pattern="[A-Za-z]+"
+                    pattern="[A-Za-z\s]+"
                     required
                   ></input>
                 </div>
