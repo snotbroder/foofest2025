@@ -82,7 +82,7 @@ function PaymentInfo() {
                     name="card_number"
                     placeholder="XXXX-XXXX-XXXX-1234"
                     maxLength="16"
-                    min="16"
+                    minLength="16"
                     required
                   ></input>
                 </div>
@@ -99,6 +99,7 @@ function PaymentInfo() {
                       className="w-1/5"
                       placeholder="02"
                       maxlength="2"
+                      minLength="2"
                       required
                     ></input>
                     <p>/</p>
@@ -108,7 +109,8 @@ function PaymentInfo() {
                       name="YY"
                       className=" w-1/5 "
                       placeholder="26"
-                      maxlength="2"
+                      maxLength="2"
+                      minLength="2"
                       required
                     ></input>
                   </div>
@@ -120,7 +122,7 @@ function PaymentInfo() {
                     type="number"
                     name="cvv"
                     placeholder="267"
-                    maxlength="3"
+                    maxLength="3"
                     minLength="3"
                     required
                   ></input>

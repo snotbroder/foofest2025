@@ -55,6 +55,7 @@ function volunteerForm() {
                 placeholder="XXXX3095"
                 id="phone_number"
                 maxLength="8"
+                minLength="8"
                 required
               ></input>
             </div>
