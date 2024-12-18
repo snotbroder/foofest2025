@@ -14,7 +14,7 @@ const nextConfig = {
 
       {
         protocol: "https",
-        hostname: "sudsy-jet-grill.glitch.me",
+        hostname: process.env.NEXT_PUBLIC_GLITCH_URL,
       },
     ],
   },
