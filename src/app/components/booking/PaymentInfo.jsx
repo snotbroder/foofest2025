@@ -54,9 +54,9 @@ function PaymentInfo() {
                   Card information
                 </legend>
                 <div className="flex flex-col ">
-                  <label>Email</label>
+                  <label for="email">Email</label>
                   <input
-                    input="email"
+                    id="email"
                     type="email"
                     name="email"
                     placeholder="e.g. john@doe.com"
@@ -64,8 +64,9 @@ function PaymentInfo() {
                   ></input>
                 </div>
                 <div className="flex flex-col">
-                  <label>Name on Card</label>
+                  <label for="name_on_card">Name on Card</label>
                   <input
+                    id="name_on_card"
                     type="text"
                     name="name_on_card"
                     placeholder="John"
@@ -74,8 +75,9 @@ function PaymentInfo() {
                   ></input>
                 </div>
                 <div className="flex flex-col">
-                  <label>CardNumber</label>
+                  <label for="cardnumber">CardNumber</label>
                   <input
+                    id="cardnumber"
                     type="text"
                     name="card_number"
                     placeholder="XXXX-XXXX-XXXX-1234"
@@ -85,9 +87,13 @@ function PaymentInfo() {
                   ></input>
                 </div>
                 <div>
-                  <label>MM / YY</label>
+                  <div className="flex gap-2">
+                    <label for="MM">MM /</label>
+                    <label for="YY"> YY</label>
+                  </div>
                   <div className="flex gap-2">
                     <input
+                      id="MM"
                       type="text"
                       name="MM"
                       className="w-1/5"
@@ -97,6 +103,7 @@ function PaymentInfo() {
                     ></input>
                     <p>/</p>
                     <input
+                      id="YY"
                       type="text"
                       name="YY"
                       className=" w-1/5 "
@@ -107,8 +114,9 @@ function PaymentInfo() {
                   </div>
                 </div>
                 <div className="flex flex-col w-1/5">
-                  <label>CVV</label>
+                  <label for="cvv">CVV</label>
                   <input
+                    id="cvv"
                     type="text"
                     name="cvv"
                     placeholder="267"
@@ -125,8 +133,9 @@ function PaymentInfo() {
                   Adress information
                 </legend>
                 <div className="flex flex-col ">
-                  <label>Address line 1</label>
+                  <label for="adress1">Address line 1</label>
                   <input
+                    id="adress1"
                     type="text"
                     name="adress_1"
                     placeholder="Fun street 1"
@@ -134,8 +143,9 @@ function PaymentInfo() {
                   ></input>
                 </div>
                 <div className="flex flex-col ">
-                  <label>Adress Line 2</label>
+                  <label for="adress2">Adress Line 2</label>
                   <input
+                    id="adress2"
                     type="text"
                     name="adress_2"
                     placeholder="Fun street 1"
@@ -144,8 +154,9 @@ function PaymentInfo() {
                 <div>
                   <div className="flex  flex-col md:flex-row lg:flex-col 2xl:flex-row gap-2">
                     <div className="flex flex-col">
-                      <label>City</label>
+                      <label for="city">City</label>
                       <input
+                        id="city"
                         type="text"
                         name="city"
                         placeholder="Copenhagen"
@@ -153,8 +164,9 @@ function PaymentInfo() {
                       ></input>
                     </div>
                     <div className="flex flex-col">
-                      <label>Zip code</label>
+                      <label for="zip_code">Zip code</label>
                       <input
+                        id="zip_code"
                         type="text"
                         name="zip_code"
                         className="w-1/2"
@@ -179,8 +191,9 @@ function PaymentInfo() {
       {paymentType === "Mobilepay" && (
         <div className="flex flex-col gap-4">
           <form action="" className="flex flex-col gap-2 ">
-            <label>Enter your mobile number</label>
+            <label for="phoneNumber">Enter your mobile number</label>
             <input
+              id="phoneNumber"
               className="w-1/4"
               type="tel"
               inputMode="decimal"
