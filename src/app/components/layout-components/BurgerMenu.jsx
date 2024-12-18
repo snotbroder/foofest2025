@@ -12,7 +12,7 @@ function BurgerMenu() {
   }
 
   return (
-    <div className="bg-primary relative py-6 placeholder-main-1 px-8 lg:px-0 mb-16 z-50 border-y-2 border-tertiary bg-[url('/img/filterbg.webp')] bg-no-repeat bg-cover">
+    <div className="bg-primary relative  py-6 placeholder-main-1 px-8 lg:px-0 mb-16 z-[100] border-y-2 border-tertiary bg-[url('/img/filterbg.webp')] bg-no-repeat bg-cover">
       <div className="lg:mx-desktop  flex justify-between place-items-center">
         <Link href="/" className="w-16 md:w-fit">
           <Image
