@@ -1,17 +1,16 @@
 import Image from "next/image";
 import BandCard from "@/app/components/BandCard";
 import ScheduleForBand from "@/app/components/ScheduleForBand";
+import { api } from "../../api";
 
 async function Band({ params }) {
   const { slug } = await params;
-  const BASE_URL = "https://sudsy-jet-grill.glitch.me/logos/";
+  const BASE_URL = `${api}/logos/`;
 
-  const response = await fetch(
-    `https://sudsy-jet-grill.glitch.me/bands/${slug}`
-  );
+  const response = await fetch(`${api}/bands/${slug}`);
   const band = await response.json();
 
-  const responseBands = await fetch(`https://sudsy-jet-grill.glitch.me/bands`);
+  const responseBands = await fetch(`${api}/bands`);
   const allBands = await responseBands.json();
 
   //filtrerer bands efter samje genre
@@ -37,9 +36,7 @@ async function Band({ params }) {
     }
   }
 
-  const scheduleResponse = await fetch(
-    `https://sudsy-jet-grill.glitch.me/schedule`
-  );
+  const scheduleResponse = await fetch(`${api}/schedule`);
   const schedule = await scheduleResponse.json();
 
   //få fat i alle billederne, hvis de mangler http bliver det tilføjet

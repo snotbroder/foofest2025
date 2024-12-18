@@ -1,5 +1,4 @@
 function ScheduleForBand({ schedule, bandName, band }) {
-  console.log(schedule);
   const scheduleItems = [];
 
   //gr gennem hver scene og dag i schedule objektet

@@ -25,7 +25,7 @@ function BurgerMenu() {
         </Link>
 
         <section className="flex justify-end gap-6 place-items-center">
-          <div>
+          <div onClick={() => setOpenBurgerMenu(false)}>
             <CtaButton href="/tickets" text="Buy ticket" />
           </div>
 
@@ -50,7 +50,9 @@ function BurgerMenu() {
             <li className="hover:underline" onClick={openBurgerMenu}>
               <Link href="/map">Festival Map</Link>
             </li>
-
+            <li className="hover:underline" onClick={openBurgerMenu}>
+              <Link href="/volunteer">Become a Volunteer</Link>
+            </li>
             <div className="absolute left-20 bottom-12 opacity-20">
               <Image
                 src="/illustrations/svg/flowerPurple.svg"

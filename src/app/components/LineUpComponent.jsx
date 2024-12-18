@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 import useSWR from "swr";
 import BandCard from "./BandCard";
 import { IoMdArrowDropdown } from "react-icons/io";
+import { api } from "../api";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function LineUpComponent() {
-  const BASE_URL = "http://localhost:8080/logos/";
-  const BANDS_URL = "http://localhost:8080/bands";
+  const BASE_URL = `${api}/logos/`;
+  const BANDS_URL = `${api}/bands`;
   let [isListAscending, setIsListAscending] = useState(false);
   let [dataThatIsMapping, setDataThatIsMapping] = useState([]);
   let [pickedGenre, setPickedGenre] = useState("");

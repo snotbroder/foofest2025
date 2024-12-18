@@ -6,8 +6,6 @@ import { useBasketFunctionality } from "@/stores/basket-functionality";
 
 function ContactPage() {
   function sendData(formData) {
-    console.log("sending data");
-
     const data = [];
 
     forms.forEach((_, index) => {
@@ -32,7 +30,6 @@ function ContactPage() {
   const forms = Array.from({ length: totalTickets });
   // Laver et array, hvis længde svarer til værdien af totatalTickets. Derved får et objekt i forms-array, for hver person der vil købe billet.
 
-  console.log("Total Item Multiply:", totalTickets);
   return (
     <div>
       <form

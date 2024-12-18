@@ -15,8 +15,6 @@ export default function Booking({ sendData, data }) {
   const [basketTickets, setBasketTickets] = useState([]);
   const [basketCamp, setBasketCamp] = useState([]);
 
-  console.log(basketTickets);
-
   //Bare for at visualisere den samlede data:
   const basketArray = [
     { "ticket info": basketTickets },

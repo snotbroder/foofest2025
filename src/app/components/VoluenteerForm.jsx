@@ -1,8 +1,6 @@
 import { postVoluenteerInfo } from "../api";
 function volunteerForm() {
   function sendData(formData) {
-    console.log("sending data");
-
     const data = {
       first_name: formData.get("first_name"),
       last_name: formData.get("last_name"),

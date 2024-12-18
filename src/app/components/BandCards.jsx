@@ -1,9 +1,10 @@
 import { getBands } from "../api";
 import BandCard from "./BandCard";
+import { api } from "../api";
 
 async function BandCards() {
-  const BASE_URL = "https://sudsy-jet-grill.glitch.me/";
-  const response = await fetch("https://sudsy-jet-grill.glitch.me/bands", {
+  const BASE_URL = { api };
+  const response = await fetch(`${api}/bands`, {
     method: "GET",
   });
   const bands = await response.json();
@@ -11,8 +12,6 @@ async function BandCards() {
   return (
     <div className="flex flex-wrap justify-center md:justify-between gap-10 mx-mobile lg:mx-desktop">
       {bands.map((band) => {
-        // const bandImage = bandImagePath.startsWith("https://picsum") ? matchingBand.logo
-        // : `${endpointBase}/logos/${matchingBand.logo}`;
         const logo = band.logo.startsWith("https://")
           ? band.logo
           : `${BASE_URL}/logos/${band.logo}`;

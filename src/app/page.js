@@ -5,9 +5,10 @@ import CtaButton from "../app/components/CtaButton";
 import Link from "next/link";
 import Image from "next/image";
 import Hero from "../app/components/Hero";
+import { api } from "./api";
 async function Home() {
-  const BASE_URL = "https://sudsy-jet-grill.glitch.me/";
-  const response = await fetch("https://sudsy-jet-grill.glitch.me/bands", {
+  const BASE_URL = api;
+  const response = await fetch(`${api}/bands`, {
     method: "GET",
   });
   const bands = await response.json();
@@ -56,10 +57,9 @@ async function Home() {
           <CtaButton href="/tickets" text="Buy Ticket"></CtaButton>
         </div>
       </section>
-      <section className="relative flex flex-col items-center border-t-[1px] border-tertiary">
-        <div className=" pt-6 mx-mobile lg:mx-desktop flex flex-col ">
+      <section className="relative flex flex-col border-t-[1px] border-tertiary">
+        <div className=" pt-6 flex flex-col ">
           <h2 className=" text-center lg:text-start">Line up 2025</h2>
-
           <div className="flex flex-wrap justify-center lg:justify-between gap-6 ">
             {bands.length > 0 &&
               bands.slice(0, 4).map((band) => {
@@ -79,7 +79,7 @@ async function Home() {
               })}
           </div>
         </div>
-        <div className="mt-20 ">
+        <div className="mt-20 place-self-center ">
           <CtaButton href="/lineup" text="See lineup"></CtaButton>
         </div>
       </section>
