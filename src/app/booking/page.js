@@ -78,7 +78,7 @@ export default function BookingPage() {
                   duration: 1.5,
                   ease: "easeInOut",
                 }}
-                className="place-self-center"
+                className="place-self-center hidden sm:block"
               >
                 <Image
                   src="/illustrations/svg/spiralPink.svg"
