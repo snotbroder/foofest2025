@@ -78,7 +78,7 @@ function PaymentInfo() {
                   <label for="cardnumber">CardNumber</label>
                   <input
                     id="cardnumber"
-                    type="text"
+                    type="number"
                     name="card_number"
                     placeholder="XXXX-XXXX-XXXX-1234"
                     maxLength="16"
@@ -94,7 +94,7 @@ function PaymentInfo() {
                   <div className="flex gap-2">
                     <input
                       id="MM"
-                      type="text"
+                      type="number"
                       name="MM"
                       className="w-1/5"
                       placeholder="02"
@@ -104,7 +104,7 @@ function PaymentInfo() {
                     <p>/</p>
                     <input
                       id="YY"
-                      type="text"
+                      type="number"
                       name="YY"
                       className=" w-1/5 "
                       placeholder="26"
@@ -117,7 +117,7 @@ function PaymentInfo() {
                   <label for="cvv">CVV</label>
                   <input
                     id="cvv"
-                    type="text"
+                    type="number"
                     name="cvv"
                     placeholder="267"
                     maxlength="3"
@@ -167,7 +167,7 @@ function PaymentInfo() {
                       <label for="zip_code">Zip code</label>
                       <input
                         id="zip_code"
-                        type="text"
+                        type="number"
                         name="zip_code"
                         className="w-1/2"
                         placeholder="2500"
