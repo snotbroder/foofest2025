@@ -59,7 +59,7 @@ async function Home() {
       </section>
       <section className="relative flex flex-col border-t-[1px] border-tertiary">
         <div className=" pt-6 flex flex-col ">
-          <h2 className=" text-center lg:text-start">Line up 2025</h2>
+          <h2 className=" text-center lg:text-start">Lineup 2025</h2>
           <div className="flex flex-wrap justify-center lg:justify-between gap-6 ">
             {bands.length > 0 &&
               bands.slice(0, 4).map((band) => {

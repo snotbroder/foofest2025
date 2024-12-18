@@ -186,11 +186,13 @@ function PaymentInfo() {
               inputMode="decimal"
               placeholder="XXXX3095"
               maxLength="8"
+              minLength="8"
               required
             ></input>
           </form>
           <button
             type="submit"
+            onClick={() => setNewStep(step + 1)}
             className="bg-accent-1 text-sm button flex self-start px-4 py-0.5"
           >
             Submit

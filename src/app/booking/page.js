@@ -12,16 +12,9 @@ import { useBasketFunctionality } from "@/stores/basket-functionality";
 import OverviewPage from "../components/booking/OverviewPage";
 import CtaButton from "../components/CtaButton";
 import Accordion from "../components/Accordion";
-
+import Image from "next/image";
+import { motion } from "motion/react";
 export default function BookingPage() {
-  //const [step, setStep] = useState(0);
-
-  // function stepHandler(newStep) {
-  //   if (newStep <= step) {
-  //     setStep(newStep);
-  //   }
-  // }
-
   const fullBasket = useBasketStore((state) => state);
   const step = useBasketFunctionality((step) => step.bookingStep);
   const setNewStep = useBasketFunctionality((state) => state.setNewStep);
@@ -70,9 +63,31 @@ export default function BookingPage() {
         )}
         {step === 5 && (
           <article className="col-span-2">
-            <h1>Booking completed</h1>
-            <p className="mb-6">Thank you for your money ;)</p>
-            <CtaButton href={"/"} text="Back to home"></CtaButton>
+            <div className="grid grid-cols-1 sm:grid-cols-[2fr_1fr]">
+              <div>
+                <h1>Booking completed</h1>
+                <h2 className="mb-6">
+                  Thank you for your money, we will see you in the summer ;)
+                </h2>
+                <CtaButton href={"/"} text="Back to home"></CtaButton>
+              </div>
+              <motion.div
+                whileInView={{ scale: 1.3, rotate: 360 }}
+                initial={{ scale: 0 }}
+                transition={{
+                  duration: 1.5,
+                  ease: "easeInOut",
+                }}
+                className="place-self-center"
+              >
+                <Image
+                  src="/illustrations/svg/spiralPink.svg"
+                  width={200}
+                  height={200}
+                  alt="pink spiral"
+                />
+              </motion.div>
+            </div>
             <section className="mt-16 pt-6 border-t-2 border-tertiary">
               <Accordion></Accordion>
             </section>

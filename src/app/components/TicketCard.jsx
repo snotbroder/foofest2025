@@ -10,7 +10,7 @@ function TicketCard({
   return (
     <div>
       <div
-        className={`${design} bg-primary flex flex-col gap-4 pt-6 p-8  w-56 h-72 ${ticketType} `}
+        className={`${design} bg-primary flex flex-col gap-4 pt-6 p-6  w-56 h-72 ${ticketType} `}
       >
         <div className="flex items-center gap-3">
           <h2 className="m-0">{title}</h2>

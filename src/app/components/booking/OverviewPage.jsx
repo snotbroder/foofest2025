@@ -6,7 +6,29 @@ import CtaButton from "../CtaButton";
 function OverviewPage() {
   const reservationId = useBasketStore((state) => state.reservationId);
   const setNewStep = useBasketFunctionality((state) => state.setNewStep);
+  const greenCamping = useBasketStore((state) => state.greenCamping);
   const step = useBasketFunctionality((step) => step.bookingStep);
+
+  const ticketInfo = useBasketStore((state) => state.ticketInfo);
+  const campInfo = useBasketStore((state) => state.campInfo);
+
+  let greenCampingTrue = 0;
+  if (greenCamping === true) {
+    greenCampingTrue = 249;
+  }
+  const reservationFee = 99;
+  const ticketTotal = ticketInfo.reduce(
+    (total, ticket) => total + ticket.itemPrice * ticket.itemMultiply,
+    0
+  );
+
+  const campTotal = campInfo.reduce(
+    (total, camp) => total + camp.itemPrice * camp.itemMultiply,
+    0
+  );
+
+  const totalPrice =
+    ticketTotal + campTotal + reservationFee + greenCampingTrue;
   async function fulfillReservationHandler() {
     try {
       const data = await fulfillReservation(reservationId);
@@ -25,12 +47,15 @@ function OverviewPage() {
   return (
     <section>
       <article className="flex flex-col gap-6 mb-6">
-        <h3>Policies</h3>
+        <h2 className="m-0">
+          You are <span className="underline">almost</span> there!
+        </h2>
+        <p>Check your order to the right before completing your purchase</p>
         <p>
           Please note, that by clicking the button below, you accept our terms
           and conditions.
         </p>
-        <p className="italic">
+        <p className="italic small">
           The festival will not be held liable for inclement weather nor
           cancellations.
         </p>
@@ -41,7 +66,7 @@ function OverviewPage() {
         }`}
         onClick={fulfillReservationHandler}
       >
-        Complete purchase
+        Pay total {totalPrice},-
       </button>
 
       {reservationId === "" ? (
