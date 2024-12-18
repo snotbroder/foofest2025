@@ -34,6 +34,7 @@ function voluenteer() {
             src="/illustrations/flower2Green.svg"
             width={220}
             height={220}
+            alt="green flower"
           />
         </div>
       </section>
