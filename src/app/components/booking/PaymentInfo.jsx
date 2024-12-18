@@ -10,8 +10,6 @@ function PaymentInfo() {
   const step = useBasketFunctionality((step) => step.bookingStep);
   const setNewStep = useBasketFunctionality((state) => state.setNewStep);
   async function sendData(formData) {
-    console.log("sending data");
-
     const data = {
       first_name: formData.get("first_name"),
       last_name: formData.get("last_name"),
