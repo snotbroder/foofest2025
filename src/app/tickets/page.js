@@ -4,7 +4,7 @@ import Image from "next/image";
 function ticketsPage() {
   return (
     <article className="relative">
-      <div className="absolute right-20 top-0">
+      <div className=" hidden sm:block absolute right-20 top-0">
         <Image
           src="/illustrations/svg/flower2Pink.svg"
           width={100}

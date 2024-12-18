@@ -8,8 +8,8 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className="relative mt-16 flex flex-col  lg:flex-row overflow-hidden">
-      <div className="flex flex-col gap-12 md:gap-10  mx-mobile md:mx-desktop relative before:absolute before:content-[''] before:w-screen before:-mx-mobile md:before:-mx-desktop before:h-[0.5px] before:bg-main-1 py-8 before:top-0">
+    <footer className="relative mt-16 flex flex-col  lg:flex-row overflow-hidden  border-t-2 border-tertiary pt-2">
+      <div className="flex flex-col gap-12 md:gap-10 text-main-1 mx-mobile md:mx-desktop relative py-8">
         <div className="font-rethink flex gap-7  flex-col md:flex-row  md:gap-40 ">
           <ul>
             <li className="font-bold">About</li>

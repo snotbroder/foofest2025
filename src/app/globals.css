@@ -146,7 +146,6 @@ label {
   text-transform: uppercase;
   font-weight: 700;
   position: relative;
-  max-width: 40%;
   box-shadow: 4px 4px 0px #3a140b;
   transform: scale(1.02);
   transition: all 0.2s ease-in;

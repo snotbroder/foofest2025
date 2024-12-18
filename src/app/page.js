@@ -80,7 +80,7 @@ async function Home() {
           </div>
         </div>
         <div className="mt-20 place-self-center ">
-          <CtaButton href="/lineup" text="See lineup"></CtaButton>
+          <CtaButton href="/lineup" text="See full lineup"></CtaButton>
         </div>
       </section>
       <section
@@ -145,7 +145,7 @@ async function Home() {
           </div>
         </div>
       </section>
-      <Accordion></Accordion>
+      <Accordion />
     </section>
   );
 }
