@@ -59,7 +59,7 @@ function PaymentInfo() {
                     id="email"
                     type="email"
                     name="email"
-                    placeholder="e.g. john@doe.com"
+                    placeholder="john@doe.com"
                     required
                   ></input>
                 </div>
