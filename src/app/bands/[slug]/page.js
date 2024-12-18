@@ -65,7 +65,6 @@ async function Band({ params }) {
             src="/illustrations/svg/note1Pink.svg"
             width={70}
             height={70}
-            objectFit="cover"
             alt="Pink note big"
           ></Image>
         </div>
@@ -74,7 +73,6 @@ async function Band({ params }) {
             src="/illustrations/svg/note2Pink.svg"
             width={30}
             height={30}
-            objectFit="cover"
             alt="Pink note small"
           ></Image>
         </div>
@@ -83,7 +81,6 @@ async function Band({ params }) {
             src="/illustrations/svg/note2Pink.svg"
             width={30}
             height={30}
-            objectFit="cover"
             alt="Pink note small"
           ></Image>
         </div>

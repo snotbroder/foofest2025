@@ -119,7 +119,6 @@ function FestivalMap() {
         src="/img/map.webp"
         width={1200}
         height={1200}
-        objectFit="contain"
         alt="Festival Map"
       />
       {markers.map((marker, index) => (

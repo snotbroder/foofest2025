@@ -16,7 +16,6 @@ function BurgerMenu() {
       <div className="lg:mx-desktop  flex justify-between place-items-center">
         <Link href="/" className="w-16 md:w-fit">
           <Image
-            objectFit="cover"
             src="/illustrations/svg/logo.svg"
             width={90}
             height={90}

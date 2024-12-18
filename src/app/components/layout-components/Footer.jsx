@@ -51,7 +51,6 @@ function Footer() {
           src="illustrations/svg/flowerOrange.svg"
           width={140}
           height={140}
-          objectFit="containr"
           alt="Orange Flower"
           className="w-auto h-auto -ml-20"
         ></Image>

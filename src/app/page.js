@@ -24,7 +24,6 @@ async function Home() {
               src="illustrations/svg/flower2Pink.svg"
               width={250}
               height={250}
-              objectFit="cover"
               alt="Pink Flower"
             ></Image>
           </div>
@@ -33,7 +32,6 @@ async function Home() {
               src="illustrations/svg/flower2Pink.svg"
               width={150}
               height={150}
-              objectFit="cover"
               alt="Small Pink Flower"
             ></Image>
           </div>
@@ -100,7 +98,6 @@ async function Home() {
                 src="/img/tshirt.webp"
                 width={700}
                 height={700}
-                objectFit="cover"
                 alt="Foo Festival T-shirt"
               ></Image>
               <h3 className="">Buy the t-shirt of this year’s festival</h3>
@@ -115,7 +112,6 @@ async function Home() {
                   src="/img/quiz.webp"
                   width={300}
                   height={300}
-                  objectFit="cover"
                   alt="Quiz poster"
                 ></Image>
                 <h3>Join the quiz and win a free ticket</h3>
@@ -130,7 +126,6 @@ async function Home() {
                     src="/img/volunteer.webp"
                     width={300}
                     height={300}
-                    objectFit="cover"
                     alt="Volunteer poster"
                   ></Image>
                   <h3>Become a volunteer</h3>
