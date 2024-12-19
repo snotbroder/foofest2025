@@ -1,23 +1,20 @@
 function ScheduleForBand({ schedule, bandName, band }) {
   const scheduleItems = [];
-
-  //gr gennem hver scene og dag i schedule objektet
-  Object.entries(schedule).forEach(([stage, days]) => {
-    Object.entries(days).forEach(([day, events]) => {
-      events
-        //filtrering af events så act og bandname stemmer overens
-        .filter((event) => event.act === bandName)
-        .forEach((event) => {
-          //tilføjer et nyt objekt til det eksisterende array
+  for (const [stage, days] of Object.entries(schedule)) {
+    for (const [day, events] of Object.entries(days)) {
+      for (const [index, event] of events.entries()) {
+        if (event.act === bandName) {
           scheduleItems.push({
             stage,
             day,
             start: event.start,
-            end: event.end,
+            end: event.start,
           });
-        });
-    });
-  });
+        }
+      }
+    }
+  }
+
   return (
     <div className=" flex flex-col gap-8 ">
       <div className="flex flex-col gap-2">
