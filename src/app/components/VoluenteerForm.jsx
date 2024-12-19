@@ -18,27 +18,29 @@ function volunteerForm() {
           </legend>
           <div className="grid grid-cols-1 gap-4 align-baseline justify-end ">
             <div className="flex flex-col gap-1">
-              <label>First Name</label>
+              <label for="first_name">First Name</label>
               <input
                 type="text"
                 name="first_name"
                 placeholder="John"
+                id="first_name"
                 required
               ></input>
             </div>
             <div className="flex flex-col">
-              <label>Last Name</label>
+              <label for="last_name">Last Name</label>
               <input
                 type="text"
                 name="last_name"
+                id="last_name"
                 placeholder="Doe"
                 required
               ></input>
             </div>
             <div className="flex flex-col">
-              <label>Email</label>
+              <label for="email">Email</label>
               <input
-                input="email"
+                id="email"
                 type="email"
                 name="email"
                 placeholder="e.g. john@doe.com"
@@ -46,12 +48,14 @@ function volunteerForm() {
               ></input>
             </div>
             <div className="flex flex-col">
-              <label>Phone Number</label>
+              <label for="phone_number">Phone Number</label>
               <input
                 type="tel"
                 inputMode="decimal"
                 placeholder="XXXX3095"
+                id="phone_number"
                 maxLength="8"
+                minLength="8"
                 required
               ></input>
             </div>
