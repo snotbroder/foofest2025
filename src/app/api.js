@@ -36,22 +36,6 @@ export async function getSpots() {
   return data;
 }
 
-// export async function getProgram(stage, day) {
-//   let headersList = {
-//     Accept: "*/*",
-//     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
-//   };
-
-//   let response = await fetch("https://sudsy-jet-grill.glitch.me/Schedule", {
-//     method: "GET",
-//     headers: headersList,
-//   });
-//   const filteredprogram = data?.stage?.day || [];
-
-//   let data = await response.json();
-//   return filteredprogram;
-// }
-
 export async function postVoluenteerInfo(voluenteerData) {
   let headersList = {
     Accept: "*/*",
