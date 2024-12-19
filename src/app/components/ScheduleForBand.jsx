@@ -1,4 +1,4 @@
-function ScheduleForBand({ schedule, bandName, band }) {
+function ScheduleForBand({ schedule, bandName, band, logoCredits }) {
   const scheduleItems = [];
   for (const [stage, days] of Object.entries(schedule)) {
     for (const [day, events] of Object.entries(days)) {
@@ -44,6 +44,14 @@ function ScheduleForBand({ schedule, bandName, band }) {
         <h3>Band members</h3>
         <p>{band.members.join(", ")}</p>
       </div>
+      {band.logoCredits ? (
+        <div className=" relative before:absolute before:content-[''] before:h-[1px] before:bg-primary before:w-full before:-top-4">
+          <h3>Image credits</h3>
+          <p className="small">{band.logoCredits}</p>{" "}
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
