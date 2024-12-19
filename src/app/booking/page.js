@@ -67,7 +67,7 @@ export default function BookingPage() {
               <div>
                 <h1>Booking completed</h1>
                 <h2 className="mb-6">
-                  Thank you for your money, we will see you in the summer ;)
+                  Thank you for your order, we will see you in the summer!
                 </h2>
                 <CtaButton href={"/"} text="Back to home"></CtaButton>
               </div>
